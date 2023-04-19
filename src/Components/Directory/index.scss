@@ -1,0 +1,46 @@
+.directory-container {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 10px;
+}
+
+.directory-folder {
+    max-width: 100%;
+    margin: 1rem;
+    .-button {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        font-weight: bold;
+        text-align: start;
+        white-space: normal;
+        background-color: var(--white-color);
+        color: var(--primary-color);
+        border: 2px solid var(--secondary-color);
+        i {
+            font-size: 2rem;
+        }
+    }
+    .-collapse {
+        width: inherit;
+    }
+    .directory-item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 2px solid var(--secondary-color);
+        margin: 0.25rem;
+        border-radius: 0.375rem;
+        font-size: 1.75rem;
+        .item-button {
+            border: none;
+            text-decoration: underline;
+            background-color: var(--white-color);
+            color: var(--primary-color);
+            font-size: inherit;
+            font-weight: bold;
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+# Globals for Jest
+globals.d.ts
+
+# Jest configs
+jest.config.ts
+
+# Jest mocks
+/mocks

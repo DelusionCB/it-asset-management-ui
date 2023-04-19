@@ -6,6 +6,11 @@
       "dom.iterable",
       "esnext"
     ],
+    "types": [
+        "node",
+        "jest",
+        "@testing-library/jest-dom"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +23,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "outDir": "./dist/",
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-  ]
+    "src",
+    ".eslintrc.json",
+      "**/*.test.*",
+  ],
+    "exclude": [
+        "jest.config.ts",
+    ]
 }

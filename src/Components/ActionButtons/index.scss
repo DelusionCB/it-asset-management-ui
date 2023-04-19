@@ -1,0 +1,10 @@
+.action-button {
+    background-color: var(--primary-color);
+    border-radius: 0;
+    font-size: 1.25rem;
+    border: 2px solid black;
+        &:hover, &:focus {
+            border: 2px solid var(--secondary-color);
+            background-color: var(--primary-color);
+        }
+    }

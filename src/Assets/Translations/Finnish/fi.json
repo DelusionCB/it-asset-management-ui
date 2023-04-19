@@ -1,0 +1,67 @@
+
+{
+    "test": "Tämä on testi",
+    "loading": "Ladataan...",
+    "search-minimum-length": "Syötä vähintään 3 merkkiä",
+    "search-no-results": "Ei tuloksia",
+    "values": {
+        "name": "Nimi",
+        "description": "Kuvaus",
+        "classification": "Luokittelu",
+        "place_of_use": "Asiakkuus",
+        "person_register": "Sisältääkö henkilörekisterin",
+        "personal_info_logging": "Henkilötietojen katselun lokitus",
+        "install_info": "Asennuksen lisätiedot",
+        "keywords": "Avainsanat",
+        "installed_server": "Asennettu palvelimelle",
+        "service_dependency": "Liittyy palveluihin",
+        "integration": "Integraatiot",
+        "license": "Lisensointi",
+        "application_dependency": "Riippuvaisuudet sovelluksiin / sovelluksista",
+        "update_practice": "Päivitykset",
+        "security_practice_monitoring": "Varmistuskäytännöt & valvonta",
+        "recovery_practices_convalescence": "Palautuskäytönnöt & toipuminen",
+        "user_rights_management": "Käyttöoikeuksien hallinta",
+        "security_solutions": "Tietoturvaratkaisut",
+        "product_owner": "Tuoteomistaja",
+        "application_holder": "Sovelluksen haltija tai muu ensisijainen vastuuhenkilö",
+        "admin_users": "Pääkäyttäjät",
+        "liability_professional_users": "Vastuu & ammattikäyttäjät",
+        "holder_extra_info": "Lisätietoja vastuuhenkilöistä",
+        "provider": "Toimittaja",
+        "provider_responsibility": "Toimittajan vastuut",
+        "additional_contacts": "Lisäkontaktit",
+        "known_issues": "Lisätietoja",
+        "fileUrl": "Linkit & Dokumentit",
+        "servers": "Palvelimet",
+        "applications": "Sovellukset",
+        "services": "Palvelut",
+        "status": "Tila",
+        "log_archives": "Lokitukset ja lokiarkistointi"
+    },
+
+    "radios": {
+        "application": "Sovellus",
+        "directory": "Kansio",
+        "license": "Lisenssi",
+        "server": "Palvelin",
+        "service": "Palvelu"
+    },
+
+    "application": {
+        "create": "Luo uusi sovellus",
+        "edit": "Muokkaa sovellusta",
+        "description": "Sovelluksen kuvaus",
+        "dependency": "Sovelluksen sidokset",
+        "continuity": "Jatkuvuus, kriittisyys & palautumistiedot",
+        "responsibility": "Vastuut",
+        "extra": "Lisätiedot & linkit"
+    },
+
+    "directory": {
+        "create": "Luo uusi kansio",
+        "edit": "Muokkaa kansiota",
+        "description": "Kansion kuvaus",
+        "dependency": "Kansion sidokset"
+    }
+}
