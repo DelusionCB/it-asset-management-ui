@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> Snapshot renders correctly 1`] = `
+<div
+  className="container-wrapper"
+>
+  <nav
+    className="navbar navbar-expand navbar-dark"
+  >
+    <div
+      className="container-fluid"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="Varhan logo"
+          height={80}
+          src=""
+        />
+      </a>
+      <div
+        className="collapse navbar-collapse"
+        style={{}}
+      >
+        <ul
+          className="me-auto navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              href="/archive/create/new"
+              onClick={[Function]}
+            >
+              Luo uusi arkistointi
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              href="/search"
+              onClick={[Function]}
+            >
+              Etsi arkistoja
+            </a>
+          </li>
+        </ul>
+      </div>
+      <button
+        aria-label="Toggle navigation"
+        className="me-2 navbar-toggler"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+    </div>
+  </nav>
+  <main
+    id="main"
+  >
+    <div>
+      <div>
+        <h1>
+          Tervetuloa IT- ja omaisuuden hallintaan!
+        </h1>
+      </div>
+      <div>
+        <div>
+          <div
+            className="directory-container"
+          >
+            <div>
+              <h1>
+                Ei kansioita joita näyttää
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer
+    className="footer"
+  >
+    <img
+      alt="Varhan logo"
+      height={80}
+      src=""
+    />
+  </footer>
+</div>
+`;

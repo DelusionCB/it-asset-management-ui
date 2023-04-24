@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Homepage /> Snapshot renders correctly 1`] = `
+<div>
+  <div>
+    <h1>
+      Tervetuloa IT- ja omaisuuden hallintaan!
+    </h1>
+  </div>
+  <div>
+    <div>
+      <div
+        className="directory-container"
+      >
+        <div>
+          <h1>
+            Ei kansioita joita näyttää
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

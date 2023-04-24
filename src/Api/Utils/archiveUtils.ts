@@ -31,6 +31,7 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             obj.provider_responsibility = values.provider_responsibility
             obj.additional_contacts = values.additional_contacts
             obj.known_issues = values.known_issues
+            obj.visibility = values.visibility
 
             if (!values.fileUrl) {
                 obj.fileUrl = null
@@ -85,6 +86,7 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             // General data
             obj.name = values.name
             obj.description = values.description
+            obj.visibility = values.visibility
 
             // Arrays
             if (values.applications.length === 0) {

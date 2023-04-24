@@ -1,15 +1,15 @@
 import React from 'react';
 import * as TestRenderer from 'react-test-renderer';
-import CustomSwitch from '../CustomSwitch';
+import VisibilitySelector from '../VisibilitySelector';
 import '@testing-library/jest-dom'
 
-describe('<CustomSwitch />', () => {
+describe('<VisibilitySelector  />', () => {
     let renderer: TestRenderer.ReactTestRenderer;
 
     // Render the component before tests
     beforeAll(() => {
         renderer = TestRenderer.create(
-            <CustomSwitch invalid={false} disabled={false} id={'id'} label={'label'} onChange={jest.fn()} value={false}/>,
+            <VisibilitySelector value='hidden' id={'id'} options={['one', 'two']} invalid={false} label='label' onChange={jest.fn()} placeholder={'placeholder'} disabled={false}/>,
         );
     });
     describe('Snapshot', () => {

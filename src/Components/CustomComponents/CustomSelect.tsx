@@ -4,21 +4,7 @@ import {useTranslation} from 'react-i18next';
 import client from '../../Api/Client';
 import AsyncSelect from 'react-select/async';
 import './index.scss'
-
-interface CustomSelectProps {
-    label: string
-    validation?: object
-    value: object[] | object | undefined | null
-    onChange: (value: MyOption | readonly MyOption[] | undefined | null, id: string) => void
-    endpoint: string
-    id: string
-    placeholder: string
-    disabled: boolean
-    invalid?: boolean
-    isMulti?: boolean
-}
-
-interface MyOption {label: string, value: number}
+import {CustomSelectProps, MyOption} from './types.customcomps';
 
 function CSelect ({label, value, onChange, endpoint, id, placeholder, disabled, invalid, isMulti = false}: CustomSelectProps): JSX.Element {
     const {t} = useTranslation()
@@ -83,7 +69,7 @@ function CSelect ({label, value, onChange, endpoint, id, placeholder, disabled, 
         )
     }
 
-    function getDefaultValue (): {label: any, value: any} | null {
+    function getDefaultValue (): MyOption | MyOption[] | null {
         if (!selectedValue || Object.keys(selectedValue).length === 0) {
             return null
         }
@@ -102,7 +88,7 @@ function CSelect ({label, value, onChange, endpoint, id, placeholder, disabled, 
         }
     }
 
-    function formatOption (item: any): JSX.Element {
+    function formatOption (item: MyOption): JSX.Element {
         return (
             <React.Fragment>
                 {item.label}
@@ -135,6 +121,7 @@ function CSelect ({label, value, onChange, endpoint, id, placeholder, disabled, 
                     aria-label={`${t(placeholder)}`}
                     placeholder={`${t(placeholder)}`}
                     isDisabled={disabled}
+                    aria-invalid={invalid}
                     isMulti={isMulti}
                 />
             </FormGroup>

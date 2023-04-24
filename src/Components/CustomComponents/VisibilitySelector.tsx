@@ -2,10 +2,19 @@ import * as React from 'react';
 import {Col, FormGroup, Input, Label} from 'reactstrap';
 import {useTranslation} from 'react-i18next';
 import './index.scss'
-import {TextFieldProps} from './types.customcomps';
+import {VisibilitySelectorProps} from './types.customcomps';
 
-function TextField ({label, validation, value, onChange, type, id, placeholder, disabled = false, invalid = false}: TextFieldProps): JSX.Element {
+function VisibilitySelector ({label, validation, value, onChange, options, id, placeholder, disabled = false, invalid = false}: VisibilitySelectorProps): JSX.Element {
     const {t} = useTranslation()
+
+    function getOptions (options: string[]): JSX.Element[] {
+        return options.map((value, index) => {
+            return (
+                <option key={index} value={value}>{t(`visibility.${value}`)}</option>
+            )
+        })
+    }
+
     return (
         <Col className='textfield'>
             <FormGroup>
@@ -19,13 +28,15 @@ function TextField ({label, validation, value, onChange, type, id, placeholder, 
                     aria-invalid={invalid}
                     name={id}
                     placeholder={`${t(placeholder)}`}
-                    type={type}
+                    type='select'
                     value={value}
                     onChange={(e) => { onChange(e); }}
-                />
+                >
+                    {getOptions(options)}
+                </Input>
             </FormGroup>
         </Col>
     );
 }
 
-export default TextField;
+export default VisibilitySelector;

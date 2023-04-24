@@ -2,12 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {FormGroup, Input, Label} from 'reactstrap';
 import {useTranslation} from 'react-i18next';
 import './index.scss'
-
-interface CustomSelectionProps {
-    onChange: (e: string) => void
-    selections: string[]
-    disabled: boolean
-}
+import {CustomSelectionProps} from './types.customcomps';
 
 function FormSelection ({onChange, selections, disabled = false}: CustomSelectionProps): JSX.Element {
     const {t} = useTranslation()

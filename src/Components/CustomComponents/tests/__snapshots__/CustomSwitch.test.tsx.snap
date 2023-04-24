@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CustomSwitch /> Snapshot renders correctly 1`] = `
+<div
+  className="switches col"
+>
+  <div
+    className="form-check form-switch"
+  >
+    <label
+      className="form-check-label"
+      htmlFor="id"
+    >
+      label
+    </label>
+    <input
+      aria-checked={false}
+      aria-invalid={false}
+      checked={false}
+      className="form-check-input"
+      disabled={false}
+      id="id"
+      name="id"
+      onChange={[Function]}
+      type="checkbox"
+    />
+  </div>
+</div>
+`;

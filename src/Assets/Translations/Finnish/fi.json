@@ -37,7 +37,14 @@
         "applications": "Sovellukset",
         "services": "Palvelut",
         "status": "Tila",
-        "log_archives": "Lokitukset ja lokiarkistointi"
+        "log_archives": "Lokitukset ja lokiarkistointi",
+        "visibility": "Näkyvyys"
+    },
+
+    "visibility": {
+        "draft": "Luonnos",
+        "published": "Julkaistu",
+        "hidden": "Piilotettu"
     },
 
     "radios": {
@@ -55,13 +62,15 @@
         "dependency": "Sovelluksen sidokset",
         "continuity": "Jatkuvuus, kriittisyys & palautumistiedot",
         "responsibility": "Vastuut",
-        "extra": "Lisätiedot & linkit"
+        "extra": "Lisätiedot & linkit",
+        "visibility": "Valitse sovelluksen näkyvyys"
     },
 
     "directory": {
         "create": "Luo uusi kansio",
         "edit": "Muokkaa kansiota",
         "description": "Kansion kuvaus",
-        "dependency": "Kansion sidokset"
+        "dependency": "Kansion sidokset",
+        "visibility": "Valitse sovelluksen näkyvyys"
     }
 }

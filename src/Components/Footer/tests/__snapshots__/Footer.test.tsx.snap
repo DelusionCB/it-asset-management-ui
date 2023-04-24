@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> Snapshot renders correctly 1`] = `
+<footer
+  className="footer"
+>
+  <img
+    alt="Varhan logo"
+    height={80}
+    src=""
+  />
+</footer>
+`;

@@ -78,4 +78,25 @@ export const debouncedCheck = debounce((values: any, defaultValues: any, isDisab
     } else {
         isDisabled(false);
     }
-}, 500); // 500ms debounce delay
+}, 500);
+
+// Function to clear certain values from form
+export function handleClear<T extends Record<string, any>> (
+    values: T,
+    fieldsToNull: Array<keyof T>,
+    fieldsToArray: Array<keyof T>,
+    setValues: React.Dispatch<React.SetStateAction<T>>,
+): void {
+    const newState = {...values};
+    if (fieldsToNull.length > 0) {
+        fieldsToNull.forEach((fieldName) => {
+            newState[fieldName] = null as any as T[keyof T];
+        });
+    }
+    if (fieldsToArray.length > 0) {
+        fieldsToArray.forEach((fieldName) => {
+            newState[fieldName] = [] as any as T[keyof T];
+        });
+    }
+    setValues(newState);
+}

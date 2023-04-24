@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ActionButton /> Snapshot renders correctly 1`] = `
+[
+  <button
+    className="action-button btn btn-secondary"
+    onClick={[Function]}
+    type="button"
+  >
+    application.create
+  </button>,
+  ",",
+]
+`;

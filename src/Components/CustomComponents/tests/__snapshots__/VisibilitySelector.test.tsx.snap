@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VisibilitySelector  /> Snapshot renders correctly 1`] = `
+<div
+  className="textfield col"
+>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="form-label"
+      htmlFor="id"
+    >
+      label
+    </label>
+    <select
+      aria-invalid={false}
+      className="form-select"
+      disabled={false}
+      id="id"
+      name="id"
+      onChange={[Function]}
+      placeholder="placeholder"
+      value="hidden"
+    >
+      <option
+        value="one"
+      >
+        visibility.one
+      </option>
+      <option
+        value="two"
+      >
+        visibility.two
+      </option>
+    </select>
+  </div>
+</div>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ActionButtons /> Snapshot renders correctly 1`] = `
+[
+  <div>
+    <button
+      className="action-button btn btn-secondary"
+      onClick={[Function]}
+      type="button"
+    >
+      application.edit
+    </button>
+    <button
+      className="action-button btn btn-secondary"
+      onClick={[Function]}
+      type="button"
+    >
+      application.create
+    </button>
+  </div>,
+  ",",
+]
+`;

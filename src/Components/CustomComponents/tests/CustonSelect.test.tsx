@@ -9,7 +9,7 @@ describe('<CustomSelect />', () => {
     // Render the component before tests
     beforeAll(() => {
         renderer = TestRenderer.create(
-            <CustomSelect endpoint='endpoint' id='id' label='label' onChange={jest.fn()} placeholder={'placeholder'} value={null} disabled={false}/>,
+            <CustomSelect invalid={false} isMulti={false} endpoint='endpoint' id='id' label='label' onChange={jest.fn()} placeholder={'placeholder'} value={null} disabled={false}/>,
         );
     });
     describe('Snapshot', () => {

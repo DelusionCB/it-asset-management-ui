@@ -89,7 +89,7 @@ export interface serviceDataProps {
     required_installations: []
 }
 
-export const serviceDefaultResults: serviceDataProps = {
+export const serviceDefaultValues: serviceDataProps = {
     name: '',
     description: '',
     service_status: '',
@@ -121,6 +121,7 @@ export interface extendedDirectoryDataProps {
     created_time?: string
     last_modified_time?: string
     id_predix?: string
+    visibility: string
 }
 
 export const directoryDefaultValues: extendedDirectoryDataProps = {
@@ -129,6 +130,7 @@ export const directoryDefaultValues: extendedDirectoryDataProps = {
     applications: [],
     servers: [],
     services: [],
+    visibility: 'published',
 }
 
 export interface LicenseDataProps {
@@ -170,6 +172,7 @@ export interface appDependencyItemProps {
 export interface extendedApplicationDataProps {
     base_id?: string
     name: string
+    visibility: string
     description: string
     created_time?: string
     last_modified_time?: string
@@ -217,6 +220,7 @@ export interface IntegrationsDataProps {
 export const appDefaultValues: extendedApplicationDataProps = {
     name: '',
     description: '',
+    visibility: 'published',
     classification: '',
     place_of_use: '',
     status: '',

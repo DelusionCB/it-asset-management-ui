@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormSelection /> Snapshot renders correctly 1`] = `
+<div
+  className="selection-wrapper"
+>
+  <div
+    className="selection-header"
+  >
+    <h1>
+      Valitse arkistoinnin tyyppi
+    </h1>
+  </div>
+  <div
+    className="selection-radios"
+  >
+    <div>
+      <div
+        className="form-check"
+      >
+        <label
+          className="form-check-label"
+          htmlFor="selection-0"
+        >
+          radios.selection
+        </label>
+        <input
+          aria-disabled={false}
+          checked={false}
+          className="form-check-input"
+          disabled={false}
+          id="selection-0"
+          name="selection"
+          onChange={[Function]}
+          type="radio"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -4,9 +4,14 @@ import TextField from '../CustomComponents/TextField';
 import {Row} from 'reactstrap';
 import CSelect from '../CustomComponents/CustomSelect';
 import CSwitch from '../CustomComponents/CustomSwitch';
-import {debouncedCheck, handleApplicationChange, handleApplicationSelect} from '../../Utils/helpers';
+import {
+    debouncedCheck,
+    handleApplicationChange,
+    handleApplicationSelect, handleClear,
+} from '../../Utils/helpers';
 import {useTranslation} from 'react-i18next';
 import ActionButtons from '../ActionButtons/ActionButtons';
+import VisibilitySelector from '../CustomComponents/VisibilitySelector';
 
 interface FieldsStates {
     isDisabled: (is: boolean) => void
@@ -22,7 +27,6 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
     }
 
     function handleSelect (value: {} | [] | undefined | null, id: string): void {
-        console.log(value, 'handleSelect')
         handleApplicationSelect(value, id, values, setValues);
     }
 
@@ -36,10 +40,36 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
         };
     }, [values]);
 
+    useEffect(() => {
+        if (values.visibility === 'hidden' || values.visibility === 'draft') {
+            handleClear<extendedApplicationDataProps>(
+                values,
+                ['contract', 'license', 'application_dependency', 'installed_server'],
+                ['service_dependency', 'integration'],
+                setValues,
+            )
+        }
+    }, [values.visibility])
+
     return (
         <>
             <Row>
                 <h1>{t('application.create')}</h1>
+            </Row>
+            <Row>
+                <h2>{t('application.visibility')}</h2>
+            </Row>
+            <Row>
+                <VisibilitySelector
+                    value={values.visibility}
+                    onChange={(e) => { handleChange(e); }}
+                    disabled={false}
+                    id='visibility'
+                    label={'values.visibility'}
+                    invalid={false}
+                    options={['draft', 'hidden', 'published']}
+                    placeholder={'placeholder.visibility'}
+                />
             </Row>
             <Row>
                 <h2>{t('application.description')}</h2>
@@ -53,6 +83,7 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
                     onChange={(e) => { handleChange(e); }}
                     placeholder={'placeholder.name'}
                     value={values.name}
+                    type='text'
                 />
             </Row>
             <Row>
@@ -76,6 +107,7 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.classification'}
                     value={values.classification}
+                    type='text'
                 />
             </Row>
             <Row>
@@ -87,6 +119,7 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.place_of_use'}
                     value={values.place_of_use}
+                    type='text'
                 />
             </Row>
             <Row>
@@ -166,7 +199,7 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
                     endpoint='server'
                     id={'installed_server'}
                     placeholder={'placeholder.server'}
-                    disabled={false}
+                    disabled={values.visibility === 'hidden' || values.visibility === 'draft'}
                     invalid={false}
                     isMulti={false}
                     value={values.installed_server}
@@ -179,7 +212,7 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
                     endpoint='service'
                     id={'service_dependency'}
                     placeholder={'placeholder.service_dependency'}
-                    disabled={false}
+                    disabled={values.visibility === 'hidden' || values.visibility === 'draft'}
                     invalid={false}
                     isMulti={true}
                     value={values.service_dependency}
@@ -205,7 +238,7 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
                     endpoint='license'
                     id={'license'}
                     placeholder={'placeholder.license'}
-                    disabled={false}
+                    disabled={values.visibility === 'hidden' || values.visibility === 'draft'}
                     invalid={false}
                     isMulti={false}
                     value={values.license}
@@ -218,7 +251,7 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
                     endpoint='application'
                     id={'application_dependency'}
                     placeholder={'placeholder.application_dependency'}
-                    disabled={false}
+                    disabled={values.visibility === 'hidden' || values.visibility === 'draft'}
                     invalid={false}
                     isMulti={false}
                     value={values.application_dependency}

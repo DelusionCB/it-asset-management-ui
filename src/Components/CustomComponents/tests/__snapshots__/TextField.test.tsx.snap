@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField  /> Snapshot renders correctly 1`] = `
+<div
+  className="textfield col"
+>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="form-label"
+      htmlFor="id"
+    >
+      label
+    </label>
+    <input
+      aria-invalid={false}
+      className="form-control"
+      disabled={false}
+      id="id"
+      name="id"
+      onChange={[Function]}
+      placeholder="placeholder"
+      type="text"
+    />
+  </div>
+</div>
+`;
