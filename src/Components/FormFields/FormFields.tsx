@@ -1,26 +1,26 @@
 import React, {useState} from 'react';
-import ApplicationFields from './ApplicationFields';
+import ApplicationForm from './Forms/ApplicationForm';
 import FormSelection from '../CustomComponents/FormSelection';
 import {Container, Row} from 'reactstrap';
-import DirectoryFields from './DirectoryFields';
+import DirectoryForm from './Forms/DirectoryForm';
 
 function FormFields (): JSX.Element {
     const [fieldType, setFieldType] = useState('application')
 
     const [disabled, isDisabled] = useState(false)
 
-    function getEditFields (): JSX.Element {
+    function getFormFields (): JSX.Element {
         switch (fieldType) {
             case 'application':
                 return (
-                    <ApplicationFields
+                    <ApplicationForm
                         type={fieldType}
                         isDisabled={isDisabled}
                     />
                 )
             case 'directory':
                 return (
-                    <DirectoryFields
+                    <DirectoryForm
                         type={fieldType}
                         isDisabled={isDisabled}
                     />
@@ -28,17 +28,19 @@ function FormFields (): JSX.Element {
             case 'license':
                 return (
                     <div />
-                    // <LicenseFields isDisabled={isDisabled} />
+                    // <LicenseForm
+                    // type={fieldType}
+                    // isDisabled={isDisabled} />
                 )
             case 'server':
                 return (
                     <div />
-                    // <ServerFields isDisabled={isDisabled} />
+                    // <ServerForm type={fieldType} isDisabled={isDisabled} />
                 )
             case 'service':
                 return (
                     <div />
-                    // <ServiceFields isDisabled={isDisabled} />
+                    // <ServiceForm type={fieldType} isDisabled={isDisabled} />
                 )
             default:
                 return (<div />)
@@ -55,7 +57,7 @@ function FormFields (): JSX.Element {
                 />
             </Row>
             <Row>
-                {getEditFields()}
+                {getFormFields()}
             </Row>
         </Container>
     );

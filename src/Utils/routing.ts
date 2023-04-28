@@ -11,6 +11,15 @@ export function getEndpoint (endpoint: string): string {
         case 'lcn':
             path = 'license'
             break;
+        case 'con':
+            path = 'contract'
+            break;
+        case 'srv':
+            path = 'server'
+            break;
+        case 'ser':
+            path = 'service'
+            break;
         default:
             path = ''
             break;
@@ -18,8 +27,8 @@ export function getEndpoint (endpoint: string): string {
     return path
 }
 
-export function redirectTo (navigate: Function, endpoint: string, e: string): void {
-    navigate(`${getEndpoint(endpoint)}/${e}`, {
+export function redirectTo (navigate: Function, endpoint: string = '', e: string = ''): void {
+    navigate(`/${getEndpoint(endpoint)}/${e}`, {
         state: {
             path: getEndpoint(endpoint),
             id: e,

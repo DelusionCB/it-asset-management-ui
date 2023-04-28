@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row} from 'reactstrap';
 
-function LicenseFields (): JSX.Element {
+function LicenseForm (): JSX.Element {
     return (
         <>
             <Row>
@@ -14,4 +14,4 @@ function LicenseFields (): JSX.Element {
     );
 }
 
-export default LicenseFields;
+export default LicenseForm;

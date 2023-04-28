@@ -38,7 +38,55 @@
         "services": "Palvelut",
         "status": "Tila",
         "log_archives": "Lokitukset ja lokiarkistointi",
-        "visibility": "Näkyvyys"
+        "visibility": "Näkyvyys",
+
+        "server_role": "Palvelimen rooli",
+        "operating_organization": "Asiakkuus",
+        "place_of_use_location": "Sijainttiedot",
+        "product_owner_server": "Vastuuhenkilö(t)",
+        "server_model": "Palvelimen malli",
+        "backup_data": "Varmuuskopiotiedot",
+        "backup_device": "Varmuuskopiolaite",
+        "public_ip_addresses": "Julkiset IP-osoitteet",
+        "dns_names": "Nimipalveluiden nimet",
+        "server_type": "Palvelimen tyyppi",
+        "enviroment_type": "Ympäristön tyyppi",
+        "dedicated": "Dedikoitu",
+        "maintenance_window": "Huoltoikkuna",
+        "device_criticality": "Laitteen kriittisyys",
+        "security_level": "Tietoturvataso",
+        "install_date": "Asennuksen päivämäärä",
+        "ip_address": "IP-osoite",
+        "updates": "Päivitykset",
+        "verification_practices": "Varmistuskäytännöt",
+        "logging": "Lokitukset",
+        "access_rights_management": "Käyttöoikeuksien hallinta",
+        "external_rights": "Ulkoiset oikeudet",
+        "domain_name": "Verkkotunnuksen nimi",
+        "sub_domain": "Aliverkkotunnukset",
+        "ip_address_type": "IP-osoitteen tyyppi",
+        "subnet_mask": "Aliverkon maski",
+        "default_gateway": "Oletusyhdyskäytävä",
+        "mac_address": "MAC-osoite",
+        "placeholder": "Placeholder",
+
+        "product_owner_service": "Palvelun omistaja",
+        "service_status": "Palvelun tila",
+        "criticality": "Palvelun kriittisyys",
+        "service_level": "Palvelutaso",
+        "service_type": "Palvelun tyyppi",
+        "validity_type": "Palvelutason voimassaoloaika",
+        "limitations": "Rajoitukset",
+        "service_holder": "Palvelun haltija",
+        "provider_role": "Toimittajarooli",
+        "provider_contact": "Toimittajan yhteyshenkilöt",
+        "contract": "Sopimukset",
+        "related_services": "Liittyy muihin palveluihin",
+        "required_installations": "Tarvittavat sovellusasennukset",
+        "valid_from_date": "Voimassaoloaika alkaen",
+        "valid_until_date": "Voimassaoloaika päättyy",
+        "license_type": "Lisenssin tyyppi"
+
     },
 
     "visibility": {
@@ -56,6 +104,7 @@
     },
 
     "application": {
+        "app": "Sovellus",
         "create": "Luo uusi sovellus",
         "edit": "Muokkaa sovellusta",
         "description": "Sovelluksen kuvaus",
@@ -67,10 +116,59 @@
     },
 
     "directory": {
+        "dir": "Kansio",
         "create": "Luo uusi kansio",
         "edit": "Muokkaa kansiota",
         "description": "Kansion kuvaus",
         "dependency": "Kansion sidokset",
         "visibility": "Valitse sovelluksen näkyvyys"
-    }
+    },
+
+    "server": {
+        "srv": "Palvelin",
+        "create": "Luo uusi palvelin",
+        "edit": "Muokkaa palvelinta",
+        "description": "Palvelimen kuvaus",
+        "info": "Palvelimen tiedot",
+        "status": "Palvelimen tilatiedot",
+        "security": "Palvelimen ylläpito- ja turvallisuus",
+        "network": "Palvelimen verkkotiedot",
+        "apps": "Palvelimen sovellukset",
+        "extra": "Palvelimen lisätiedot",
+        "visibility": "Valitse palvelimen näkyvyys"
+    },
+
+    "license": {
+        "lcn": "Lisenssi",
+        "create": "Luo uusi lisenssi",
+        "edit": "Muokkaa lisenssiä",
+        "description": "Lisenssin kuvaus",
+        "dependency": "Lisenssin sidokset",
+        "visibility": "Valitse lisenssin näkyvyys"
+    },
+
+    "contract": {
+        "con": "Sopimus",
+        "description": "Sopimuksen kuvaus",
+        "create": "Luo uusi sopimus",
+        "edit": "Muokkaa sopimusta",
+        "visibility": "Valitse sopimuksen näkyvyys"
+    },
+
+    "service": {
+        "ser": "Palvelu",
+        "description": "Palvelun kuvaus",
+        "create": "Luo uusi palvelu",
+        "edit": "Muokkaa palvelua",
+        "visibility": "Valitse palvelun näkyvyys",
+        "responsibility": "Palvelun vastuut",
+        "extra": "Lisätiedot ja linkit"
+    },
+
+    "yes": "Kyllä",
+    "no": "Ei",
+    "no-connections": "Ei sidoksia",
+    "redirect": "Siirry {{value}} sivulle",
+    "dateRange": "Alkaa: {{startDate}}, päättyy: {{endDate}}",
+    "back": "Palaa takaisin"
 }

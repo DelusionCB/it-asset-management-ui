@@ -21,7 +21,6 @@ export function handleDirectoryChange (
 export function handleApplicationChange (
     e: React.ChangeEvent<HTMLInputElement>,
     isSwitch: boolean = false,
-    isFiles: boolean = false,
     values: extendedApplicationDataProps,
     setValues: React.Dispatch<React.SetStateAction<extendedApplicationDataProps>>,
 ): void {
@@ -30,15 +29,6 @@ export function handleApplicationChange (
             ...values,
             [e.target.name]: e.target.checked,
         });
-    } else if (isFiles) {
-        if (e.target.files !== null) {
-            const data = new FormData();
-            data.append('files', new Blob([JSON.stringify(e.target.files[0])], {type: 'text/html'}))
-            setValues({
-                ...values,
-                [e.target.name]: e.target.files[0],
-            });
-        }
     } else {
         setValues({
             ...values,

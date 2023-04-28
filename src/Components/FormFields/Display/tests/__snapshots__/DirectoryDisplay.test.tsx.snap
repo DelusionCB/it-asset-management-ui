@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DirectoryDisplay /> Snapshot renders correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <h1 />
+  </div>
+  <div
+    className="row"
+  >
+    <hr
+      hidden={true}
+    />
+    <h2 />
+    <hr
+      hidden={true}
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="row"
+    >
+      <h3 />
+      <p />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="row"
+    >
+      <h3 />
+      <p />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <hr
+      hidden={true}
+    />
+    <h2 />
+    <hr
+      hidden={true}
+    />
+  </div>
+  <div
+    className="display row"
+  >
+    <h3>
+      :
+    </h3>
+    <h4 />
+  </div>
+  <div
+    className="display row"
+  >
+    <h3>
+      :
+    </h3>
+    <h4 />
+  </div>
+  <div
+    className="display row"
+  >
+    <h3>
+      :
+    </h3>
+    <h4 />
+  </div>
+</div>
+`;

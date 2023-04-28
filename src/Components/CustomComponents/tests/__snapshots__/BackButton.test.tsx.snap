@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BackButton /> Snapshot renders correctly 1`] = `
+[
+  <button
+    className="back-button btn btn-secondary"
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="bi bi-arrow-left"
+    />
+    back
+  </button>,
+  ",",
+]
+`;

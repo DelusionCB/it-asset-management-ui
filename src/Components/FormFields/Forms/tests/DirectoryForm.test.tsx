@@ -1,6 +1,6 @@
 import React from 'react';
 import * as TestRenderer from 'react-test-renderer';
-import DirectoryFields from '../FormFields';
+import DirectoryForm from '../DirectoryForm'
 import {BrowserRouter} from 'react-router-dom'
 import '@testing-library/jest-dom'
 
@@ -11,7 +11,7 @@ describe('<DirectoryFields />', () => {
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <DirectoryFields />
+                <DirectoryForm type='directory' isDisabled={jest.fn()} />
             </BrowserRouter>,
         );
     });

@@ -112,7 +112,7 @@ export async function postData (navigate: Function, action: string, endpoint: st
     let data;
 
     const preparedValues = mapUIDataToAPIFormat(endpoint, values)
-    console.log(preparedValues, 'Nämä arvot ovat muutettu oikeaan formaattiin')
+
     try {
         const response = action === 'edit'
             ? await client.put(`${endpoint}/`, preparedValues)

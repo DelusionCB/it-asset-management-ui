@@ -1,29 +1,29 @@
 import React, {useEffect, useState} from 'react';
-import {appDefaultValues, extendedApplicationDataProps} from '../../Types/types.directories';
-import TextField from '../CustomComponents/TextField';
+import {appDefaultValues, extendedApplicationDataProps} from '../../../Types/types.directories';
+import TextField from '../../CustomComponents/TextField';
 import {Row} from 'reactstrap';
-import CSelect from '../CustomComponents/CustomSelect';
-import CSwitch from '../CustomComponents/CustomSwitch';
+import CSelect from '../../CustomComponents/CustomSelect';
+import CSwitch from '../../CustomComponents/CustomSwitch';
 import {
     debouncedCheck,
     handleApplicationChange,
     handleApplicationSelect, handleClear,
-} from '../../Utils/helpers';
+} from '../../../Utils/helpers';
 import {useTranslation} from 'react-i18next';
-import ActionButtons from '../ActionButtons/ActionButtons';
-import VisibilitySelector from '../CustomComponents/VisibilitySelector';
+import ActionButtons from '../../ActionButtons/ActionButtons';
+import VisibilitySelector from '../../CustomComponents/VisibilitySelector';
 
 interface FieldsStates {
     isDisabled: (is: boolean) => void
     type: string
 }
 
-function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
+function ApplicationForm ({isDisabled, type}: FieldsStates): JSX.Element {
     const [values, setValues] = useState<extendedApplicationDataProps>(appDefaultValues)
     const {t} = useTranslation()
 
-    function handleChange (e: React.ChangeEvent<HTMLInputElement>, isSwitch: boolean = false, isFiles: boolean = false): void {
-        handleApplicationChange(e, isSwitch, isFiles, values, setValues);
+    function handleChange (e: React.ChangeEvent<HTMLInputElement>, isSwitch: boolean = false): void {
+        handleApplicationChange(e, isSwitch, values, setValues);
     }
 
     function handleSelect (value: {} | [] | undefined | null, id: string): void {
@@ -31,10 +31,10 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
     }
 
     useEffect(() => {
-        // Invoke debouncedCheck with updated values and directoryDefaultValues
+        // Invoke debouncedCheck with updated values
         debouncedCheck(values, appDefaultValues, isDisabled);
 
-        // Cleanup function to cancel the debounce on unmount
+        // Cleanup function to cancel debounce on unmount
         return () => {
             debouncedCheck.cancel();
         };
@@ -42,6 +42,7 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
 
     useEffect(() => {
         if (values.visibility === 'hidden' || values.visibility === 'draft') {
+            // Clear these fields if visibility is X -value
             handleClear<extendedApplicationDataProps>(
                 values,
                 ['contract', 'license', 'application_dependency', 'installed_server'],
@@ -442,7 +443,7 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
                     invalid={false}
                     type='file'
                     label={'values.fileUrl'}
-                    onChange={(e) => { handleChange(e, false, true) }}
+                    onChange={() => { }}
                     placeholder={'placeholder.fileUrl'}
                 />
             </Row>
@@ -455,4 +456,4 @@ function ApplicationFields ({isDisabled, type}: FieldsStates): JSX.Element {
     );
 }
 
-export default ApplicationFields;
+export default ApplicationForm;
