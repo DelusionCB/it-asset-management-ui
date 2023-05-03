@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FormSelection /> Snapshot renders correctly 1`] = `
+exports[`<ArchiveSelection /> Snapshot renders correctly 1`] = `
 <div
   className="selection-wrapper"
 >
@@ -8,7 +8,7 @@ exports[`<FormSelection /> Snapshot renders correctly 1`] = `
     className="selection-header"
   >
     <h1>
-      Valitse arkistoinnin tyyppi
+      label
     </h1>
   </div>
   <div

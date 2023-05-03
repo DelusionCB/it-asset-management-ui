@@ -1,15 +1,15 @@
 import React from 'react';
 import * as TestRenderer from 'react-test-renderer';
-import FormSelection from '../FormSelection';
+import ArchiveSelection from '../ArchiveSelection';
 import '@testing-library/jest-dom'
 
-describe('<FormSelection />', () => {
+describe('<ArchiveSelection />', () => {
     let renderer: TestRenderer.ReactTestRenderer;
 
     // Render the component before tests
     beforeAll(() => {
         renderer = TestRenderer.create(
-            <FormSelection disabled={false} onChange={jest.fn()} selections={['selection']}/>,
+            <ArchiveSelection label='label' disabled={false} onChange={jest.fn()} selections={['selection']}/>,
         );
     });
     describe('Snapshot', () => {

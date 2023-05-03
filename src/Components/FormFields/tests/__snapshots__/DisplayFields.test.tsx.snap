@@ -14,7 +14,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
         className="selection-header"
       >
         <h1>
-          Valitse arkistoinnin tyyppi
+          select-archive
         </h1>
       </div>
       <div

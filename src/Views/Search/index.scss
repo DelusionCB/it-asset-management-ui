@@ -1,0 +1,19 @@
+.search-page {
+    .results-count-status {
+        margin: 1rem 0 1rem 0;
+        padding-right: calc(1.5rem * .5);
+        padding-left: calc(1.5rem * .5);
+    }
+    .search-bar {
+        button {
+            background-color: var(--primary-color);
+            border-radius: 0;
+            font-size: 1.25rem;
+            border: 2px solid black;
+            &:hover, &:focus {
+                border: 2px solid var(--secondary-color);
+                background-color: var(--primary-color);
+            }
+        }
+    }
+}

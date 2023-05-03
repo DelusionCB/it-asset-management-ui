@@ -204,6 +204,16 @@ exports[`<ServerDisplay /> Snapshot renders correctly 1`] = `
   <div
     className="row"
   >
+    <div
+      className="row"
+    >
+      <h3 />
+      <p />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
     <hr
       hidden={true}
     />

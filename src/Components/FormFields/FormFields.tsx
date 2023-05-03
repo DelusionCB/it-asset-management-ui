@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ApplicationForm from './Forms/ApplicationForm';
-import FormSelection from '../CustomComponents/FormSelection';
+import ArchiveSelection from '../CustomComponents/ArchiveSelection';
 import {Container, Row} from 'reactstrap';
 import DirectoryForm from './Forms/DirectoryForm';
 
@@ -50,10 +50,11 @@ function FormFields (): JSX.Element {
     return (
         <Container>
             <Row>
-                <FormSelection
+                <ArchiveSelection
                     onChange={(e) => { setFieldType(e); }}
                     selections={['application', 'directory', 'license', 'server', 'service']}
                     disabled={disabled}
+                    label='select-archive'
                 />
             </Row>
             <Row>

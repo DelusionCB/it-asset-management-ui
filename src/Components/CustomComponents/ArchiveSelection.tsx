@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next';
 import './index.scss'
 import {CustomSelectionProps} from './types.customcomps';
 
-function FormSelection ({onChange, selections, disabled = false}: CustomSelectionProps): JSX.Element {
+function ArchiveSelection ({onChange, selections, disabled = false, label}: CustomSelectionProps): JSX.Element {
     const {t} = useTranslation()
     const [selected, setSelected] = useState('application')
 
@@ -44,7 +44,7 @@ function FormSelection ({onChange, selections, disabled = false}: CustomSelectio
     return (
         <div className='selection-wrapper'>
             <div className='selection-header'>
-                <h1>Valitse arkistoinnin tyyppi</h1>
+                <h1>{t(label)}</h1>
             </div>
             <div className='selection-radios'>
                 {getSelection()}
@@ -53,4 +53,4 @@ function FormSelection ({onChange, selections, disabled = false}: CustomSelectio
     );
 }
 
-export default FormSelection;
+export default ArchiveSelection;

@@ -197,6 +197,7 @@ export interface serverDataProps {
     maintenance_window: string
     device_criticality: string
     security_level: string
+    service_level: string
     status: string
     install_date: string
     ip_address: string
@@ -225,6 +226,7 @@ export const serverDefaultValues: serverDataProps = {
     last_modified_time: '',
     visibility: '',
     server_role: '',
+    service_level: '',
     operating_organization: '',
     place_of_use: '',
     product_owner: '',

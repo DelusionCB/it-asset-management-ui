@@ -28,6 +28,7 @@ export interface CustomSelectionProps {
     onChange: (e: string) => void
     selections: string[]
     disabled: boolean
+    label: string
 }
 
 export interface CustomSwitchProps {

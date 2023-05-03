@@ -170,5 +170,11 @@
     "no-connections": "Ei sidoksia",
     "redirect": "Siirry {{value}} sivulle",
     "dateRange": "Alkaa: {{startDate}}, päättyy: {{endDate}}",
-    "back": "Palaa takaisin"
+    "back": "Palaa takaisin",
+    "select-archive": "Valitse arkiston tyyppi haettavaksi",
+    "archive-contents": "Arkiston nimi (min. 3 merkkiä)",
+    "archive-fetch": "Hae arkistoja",
+    "archive-example": "Esim. Elatusapulaskuri...",
+    "search-results": "Hakutulosten määrä on {{count}}",
+    "search-header": "Etsi arkistoista sisältöä"
 }

@@ -1,0 +1,22 @@
+
+.item {
+    height: 250px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: 2px solid var(--primary-color);
+    padding: 2rem;
+    i {
+        &::before {
+            font-size: 4rem;
+        }
+    }
+    .redirect-button {
+        font-size: 1.25rem;
+        i {
+            &::before {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

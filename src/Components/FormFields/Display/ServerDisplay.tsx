@@ -36,6 +36,7 @@ function ServerDisplay ({values, t, navigate}: serverDisplayProps): JSX.Element 
             <DisplayText t={t} value={values.maintenance_window} label='values.maintenance_window' />
             <DisplayText t={t} value={values.device_criticality} label='values.device_criticality' />
             <DisplayText t={t} value={values.security_level} label='values.security_level' />
+            <DisplayText t={t} value={values.service_level} label='values.service_level' />
 
             <DisplayDescription t={t} label='server.status' />
 
