@@ -11,7 +11,7 @@ describe('<ItemGrid />', () => {
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <ItemGrid t={jest.fn()} navigate={jest.fn()} items={[]} />
+                <ItemGrid t={jest.fn()} items={[]} />
             </BrowserRouter>,
         );
     });

@@ -1,7 +1,7 @@
-import {Button} from 'reactstrap';
 import React from 'react';
-import {redirectTo} from '../../Utils/routing';
+import {getEndpoint} from '../../Utils/routing';
 import './index.scss'
+import {Link} from 'react-router-dom';
 
 interface objectItem {
     name: string
@@ -14,10 +14,9 @@ interface itemProps {
     key: number
     item: objectItem
     t: any
-    navigate: any
 }
 
-function Item ({key, item, t, navigate}: itemProps): JSX.Element {
+function Item ({key, item, t}: itemProps): JSX.Element {
     function getIcon (type: string): JSX.Element {
         let icon = ''
         switch (type) {
@@ -48,42 +47,36 @@ function Item ({key, item, t, navigate}: itemProps): JSX.Element {
 
     return (
         <div className="col-xs-12 col-md-6 col-lg-4" key={key}>
-            <div className='item'>
-                <div>
-                    {getIcon(item.id_prefix)}
+            <Link
+                aria-label={t('redirect', {value: item.name})}
+                className='link-item'
+                to={`/${getEndpoint(item.id_prefix)}/${item.base_id}`}
+            >
+                <div className='item'>
+                    <div>
+                        {getIcon(item.id_prefix)}
+                    </div>
+                    <div>
+                        <p>{item.name}</p>
+                    </div>
+                    <div>
+                        <p>{item.description.slice(0, 20) + '...'}</p>
+                    </div>
                 </div>
-                <div>
-                    {item.name}
-                </div>
-                <div>
-                    {item.description.slice(0, 20) + '...'}
-                </div>
-                <div>
-                    <Button
-                        className='redirect-button'
-                        role='link'
-                        aria-label={t('redirect', {value: item.name})}
-                        onClick={() => { redirectTo(navigate, item.id_prefix, item.base_id) }}
-                    >
-                        <span>{t('redirect', {value: item.name})}</span>
-                        <i className='bi bi-arrow-right' />
-                    </Button>
-                </div>
-            </div>
+            </Link>
         </div>
     )
 }
 
 interface gridItems {
     items: objectItem[]
-    navigate: any
     t: any
 }
 
-function ItemGrid ({items, t, navigate}: gridItems): JSX.Element {
+function ItemGrid ({items, t}: gridItems): JSX.Element {
     return (
         <div className="row event-grid">
-            {items.map((item, key) => <Item t={t} navigate={navigate} item={item} key={key}/>)}
+            {items.map((item, key) => <Item t={t} item={item} key={key}/>)}
         </div>
     )
 }

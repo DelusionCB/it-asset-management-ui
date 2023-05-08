@@ -2,26 +2,20 @@
 
 exports[`<DirectoryDisplay /> Snapshot renders correctly 1`] = `
 <div
-  className="container"
+  className="directory-wrapper container"
 >
   <div
-    className="row"
+    className="display-header row"
   >
     <h1 />
   </div>
   <div
-    className="row"
+    className="display-description row"
   >
-    <hr
-      hidden={true}
-    />
     <h2 />
-    <hr
-      hidden={true}
-    />
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -31,7 +25,7 @@ exports[`<DirectoryDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -41,15 +35,9 @@ exports[`<DirectoryDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display-description row"
   >
-    <hr
-      hidden={true}
-    />
     <h2 />
-    <hr
-      hidden={true}
-    />
   </div>
   <div
     className="display row"

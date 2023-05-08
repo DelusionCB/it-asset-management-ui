@@ -2,6 +2,7 @@ import {Container} from 'reactstrap';
 import React from 'react';
 import {LicenseDataProps} from '../../../Types/types.directories';
 import {DisplayDescription, DisplayHeader, DisplayText} from '../../CustomComponents/DisplayComponents';
+import './index.scss';
 
 interface licDisplayProps {
     values: LicenseDataProps
@@ -11,7 +12,7 @@ interface licDisplayProps {
 
 function LicenseDisplay ({values, t, navigate}: licDisplayProps): JSX.Element {
     return (
-        <Container>
+        <Container className='directory-wrapper'>
 
             <DisplayHeader t={t} label='license.lcn' />
 

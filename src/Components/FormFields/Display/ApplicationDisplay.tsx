@@ -9,6 +9,7 @@ import {
     DisplayObject,
     DisplayText,
 } from '../../CustomComponents/DisplayComponents';
+import './index.scss';
 
 interface appDisplayProps {
     values: extendedApplicationDataProps
@@ -18,7 +19,7 @@ interface appDisplayProps {
 
 function ApplicationDisplay ({values, t, navigate}: appDisplayProps): JSX.Element {
     return (
-        <Container className='directoryvalues-page'>
+        <Container className='directory-wrapper'>
 
             <DisplayHeader t={t} label='application.app' />
 
@@ -32,10 +33,7 @@ function ApplicationDisplay ({values, t, navigate}: appDisplayProps): JSX.Elemen
             <DisplayBoolean t={t} value={values.personal_info_logging} label='values.personal_info_logging' />
             <DisplayText t={t} value={values.install_info} label='values.install_info' />
 
-            <Row>
-                <h3>Avainsanat:</h3>
-                <p>{values.keywords}</p>
-            </Row>
+            <DisplayText t={t} value={values.keywords} label='values.keywords' />
 
             <DisplayDescription t={t} label='application.dependency' />
 

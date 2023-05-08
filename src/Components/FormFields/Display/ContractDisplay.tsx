@@ -2,6 +2,7 @@ import {Container} from 'reactstrap';
 import React from 'react';
 import {contractDataProps} from '../../../Types/types.directories';
 import {DisplayDescription, DisplayHeader, DisplayText} from '../../CustomComponents/DisplayComponents';
+import './index.scss';
 
 interface contractDisplayProps {
     values: contractDataProps
@@ -11,7 +12,7 @@ interface contractDisplayProps {
 
 function ContractDisplay ({values, t, navigate}: contractDisplayProps): JSX.Element {
     return (
-        <Container>
+        <Container className='directory-wrapper'>
 
             <DisplayHeader t={t} label='contract.con' />
 

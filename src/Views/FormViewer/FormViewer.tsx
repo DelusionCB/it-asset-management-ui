@@ -4,6 +4,7 @@ import {getItemData} from '../../Api/Utils/fetchUtils';
 import DisplayFields from '../../Components/FormFields/DisplayFields';
 import {Spinner} from 'reactstrap';
 import Back from '../../Components/CustomComponents/BackButton';
+import './index.scss'
 
 function FormViewer (): JSX.Element {
     const params = useLocation();
@@ -43,7 +44,7 @@ function FormViewer (): JSX.Element {
         );
     } else {
         return (
-            <div>
+            <div className='formviewer'>
                 <Back />
                 <DisplayFields
                     loading={loading}

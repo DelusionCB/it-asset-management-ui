@@ -4,7 +4,6 @@ import Searchbar from '../../Components/Searchbar/Searchbar';
 import {useTranslation} from 'react-i18next';
 import {getEndpointData} from '../../Api/Utils/fetchUtils';
 import ItemGrid from '../../Components/ItemGrid/ItemGrid';
-import {useNavigate} from 'react-router-dom';
 import './index.scss'
 
 function Search (): JSX.Element {
@@ -12,7 +11,6 @@ function Search (): JSX.Element {
     const [completed, setCompleted] = useState(false)
     const [loading, setLoading] = useState(false)
     const {t} = useTranslation()
-    const navigate = useNavigate()
 
     async function executeSearch (query: string, type: string, fetch: boolean): Promise<void> {
         if (!fetch) {
@@ -32,7 +30,7 @@ function Search (): JSX.Element {
     function getResults (): JSX.Element | null {
         return completed && results.length < 0
             ? null
-            : <ItemGrid t={t} navigate={navigate} items={results} />
+            : <ItemGrid t={t} items={results} />
     }
 
     return (

@@ -2,6 +2,7 @@ import React from 'react';
 import {Container} from 'reactstrap';
 import {extendedDirectoryDataProps} from '../../../Types/types.directories';
 import {DisplayArray, DisplayDescription, DisplayHeader, DisplayText} from '../../CustomComponents/DisplayComponents';
+import './index.scss';
 
 interface dirDisplayProps {
     values: extendedDirectoryDataProps
@@ -11,7 +12,7 @@ interface dirDisplayProps {
 
 function DirectoryDisplay ({values, t, navigate}: dirDisplayProps): JSX.Element {
     return (
-        <Container>
+        <Container className='directory-wrapper'>
             <DisplayHeader t={t} label='directory.dir' />
 
             <DisplayDescription t={t} label='directory.description' />

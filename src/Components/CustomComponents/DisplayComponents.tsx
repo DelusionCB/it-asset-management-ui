@@ -16,7 +16,7 @@ interface headerProps {
 
 export function DisplayHeader ({t, label}: headerProps): JSX.Element {
     return (
-        <Row>
+        <Row className='display-header'>
             <h1>{t(label)}</h1>
         </Row>
     )
@@ -29,10 +29,8 @@ interface descProps {
 
 export function DisplayDescription ({t, label}: descProps): JSX.Element {
     return (
-        <Row>
-            <hr hidden />
+        <Row className='display-description'>
             <h2>{t(label)}</h2>
-            <hr hidden />
         </Row>
     )
 }
@@ -45,7 +43,7 @@ interface booleanProps {
 
 export function DisplayBoolean ({t, label, value}: booleanProps): JSX.Element {
     return (
-        <Row>
+        <Row className='display'>
             <Row>
                 <h3>{t(label)}:</h3>
                 <p>{value ? t('yes') : t('no')}</p>
@@ -62,7 +60,7 @@ interface textProps {
 
 export function DisplayText ({t, label, value}: textProps): JSX.Element {
     return (
-        <Row>
+        <Row className='display'>
             <Row>
                 <h3>{t(label)}</h3>
                 <p>{value}</p>

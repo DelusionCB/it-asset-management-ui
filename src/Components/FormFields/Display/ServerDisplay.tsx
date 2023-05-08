@@ -2,6 +2,7 @@ import {Container} from 'reactstrap';
 import React from 'react';
 import {serverDataProps} from '../../../Types/types.directories';
 import {DisplayArray, DisplayDescription, DisplayHeader, DisplayText} from '../../CustomComponents/DisplayComponents';
+import './index.scss';
 
 interface serverDisplayProps {
     values: serverDataProps
@@ -11,7 +12,7 @@ interface serverDisplayProps {
 
 function ServerDisplay ({values, t, navigate}: serverDisplayProps): JSX.Element {
     return (
-        <Container>
+        <Container className='directory-wrapper'>
             <DisplayHeader t={t} label='server.srv' />
 
             <DisplayDescription t={t} label='server.description' />

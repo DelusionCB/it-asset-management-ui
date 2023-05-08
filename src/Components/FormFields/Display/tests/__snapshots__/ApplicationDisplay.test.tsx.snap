@@ -2,26 +2,20 @@
 
 exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
 <div
-  className="directoryvalues-page container"
+  className="directory-wrapper container"
 >
   <div
-    className="row"
+    className="display-header row"
   >
     <h1 />
   </div>
   <div
-    className="row"
+    className="display-description row"
   >
-    <hr
-      hidden={true}
-    />
     <h2 />
-    <hr
-      hidden={true}
-    />
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -31,7 +25,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -41,7 +35,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -51,7 +45,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -61,7 +55,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -73,7 +67,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -85,7 +79,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -95,23 +89,19 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
-    <h3>
-      Avainsanat:
-    </h3>
-    <p />
+    <div
+      className="row"
+    >
+      <h3 />
+      <p />
+    </div>
   </div>
   <div
-    className="row"
+    className="display-description row"
   >
-    <hr
-      hidden={true}
-    />
     <h2 />
-    <hr
-      hidden={true}
-    />
   </div>
   <div
     className="display row"
@@ -162,18 +152,12 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display-description row"
   >
-    <hr
-      hidden={true}
-    />
     <h2 />
-    <hr
-      hidden={true}
-    />
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -183,7 +167,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -193,7 +177,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -203,7 +187,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -213,7 +197,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -223,18 +207,12 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display-description row"
   >
-    <hr
-      hidden={true}
-    />
     <h2 />
-    <hr
-      hidden={true}
-    />
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -244,7 +222,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -254,7 +232,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -264,7 +242,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -274,7 +252,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -292,7 +270,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     <p />
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -302,7 +280,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -312,7 +290,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -322,18 +300,12 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display-description row"
   >
-    <hr
-      hidden={true}
-    />
     <h2 />
-    <hr
-      hidden={true}
-    />
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"
@@ -343,7 +315,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="row"
+    className="display row"
   >
     <div
       className="row"

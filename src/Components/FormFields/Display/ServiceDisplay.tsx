@@ -8,6 +8,7 @@ import {
     DisplayObject,
     DisplayText,
 } from '../../CustomComponents/DisplayComponents';
+import './index.scss';
 
 interface serviceDisplayProps {
     values: serviceDataProps
@@ -17,7 +18,7 @@ interface serviceDisplayProps {
 
 function ServiceDisplay ({values, t, navigate}: serviceDisplayProps): JSX.Element {
     return (
-        <Container>
+        <Container className='directory-wrapper'>
 
             <DisplayHeader t={t} label='service.ser' />
 

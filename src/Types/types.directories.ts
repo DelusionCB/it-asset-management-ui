@@ -305,7 +305,7 @@ export interface extendedApplicationDataProps {
     person_register: boolean
     personal_info_logging: boolean
     install_info: string
-    keywords?: string
+    keywords: string
     update_practice: string
     security_practice_monitoring: string
     recovery_practices_convalescence: string
