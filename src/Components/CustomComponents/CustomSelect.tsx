@@ -4,9 +4,9 @@ import {useTranslation} from 'react-i18next';
 import client from '../../Api/Client';
 import AsyncSelect from 'react-select/async';
 import './index.scss'
-import {CustomSelectProps, MyOption} from './types.customcomps';
+import {customSelectProps, MyOption} from '../../Types/types.customComponents';
 
-function CSelect ({label, value, onChange, endpoint, id, placeholder, disabled, invalid, isMulti = false}: CustomSelectProps): JSX.Element {
+function CSelect ({label, value, onChange, endpoint, id, placeholder, disabled, invalid, isMulti = false}: customSelectProps): JSX.Element {
     const {t} = useTranslation()
     const [selectedValue, setValue] = useState<any>(isMulti ? [] : {})
 

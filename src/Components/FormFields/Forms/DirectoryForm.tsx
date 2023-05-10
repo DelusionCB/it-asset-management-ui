@@ -1,22 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {Row} from 'reactstrap';
 import {
-    directoryDefaultValues,
     extendedDirectoryDataProps,
 } from '../../../Types/types.directories';
+import {directoryDefaultValues} from '../../../Types/defaultValues';
 import TextField from '../../CustomComponents/TextField';
 import CSelect from '../../CustomComponents/CustomSelect';
 import {handleDirectoryChange, handleDirectorySelect, debouncedCheck, handleClear} from '../../../Utils/helpers';
 import {useTranslation} from 'react-i18next';
 import ActionButtons from '../../ActionButtons/ActionButtons';
 import VisibilitySelector from '../../CustomComponents/VisibilitySelector';
+import {formTypes} from '../../../Types/types.forms';
 
-interface FieldsStates {
-    isDisabled: (is: boolean) => void
-    type: string
-}
-
-function DirectoryForm ({isDisabled, type}: FieldsStates): JSX.Element {
+function DirectoryForm ({isDisabled, type}: formTypes): JSX.Element {
     const [values, setValues] = useState<extendedDirectoryDataProps>(directoryDefaultValues)
     const {t} = useTranslation()
 

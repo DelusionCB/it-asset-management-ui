@@ -1,13 +1,8 @@
 import React from 'react'
 import ActionButton from './ActionButton';
+import {ActionPropTypes} from '../../Types/types.components';
 
-interface ActionProps {
-    values: object
-    actions: string[]
-    type: string
-}
-
-function ActionButtons ({values, actions, type}: ActionProps): JSX.Element {
+function ActionButtons ({values, actions, type}: ActionPropTypes): JSX.Element {
     function getButtons (): JSX.Element[] {
         return actions.map((action, key) => {
             return (

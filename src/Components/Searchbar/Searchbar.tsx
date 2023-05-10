@@ -2,13 +2,9 @@ import React, {useEffect, useState} from 'react';
 import {Button, Container, Form, Row} from 'reactstrap';
 import ArchiveSelection from '../../Components/CustomComponents/ArchiveSelection';
 import TextField from '../CustomComponents/TextField';
+import {searchBarPropTypes} from '../../Types/types.components';
 
-interface searchBarProps {
-    onFormSubmit: (searchQuery: string, contextType: string, fetch: boolean) => void
-    t: any
-}
-
-function Searchbar ({onFormSubmit, t}: searchBarProps): JSX.Element {
+function Searchbar ({onFormSubmit, t}: searchBarPropTypes): JSX.Element {
     const [fieldType, setFieldType] = useState('application')
     const [searchQuery, setSearchQuery] = useState('')
 

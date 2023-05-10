@@ -4,14 +4,9 @@ import {useTranslation} from 'react-i18next';
 import './index.scss'
 import {postData} from '../../Api/Utils/archiveUtils';
 import {useNavigate} from 'react-router-dom'
+import {actionButtonPropTypes} from '../../Types/types.components';
 
-interface ActionButtonProps {
-    values: object
-    action: string
-    type: string
-}
-
-function ActionButton ({values, action, type}: ActionButtonProps): JSX.Element {
+function ActionButton ({values, action, type}: actionButtonPropTypes): JSX.Element {
     const {t} = useTranslation()
     const navigate = useNavigate()
 

@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import {FormGroup, Input, Label} from 'reactstrap';
 import {useTranslation} from 'react-i18next';
 import './index.scss'
-import {CustomSelectionProps} from './types.customcomps';
+import {customSelectionProps} from '../../Types/types.customComponents';
 
-function ArchiveSelection ({onChange, selections, disabled = false, label}: CustomSelectionProps): JSX.Element {
+function ArchiveSelection ({onChange, selections, disabled = false, label}: customSelectionProps): JSX.Element {
     const {t} = useTranslation()
     const [selected, setSelected] = useState('application')
 

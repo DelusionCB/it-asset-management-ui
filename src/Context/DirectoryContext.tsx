@@ -2,8 +2,8 @@ import * as React from 'react';
 import {
     DirectoryContextType,
     DirectoryResults,
-    DirectoryDefaultResults,
 } from '../Types/types.directories';
+import {directoryDefaultResults} from '../Types/defaultValues';
 import {getDirectories} from '../Api/Utils/fetchUtils';
 import {useEffect} from 'react';
 
@@ -14,7 +14,7 @@ interface ProviderProps {
 }
 
 const DirectoryProvider: React.FC<ProviderProps> = ({children}) => {
-    const [directories, setDirectories] = React.useState<DirectoryResults>(DirectoryDefaultResults);
+    const [directories, setDirectories] = React.useState<DirectoryResults>(directoryDefaultResults);
 
     const updateContext = (pageNumber?: number, countNumber?: number): void => {
         void getDirectories({pageNumber, countNumber}).then((res) => {

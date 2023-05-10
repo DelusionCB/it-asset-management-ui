@@ -3,7 +3,7 @@ import * as TestRenderer from 'react-test-renderer';
 import ContractDisplay from '../ContractDisplay'
 import {BrowserRouter} from 'react-router-dom'
 import '@testing-library/jest-dom'
-import {contractDefaultValues} from '../../../../Types/types.directories';
+import {contractDefaultValues} from '../../../../Types/defaultValues';
 
 describe('<ContractDisplay />', () => {
     let renderer: TestRenderer.ReactTestRenderer;

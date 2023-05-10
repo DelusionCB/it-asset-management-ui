@@ -1,16 +1,10 @@
 import {Container} from 'reactstrap';
 import React from 'react';
-import {serverDataProps} from '../../../Types/types.directories';
 import {DisplayArray, DisplayDescription, DisplayHeader, DisplayText} from '../../CustomComponents/DisplayComponents';
 import './index.scss';
+import {serverDisplayPropTypes} from '../../../Types/types.displays';
 
-interface serverDisplayProps {
-    values: serverDataProps
-    t: any
-    navigate: any
-}
-
-function ServerDisplay ({values, t, navigate}: serverDisplayProps): JSX.Element {
+function ServerDisplay ({values, t, navigate}: serverDisplayPropTypes): JSX.Element {
     return (
         <Container className='directory-wrapper'>
             <DisplayHeader t={t} label='server.srv' />

@@ -1,16 +1,10 @@
 import {Container} from 'reactstrap';
 import React from 'react';
-import {LicenseDataProps} from '../../../Types/types.directories';
 import {DisplayDescription, DisplayHeader, DisplayText} from '../../CustomComponents/DisplayComponents';
 import './index.scss';
+import {licenseDisplayPropTypes} from '../../../Types/types.displays';
 
-interface licDisplayProps {
-    values: LicenseDataProps
-    t: any
-    navigate: any
-}
-
-function LicenseDisplay ({values, t, navigate}: licDisplayProps): JSX.Element {
+function LicenseDisplay ({values, t, navigate}: licenseDisplayPropTypes): JSX.Element {
     return (
         <Container className='directory-wrapper'>
 
@@ -27,7 +21,7 @@ function LicenseDisplay ({values, t, navigate}: licDisplayProps): JSX.Element {
             <DisplayText t={t} value={values.license_type} label='values.license_type' />
 
             <DisplayText t={t} value={values.contract} label='values.contract' />
-            <DisplayText t={t} value={values.fileUrl} label='values.fileUrl' />
+            {/* <DisplayText t={t} value={values.fileUrl} label='values.fileUrl' /> */}
 
         </Container>
     )

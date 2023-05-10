@@ -3,7 +3,7 @@ import * as TestRenderer from 'react-test-renderer';
 import DirectoryDisplay from '../DirectoryDisplay';
 import {BrowserRouter} from 'react-router-dom'
 import '@testing-library/jest-dom'
-import {directoryDefaultValues} from '../../../../Types/types.directories';
+import {directoryDefaultValues} from '../../../../Types/defaultValues';
 
 describe('<DirectoryDisplay />', () => {
     let renderer: TestRenderer.ReactTestRenderer;

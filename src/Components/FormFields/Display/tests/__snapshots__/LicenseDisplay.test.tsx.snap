@@ -74,15 +74,5 @@ exports[`<LicenseDisplay /> Snapshot renders correctly 1`] = `
       <p />
     </div>
   </div>
-  <div
-    className="display row"
-  >
-    <div
-      className="row"
-    >
-      <h3 />
-      <p />
-    </div>
-  </div>
 </div>
 `;

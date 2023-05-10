@@ -3,7 +3,7 @@ import * as TestRenderer from 'react-test-renderer';
 import LicenseDisplay from '../LicenseDisplay'
 import {BrowserRouter} from 'react-router-dom'
 import '@testing-library/jest-dom'
-import {licenseDefaultValues} from '../../../../Types/types.directories';
+import {licenseDefaultValues} from '../../../../Types/defaultValues';
 
 describe('<LicenseDisplay />', () => {
     let renderer: TestRenderer.ReactTestRenderer;

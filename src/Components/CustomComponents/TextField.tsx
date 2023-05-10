@@ -2,9 +2,9 @@ import * as React from 'react';
 import {Col, FormGroup, Input, Label} from 'reactstrap';
 import {useTranslation} from 'react-i18next';
 import './index.scss'
-import {TextFieldProps} from './types.customcomps';
+import {textFieldProps} from '../../Types/types.customComponents';
 
-function TextField ({label, validation, value, onChange, type, id, placeholder, disabled = false, invalid = false}: TextFieldProps): JSX.Element {
+function TextField ({label, validation, value, onChange, type, id, placeholder, disabled = false, invalid = false}: textFieldProps): JSX.Element {
     const {t} = useTranslation()
     return (
         <Col className='textfield'>

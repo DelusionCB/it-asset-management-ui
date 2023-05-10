@@ -1,6 +1,19 @@
 import React from 'react';
+import {
+    appDependencyItemProps,
+    contractDataProps,
+    licenseItemProps,
+    serverDataProps,
+    serviceDataProps,
+} from './types.directories';
 
-export interface TextFieldProps {
+// eslint-disable-next-line import/named
+import {NavigateFunction} from 'react-router-dom';
+// eslint-disable-next-line import/named
+import {TFunction} from 'i18next';
+
+
+export interface textFieldProps {
     label: string
     validation?: object
     value?: string | undefined
@@ -12,7 +25,7 @@ export interface TextFieldProps {
     invalid: boolean
 }
 
-export interface VisibilitySelectorProps {
+export interface visibilitySelectorProps {
     label: string
     validation?: object
     value: string | undefined
@@ -24,14 +37,14 @@ export interface VisibilitySelectorProps {
     invalid: boolean
 }
 
-export interface CustomSelectionProps {
+export interface customSelectionProps {
     onChange: (e: string) => void
     selections: string[]
     disabled: boolean
     label: string
 }
 
-export interface CustomSwitchProps {
+export interface customSwitchProps {
     value: boolean
     label: string
     validation?: object
@@ -41,7 +54,7 @@ export interface CustomSwitchProps {
     invalid: boolean
 }
 
-export interface CustomSelectProps {
+export interface customSelectProps {
     label: string
     validation?: object
     value: object[] | object | undefined | null
@@ -55,3 +68,30 @@ export interface CustomSelectProps {
 }
 
 export interface MyOption {label: string, value: number}
+
+// Display components
+
+type ItemProps = serverDataProps | licenseItemProps | appDependencyItemProps | contractDataProps | serviceDataProps;
+
+export interface basePropTypes {
+    t: TFunction
+    label: string
+}
+
+export interface objectPropTypes extends basePropTypes {
+    value: ItemProps | null
+    navigate: NavigateFunction
+}
+
+export interface arrayPropTypes extends basePropTypes {
+    value: ItemProps[]
+    navigate: NavigateFunction
+}
+
+export interface textPropTypes extends basePropTypes {
+    value: string
+}
+
+export interface booleanPropTypes extends basePropTypes {
+    value: boolean
+}

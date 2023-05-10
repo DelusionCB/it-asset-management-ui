@@ -2,9 +2,9 @@ import React from 'react';
 import {Col, FormGroup, Input, Label} from 'reactstrap';
 import {useTranslation} from 'react-i18next';
 import './index.scss'
-import {CustomSwitchProps} from './types.customcomps';
+import {customSwitchProps} from '../../Types/types.customComponents';
 
-function CSwitch ({value, label, validation, onChange, id, disabled, invalid}: CustomSwitchProps): JSX.Element {
+function CSwitch ({value, label, validation, onChange, id, disabled, invalid}: customSwitchProps): JSX.Element {
     const {t} = useTranslation()
 
     return (

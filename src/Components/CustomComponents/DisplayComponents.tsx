@@ -1,20 +1,10 @@
 import {Button, Row} from 'reactstrap';
 import React from 'react';
 import {redirectTo} from '../../Utils/routing';
-import {
-    appDependencyItemProps,
-    contractDataProps,
-    licenseItemProps,
-    serverDataProps, serviceDataProps,
-} from '../../Types/types.directories';
 import './index.scss'
+import {basePropTypes, booleanPropTypes, textPropTypes, arrayPropTypes, objectPropTypes} from '../../Types/types.customComponents'
 
-interface headerProps {
-    t: any
-    label: string
-}
-
-export function DisplayHeader ({t, label}: headerProps): JSX.Element {
+export function DisplayHeader ({t, label}: basePropTypes): JSX.Element {
     return (
         <Row className='display-header'>
             <h1>{t(label)}</h1>
@@ -22,12 +12,7 @@ export function DisplayHeader ({t, label}: headerProps): JSX.Element {
     )
 }
 
-interface descProps {
-    t: any
-    label: string
-}
-
-export function DisplayDescription ({t, label}: descProps): JSX.Element {
+export function DisplayDescription ({t, label}: basePropTypes): JSX.Element {
     return (
         <Row className='display-description'>
             <h2>{t(label)}</h2>
@@ -35,13 +20,7 @@ export function DisplayDescription ({t, label}: descProps): JSX.Element {
     )
 }
 
-interface booleanProps {
-    t: any
-    value: boolean
-    label: string
-}
-
-export function DisplayBoolean ({t, label, value}: booleanProps): JSX.Element {
+export function DisplayBoolean ({t, label, value}: booleanPropTypes): JSX.Element {
     return (
         <Row className='display'>
             <Row>
@@ -52,13 +31,7 @@ export function DisplayBoolean ({t, label, value}: booleanProps): JSX.Element {
     )
 }
 
-interface textProps {
-    t: any
-    value: string | null
-    label: string
-}
-
-export function DisplayText ({t, label, value}: textProps): JSX.Element {
+export function DisplayText ({t, label, value}: textPropTypes): JSX.Element {
     return (
         <Row className='display'>
             <Row>
@@ -69,21 +42,12 @@ export function DisplayText ({t, label, value}: textProps): JSX.Element {
     )
 }
 
-type arrayItemProps = serverDataProps | licenseItemProps | appDependencyItemProps | contractDataProps | serviceDataProps;
-
-interface arrayProps {
-    t: any
-    navigate: Function
-    value: arrayItemProps[]
-    label: string
-}
-
-export function DisplayArray ({t, navigate, value, label}: arrayProps): JSX.Element {
+export function DisplayArray ({t, navigate, value, label}: arrayPropTypes): JSX.Element {
     return (
         <Row className='display'>
             <h3>{t(label)}:</h3>
             {value?.length
-                ? value.map((child, key) => (
+                ? value.map((child, key: number) => (
                     <div className='array' key={key}>
                         <Row><h3>Sidos Nro. {key + 1}</h3></Row>
                         <Row>
@@ -98,7 +62,7 @@ export function DisplayArray ({t, navigate, value, label}: arrayProps): JSX.Elem
                             <Button
                                 className='redirect-button'
                                 role='link'
-                                aria-label={t('redirect', {value: child.name})}
+                                aria-label={`${t('redirect', {value: child.name})}`}
                                 onClick={() => { redirectTo(navigate, child.id_prefix, child.base_id) }}
                             >
                                 <span>{t('redirect', {value: child.name})}</span>
@@ -115,16 +79,7 @@ export function DisplayArray ({t, navigate, value, label}: arrayProps): JSX.Elem
     )
 }
 
-type objectItemProps = serverDataProps | licenseItemProps | appDependencyItemProps | contractDataProps | serviceDataProps;
-
-interface objectProps {
-    t: any
-    navigate: Function
-    value: objectItemProps | null | undefined
-    label: string
-}
-
-export function DisplayObject ({t, navigate, value, label}: objectProps): JSX.Element {
+export function DisplayObject ({t, navigate, value, label}: objectPropTypes): JSX.Element {
     return (
         <Row className='display'>
             <h3>{t(label)}:</h3>
@@ -141,7 +96,7 @@ export function DisplayObject ({t, navigate, value, label}: objectProps): JSX.El
                     <Row>
                         <Button
                             className='redirect-button'
-                            aria-label={t('redirect', {value: value.name})}
+                            aria-label={`${t('redirect', {value: value.name})}`}
                             role='link'
                             onClick={() => { value && redirectTo(navigate, value.id_prefix, value.base_id) }}
                         >

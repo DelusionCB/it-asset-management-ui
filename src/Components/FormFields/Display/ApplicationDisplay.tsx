@@ -1,6 +1,5 @@
 import React from 'react';
 import {Container, Row} from 'reactstrap';
-import {extendedApplicationDataProps} from '../../../Types/types.directories';
 import {
     DisplayArray,
     DisplayBoolean,
@@ -10,14 +9,9 @@ import {
     DisplayText,
 } from '../../CustomComponents/DisplayComponents';
 import './index.scss';
+import {appDisplayPropTypes} from '../../../Types/types.displays';
 
-interface appDisplayProps {
-    values: extendedApplicationDataProps
-    t: any
-    navigate: any
-}
-
-function ApplicationDisplay ({values, t, navigate}: appDisplayProps): JSX.Element {
+function ApplicationDisplay ({values, t, navigate}: appDisplayPropTypes): JSX.Element {
     return (
         <Container className='directory-wrapper'>
 
@@ -72,7 +66,7 @@ function ApplicationDisplay ({values, t, navigate}: appDisplayProps): JSX.Elemen
             <DisplayDescription t={t} label='application.extra' />
 
             <DisplayText t={t} value={values.known_issues} label='values.known_issues' />
-            <DisplayText t={t} value={values.fileUrl} label='values.fileUrl' />
+            {/* <DisplayText t={t} value={values.fileUrl} label='values.fileUrl' /> */}
         </Container>
     );
 }

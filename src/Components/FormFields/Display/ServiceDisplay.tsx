@@ -1,6 +1,5 @@
 import {Container} from 'reactstrap';
 import React from 'react';
-import {serviceDataProps} from '../../../Types/types.directories';
 import {
     DisplayArray,
     DisplayDescription,
@@ -9,14 +8,9 @@ import {
     DisplayText,
 } from '../../CustomComponents/DisplayComponents';
 import './index.scss';
+import {serviceDisplayPropTypes} from '../../../Types/types.displays';
 
-interface serviceDisplayProps {
-    values: serviceDataProps
-    t: any
-    navigate: any
-}
-
-function ServiceDisplay ({values, t, navigate}: serviceDisplayProps): JSX.Element {
+function ServiceDisplay ({values, t, navigate}: serviceDisplayPropTypes): JSX.Element {
     return (
         <Container className='directory-wrapper'>
 

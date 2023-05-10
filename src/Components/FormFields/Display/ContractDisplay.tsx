@@ -1,16 +1,10 @@
 import {Container} from 'reactstrap';
 import React from 'react';
-import {contractDataProps} from '../../../Types/types.directories';
 import {DisplayDescription, DisplayHeader, DisplayText} from '../../CustomComponents/DisplayComponents';
 import './index.scss';
+import {contractDisplayPropTypes} from '../../../Types/types.displays';
 
-interface contractDisplayProps {
-    values: contractDataProps
-    t: any
-    navigate: any
-}
-
-function ContractDisplay ({values, t, navigate}: contractDisplayProps): JSX.Element {
+function ContractDisplay ({values, t, navigate}: contractDisplayPropTypes): JSX.Element {
     return (
         <Container className='directory-wrapper'>
 

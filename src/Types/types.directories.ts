@@ -24,14 +24,6 @@ export interface DirectoryResults {
     results: DirectoryDataProps[]
 }
 
-// Default values for directory fetch results
-export const DirectoryDefaultResults: DirectoryResults = {
-    count: 0,
-    next: null,
-    previous: null,
-    results: [],
-}
-
 // Types for Directory context
 export interface DirectoryContextType {
     directories: DirectoryResults
@@ -45,6 +37,13 @@ export interface DirectoryFolderProps {
 
 // Types / Props for application data inside Directory data
 export interface applicationDataProps {
+    base_id: string
+    id_prefix: string
+    name: string
+    description: string
+}
+
+export interface providerDataPropTypes {
     base_id: string
     id_prefix: string
     name: string
@@ -84,31 +83,10 @@ export interface serviceDataProps {
     additional_contacts: string
     fileUrl: string | null
     contract: string
-    provider: null
+    provider: providerDataPropTypes | null
     related_services: []
     required_installations: []
-}
-
-export const serviceDefaultValues: serviceDataProps = {
-    name: '',
-    description: '',
-    service_status: '',
-    operating_organization: '',
-    criticality: '',
-    service_level: '',
-    service_type: '',
-    validity_type: '',
-    limitations: '',
-    product_owner: '',
-    service_holder: '',
-    provider_role: '',
-    provider_contact: '',
-    additional_contacts: '',
-    fileUrl: null,
-    contract: '',
-    provider: null,
-    related_services: [],
-    required_installations: [],
+    visibility: string
 }
 
 export interface extendedDirectoryDataProps {
@@ -133,26 +111,6 @@ export interface contractDataProps {
     placeholder: string
     id_prefix?: string
     visibility: string
-}
-
-export const contractDefaultValues: contractDataProps = {
-    name: '',
-    description: '',
-    base_id: '',
-    created_time: '',
-    last_modified_time: '',
-    placeholder: '',
-    id_prefix: '',
-    visibility: '',
-}
-
-export const directoryDefaultValues: extendedDirectoryDataProps = {
-    name: '',
-    description: '',
-    applications: [],
-    servers: [],
-    services: [],
-    visibility: 'published',
 }
 
 export interface LicenseDataProps {
@@ -216,49 +174,6 @@ export interface serverDataProps {
     mac_address: string
 }
 
-export const serverDefaultValues: serverDataProps = {
-    name: '',
-    description: '',
-    base_id: '',
-    id_prefix: '',
-    applications: [],
-    created_time: '',
-    last_modified_time: '',
-    visibility: '',
-    server_role: '',
-    service_level: '',
-    operating_organization: '',
-    place_of_use: '',
-    product_owner: '',
-    server_model: '',
-    backup_data: '',
-    backup_device: '',
-    public_ip_addresses: '',
-    dns_names: '',
-    server_type: '',
-    environment_type: '',
-    dedicated: '',
-    maintenance_window: '',
-    device_criticality: '',
-    security_level: '',
-    status: '',
-    install_date: '',
-    ip_address: '',
-    updates: '',
-    verification_practices: '',
-    recovery_practices_convalescence: '',
-    logging: '',
-    access_rights_management: '',
-    security_solutions: '',
-    external_rights: '',
-    domain_name: '',
-    sub_domain: '',
-    ip_address_type: '',
-    subnet_mask: '',
-    default_gateway: '',
-    mac_address: '',
-}
-
 export interface licenseItemProps {
     name: string
     description: string
@@ -268,20 +183,6 @@ export interface licenseItemProps {
     valid_until_date: string
     license_type?: string
     contract?: string
-}
-
-export const licenseDefaultValues: LicenseDataProps = {
-    base_id: '',
-    id_prefix: '',
-    name: '',
-    description: '',
-    created_time: '',
-    last_modified_time: '',
-    valid_from_date: '',
-    valid_until_date: '',
-    license_type: '',
-    fileUrl: null,
-    contract: '',
 }
 
 export interface appDependencyItemProps {
@@ -323,11 +224,11 @@ export interface extendedApplicationDataProps {
     known_issues: string
     contract: null
     fileUrl: string | null
-    license?: licenseItemProps | null
-    installed_server?: serverDataProps | null
+    license: licenseItemProps | null
+    installed_server: serverDataProps | null
     service_dependency: ServiceDependencyDataProps[]
     integration: IntegrationsDataProps[]
-    application_dependency?: appDependencyItemProps | null
+    application_dependency: appDependencyItemProps | null
 }
 
 export interface ServiceDependencyDataProps {
@@ -342,39 +243,4 @@ export interface IntegrationsDataProps {
     description: string
     id_prefix: string
     base_id: string
-}
-
-export const appDefaultValues: extendedApplicationDataProps = {
-    name: '',
-    description: '',
-    visibility: 'published',
-    classification: '',
-    place_of_use: '',
-    status: '',
-    person_register: false,
-    personal_info_logging: false,
-    install_info: '',
-    keywords: '',
-    update_practice: '',
-    security_practice_monitoring: '',
-    recovery_practices_convalescence: '',
-    log_archives: '',
-    user_rights_management: '',
-    security_solutions: '',
-    product_owner: '',
-    application_holder: '',
-    admin_users: '',
-    liability_professional_users: '',
-    holder_extra_info: '',
-    provider: '',
-    provider_responsibility: '',
-    additional_contacts: '',
-    known_issues: '',
-    contract: null,
-    fileUrl: null,
-    license: null,
-    installed_server: null,
-    service_dependency: [],
-    integration: [],
-    application_dependency: null,
 }

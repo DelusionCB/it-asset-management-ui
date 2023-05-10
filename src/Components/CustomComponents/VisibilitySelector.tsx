@@ -2,9 +2,9 @@ import * as React from 'react';
 import {Col, FormGroup, Input, Label} from 'reactstrap';
 import {useTranslation} from 'react-i18next';
 import './index.scss'
-import {VisibilitySelectorProps} from './types.customcomps';
+import {visibilitySelectorProps} from '../../Types/types.customComponents';
 
-function VisibilitySelector ({label, validation, value, onChange, options, id, placeholder, disabled = false, invalid = false}: VisibilitySelectorProps): JSX.Element {
+function VisibilitySelector ({label, validation, value, onChange, options, id, placeholder, disabled = false, invalid = false}: visibilitySelectorProps): JSX.Element {
     const {t} = useTranslation()
 
     function getOptions (options: string[]): JSX.Element[] {

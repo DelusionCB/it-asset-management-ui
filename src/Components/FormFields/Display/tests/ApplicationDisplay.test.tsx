@@ -3,7 +3,7 @@ import * as TestRenderer from 'react-test-renderer';
 import ApplicationDisplay from '../ApplicationDisplay';
 import {BrowserRouter} from 'react-router-dom'
 import '@testing-library/jest-dom'
-import {appDefaultValues} from '../../../../Types/types.directories';
+import {appDefaultValues} from '../../../../Types/defaultValues';
 
 describe('<ApplicationDisplay />', () => {
     let renderer: TestRenderer.ReactTestRenderer;

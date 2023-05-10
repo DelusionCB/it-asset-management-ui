@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {appDefaultValues, extendedApplicationDataProps} from '../../../Types/types.directories';
+import {extendedApplicationDataProps} from '../../../Types/types.directories';
+import {appDefaultValues} from '../../../Types/defaultValues';
 import TextField from '../../CustomComponents/TextField';
 import {Row} from 'reactstrap';
 import CSelect from '../../CustomComponents/CustomSelect';
@@ -12,13 +13,9 @@ import {
 import {useTranslation} from 'react-i18next';
 import ActionButtons from '../../ActionButtons/ActionButtons';
 import VisibilitySelector from '../../CustomComponents/VisibilitySelector';
+import {formTypes} from '../../../Types/types.forms';
 
-interface FieldsStates {
-    isDisabled: (is: boolean) => void
-    type: string
-}
-
-function ApplicationForm ({isDisabled, type}: FieldsStates): JSX.Element {
+function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
     const [values, setValues] = useState<extendedApplicationDataProps>(appDefaultValues)
     const {t} = useTranslation()
 
