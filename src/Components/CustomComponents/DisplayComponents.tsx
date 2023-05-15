@@ -2,7 +2,14 @@ import {Button, Row} from 'reactstrap';
 import React from 'react';
 import {redirectTo} from '../../Utils/routing';
 import './index.scss'
-import {basePropTypes, booleanPropTypes, textPropTypes, arrayPropTypes, objectPropTypes} from '../../Types/types.customComponents'
+import {
+    basePropTypes,
+    booleanPropTypes,
+    textPropTypes,
+    arrayPropTypes,
+    objectPropTypes,
+    textArrayPropTypes,
+} from '../../Types/types.customComponents'
 
 export function DisplayHeader ({t, label}: basePropTypes): JSX.Element {
     return (
@@ -42,6 +49,28 @@ export function DisplayText ({t, label, value}: textPropTypes): JSX.Element {
     )
 }
 
+export function DisplayStatus ({t, label, value}: textPropTypes): JSX.Element {
+    return (
+        <Row className='display'>
+            <Row>
+                <h3>{t(label)}</h3>
+                <p>{t(`select.${value}`)}</p>
+            </Row>
+        </Row>
+    )
+}
+
+export function DisplayUrl ({t, label, value}: textPropTypes): JSX.Element {
+    return (
+        <Row className='display'>
+            <Row>
+                <h3>{t(label)}</h3>
+                <a href={value} target="_blank" rel="noopener noreferrer">{value} (Aukeaa uudessa ikkunassa)</a>
+            </Row>
+        </Row>
+    )
+}
+
 export function DisplayArray ({t, navigate, value, label}: arrayPropTypes): JSX.Element {
     return (
         <Row className='display'>
@@ -56,7 +85,7 @@ export function DisplayArray ({t, navigate, value, label}: arrayPropTypes): JSX.
                         </Row>
                         <Row>
                             <h4>{t('values.description')}:</h4>
-                            <p>{child.description}</p>
+                            <p>{child.description.length > 180 ? child.description.slice(0, 180) + '...' : child.description}</p>
                         </Row>
                         <Row>
                             <Button
@@ -68,6 +97,26 @@ export function DisplayArray ({t, navigate, value, label}: arrayPropTypes): JSX.
                                 <span>{t('redirect', {value: child.name})}</span>
                                 <i className='bi bi-arrow-right' />
                             </Button>
+                        </Row>
+                    </div>
+                ))
+                : <>
+                    <h4>{t('no-connections')}</h4>
+                </>
+            }
+        </Row>
+    )
+}
+
+export function DisplayTextArray ({t, value, label}: textArrayPropTypes): JSX.Element {
+    return (
+        <Row className='display'>
+            <h3>{t(label)}:</h3>
+            {value?.length
+                ? value.map((child, key: number) => (
+                    <div className='array' key={key}>
+                        <Row>
+                            <p>{child.name}</p>
                         </Row>
                     </div>
                 ))
@@ -91,7 +140,7 @@ export function DisplayObject ({t, navigate, value, label}: objectPropTypes): JS
                     </Row>
                     <Row>
                         <h4>{t('values.description')}:</h4>
-                        <p>{value.description}</p>
+                        <p>{value.description.length > 180 ? value.description.slice(0, 180) + '...' : value.description}</p>
                     </Row>
                     <Row>
                         <Button

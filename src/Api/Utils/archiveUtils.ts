@@ -10,7 +10,6 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             obj.name = values.name
             obj.description = values.description
             obj.classification = values.classification
-            obj.place_of_use = values.place_of_use
             obj.status = values.status
             obj.person_register = values.person_register
             obj.personal_info_logging = values.personal_info_logging
@@ -27,7 +26,6 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             obj.admin_users = values.admin_users
             obj.liability_professional_users = values.liability_professional_users
             obj.holder_extra_info = values.holder_extra_info
-            obj.provider = values.provider
             obj.provider_responsibility = values.provider_responsibility
             obj.additional_contacts = values.additional_contacts
             obj.known_issues = values.known_issues
@@ -48,20 +46,32 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             } else {
                 obj.contract = values.contract.value
             }
-            if (!values.installed_server) {
-                obj.installed_server = null
+
+            if (!values.provider) {
+                obj.provider = null
             } else {
-                obj.installed_server = values.installed_server.value
+                obj.provider = values.provider.value
+            }
+
+            if (!values.installed_server) {
+                obj.installed_server = []
+            } else {
+                obj.installed_server = values.installed_server.map((item: any) => item.value)
             }
             if (!values.application_dependency) {
-                obj.application_dependency = null
+                obj.application_dependency = []
             } else {
-                obj.application_dependency = values.application_dependency.value
+                obj.application_dependency = values.application_dependency.map((item: any) => item.value)
             }
             if (values.service_dependency.length === 0) {
                 obj.service_dependency = []
             } else {
                 obj.service_dependency = values.service_dependency.map((item: any) => item.value)
+            }
+            if (values.customership.length === 0) {
+                obj.customership = []
+            } else {
+                obj.customership = values.customership.map((item: any) => item.value)
             }
             if (values.integration.length === 0) {
                 obj.integration = []
@@ -103,6 +113,54 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
                 obj.services = []
             } else {
                 obj.services = values.services.map((item: any) => item.value)
+            }
+            break;
+        case 'service':
+            // General data
+            obj.name = values.name
+            obj.description = values.description
+            obj.visibility = values.visibility
+
+            obj.service_status = values.service_status
+            obj.criticality = values.criticality
+            obj.service_level = values.service_level
+            obj.service_type = values.service_type
+            obj.validity_type = values.validity_type
+            obj.limitations = values.limitations
+            obj.product_owner = values.product_owner
+            obj.service_holder = values.service_holder
+            obj.provider_role = values.provider_role
+            obj.provider_contact = values.provider_contact
+            obj.additional_contacts = values.additional_contacts
+
+            if (values.customership.length === 0) {
+                obj.customership = []
+            } else {
+                obj.customership = values.customership.map((item: any) => item.value)
+            }
+
+            if (values.related_services.length === 0) {
+                obj.related_services = []
+            } else {
+                obj.related_services = values.related_services.map((item: any) => item.value)
+            }
+
+            if (values.required_installations.length === 0) {
+                obj.required_installations = []
+            } else {
+                obj.required_installations = values.required_installations.map((item: any) => item.value)
+            }
+
+            if (!values.provider) {
+                obj.provider = null
+            } else {
+                obj.provider = values.provider.value
+            }
+
+            if (!values.contract) {
+                obj.contract = null
+            } else {
+                obj.contract = values.contract.value
             }
     }
     return obj

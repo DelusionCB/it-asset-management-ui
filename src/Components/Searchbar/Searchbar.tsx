@@ -24,7 +24,7 @@ function Searchbar ({onFormSubmit, t}: searchBarPropTypes): JSX.Element {
             <Row>
                 <ArchiveSelection
                     onChange={(e) => { setFieldType(e); }}
-                    selections={['application', 'directory', 'license', 'server', 'service']}
+                    selections={['application', 'directory', 'license', 'server', 'service', 'provider']}
                     disabled={false}
                     label='select-archive'
                 />

@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     extendedDirectoryDataProps,
-    extendedApplicationDataProps,
+    extendedApplicationDataProps, serviceDataProps,
 } from '../Types/types.directories';
 import _, {debounce} from 'lodash';
 
@@ -11,6 +11,17 @@ export function handleDirectoryChange (
     e: React.ChangeEvent<HTMLInputElement>,
     values: extendedDirectoryDataProps,
     setValues: React.Dispatch<React.SetStateAction<extendedDirectoryDataProps>>,
+): void {
+    setValues({
+        ...values,
+        [e.target.name]: e.target.value,
+    });
+}
+
+export function handleServiceChange (
+    e: React.ChangeEvent<HTMLInputElement>,
+    values: serviceDataProps,
+    setValues: React.Dispatch<React.SetStateAction<serviceDataProps>>,
 ): void {
     setValues({
         ...values,
@@ -42,6 +53,18 @@ export function handleDirectorySelect (
     id: string,
     values: extendedDirectoryDataProps,
     setValues: React.Dispatch<React.SetStateAction<extendedDirectoryDataProps>>,
+): void {
+    setValues({
+        ...values,
+        [id]: value,
+    });
+}
+
+export function handleServiceSelect (
+    value: {} | [] | undefined | null,
+    id: string,
+    values: serviceDataProps,
+    setValues: React.Dispatch<React.SetStateAction<serviceDataProps>>,
 ): void {
     setValues({
         ...values,

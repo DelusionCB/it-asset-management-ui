@@ -41,8 +41,18 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
       className="row"
     >
       <h3 />
-      <p />
+      <p>
+        tosi
+      </p>
     </div>
+  </div>
+  <div
+    className="display row"
+  >
+    <h3>
+      :
+    </h3>
+    <h4 />
   </div>
   <div
     className="display row"
@@ -109,9 +119,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     <h3>
       :
     </h3>
-    <div>
-      <h4 />
-    </div>
+    <h4 />
   </div>
   <div
     className="display row"
@@ -147,9 +155,7 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     <h3>
       :
     </h3>
-    <div>
-      <h4 />
-    </div>
+    <h4 />
   </div>
   <div
     className="display-description row"
@@ -272,11 +278,11 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
   <div
     className="display row"
   >
-    <div
-      className="row"
-    >
-      <h3 />
-      <p />
+    <h3>
+      :
+    </h3>
+    <div>
+      <h4 />
     </div>
   </div>
   <div

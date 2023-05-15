@@ -5,7 +5,7 @@ import {
 } from '../../../Types/types.directories';
 import {directoryDefaultValues} from '../../../Types/defaultValues';
 import TextField from '../../CustomComponents/TextField';
-import CSelect from '../../CustomComponents/CustomSelect';
+import SearchableSelect from '../../CustomComponents/SearchableSelect';
 import {handleDirectoryChange, handleDirectorySelect, debouncedCheck, handleClear} from '../../../Utils/helpers';
 import {useTranslation} from 'react-i18next';
 import ActionButtons from '../../ActionButtons/ActionButtons';
@@ -96,7 +96,7 @@ function DirectoryForm ({isDisabled, type}: formTypes): JSX.Element {
                 <h2>{t('directory.dependency')}</h2>
             </Row>
             <Row>
-                <CSelect
+                <SearchableSelect
                     label={'values.applications'}
                     endpoint='application'
                     id={'applications'}
@@ -109,7 +109,7 @@ function DirectoryForm ({isDisabled, type}: formTypes): JSX.Element {
                 />
             </Row>
             <Row>
-                <CSelect
+                <SearchableSelect
                     label={'values.servers'}
                     endpoint='server'
                     id={'servers'}
@@ -122,7 +122,7 @@ function DirectoryForm ({isDisabled, type}: formTypes): JSX.Element {
                 />
             </Row>
             <Row>
-                <CSelect
+                <SearchableSelect
                     label={'values.services'}
                     endpoint='service'
                     id={'services'}

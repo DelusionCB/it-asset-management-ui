@@ -66,6 +66,24 @@
     &__indicator {
         color: var(--black-color) !important;
     }
+    &__multi-value {
+        background-color: var(--primary-color) !important;
+        border-radius: 10px;
+        &__label, &__remove  {
+            font-size: 1rem !important;
+            color: var(--white-color) !important;
+        }
+        &__remove {
+            svg {
+                height: 20px;
+                width: 20px;
+            }
+            &:hover, &:focus, &:active {
+                background-color: var(--secondary-color) !important;
+                color: var(--black-color) !important;
+            }
+        }
+    }
 }
 
 .redirect-button {
@@ -96,6 +114,9 @@
         border-right: 2px solid var(--primary-color);
         margin-top: 1rem;
         background-color: #e8e8e8;
+    }
+    a {
+        color: -webkit-link !important;
     }
 }
 .display-description {

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StaticSelect /> Snapshot renders correctly 1`] = `
+<div
+  className="textfield col"
+>
+  <div
+    className="mb-3"
+  >
+    <label
+      className="form-label"
+      htmlFor="id"
+    >
+      label
+    </label>
+    <select
+      aria-invalid={false}
+      className="form-select"
+      disabled={false}
+      id="id"
+      name="id"
+      onChange={[Function]}
+      placeholder="placeholder"
+    >
+      <option
+        value="1"
+      >
+        select.1
+      </option>
+      <option
+        value="2"
+      >
+        select.2
+      </option>
+    </select>
+  </div>
+</div>
+`;

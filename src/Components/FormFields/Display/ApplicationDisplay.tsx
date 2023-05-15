@@ -5,8 +5,8 @@ import {
     DisplayBoolean,
     DisplayDescription,
     DisplayHeader,
-    DisplayObject,
-    DisplayText,
+    DisplayObject, DisplayStatus,
+    DisplayText, DisplayTextArray,
 } from '../../CustomComponents/DisplayComponents';
 import './index.scss';
 import {appDisplayPropTypes} from '../../../Types/types.displays';
@@ -22,7 +22,8 @@ function ApplicationDisplay ({values, t, navigate}: appDisplayPropTypes): JSX.El
             <DisplayText t={t} value={values.name} label='values.name' />
             <DisplayText t={t} value={values.description} label='values.description' />
             <DisplayText t={t} value={values.classification} label='values.classification' />
-            <DisplayText t={t} value={values.place_of_use} label='values.place_of_use' />
+            <DisplayTextArray t={t} value={values.customership} label='values.customership' />
+            <DisplayStatus t={t} value={values.application_status} label='values.application_status' />
             <DisplayBoolean t={t} value={values.person_register} label='values.person_register' />
             <DisplayBoolean t={t} value={values.personal_info_logging} label='values.personal_info_logging' />
             <DisplayText t={t} value={values.install_info} label='values.install_info' />
@@ -31,12 +32,12 @@ function ApplicationDisplay ({values, t, navigate}: appDisplayPropTypes): JSX.El
 
             <DisplayDescription t={t} label='application.dependency' />
 
-            <DisplayObject t={t} navigate={navigate} value={values.installed_server} label='values.installed_server' />
+            <DisplayArray t={t} navigate={navigate} value={values.installed_server} label='values.installed_server' />
             <DisplayArray navigate={navigate} t={t} value={values.service_dependency} label='values.service_dependency' />
             {/* <DisplayArray navigate={navigate} t={t} value={values.integration} label='values.integration' /> */}
             <DisplayObject t={t} navigate={navigate} value={values.license} label='values.license' />
             <DisplayObject t={t} navigate={navigate} value={values.contract} label='values.contract' />
-            <DisplayObject t={t} navigate={navigate} value={values.application_dependency} label='values.application_dependency' />
+            <DisplayArray t={t} navigate={navigate} value={values.application_dependency} label='values.application_dependency' />
 
             <DisplayDescription t={t} label='application.continuity' />
 
@@ -59,7 +60,7 @@ function ApplicationDisplay ({values, t, navigate}: appDisplayPropTypes): JSX.El
                 <p></p>
             </Row>
 
-            <DisplayText t={t} value={values.provider} label='values.provider' />
+            <DisplayObject navigate={navigate} t={t} value={values.provider} label='values.provider' />
             <DisplayText t={t} value={values.provider_responsibility} label='values.provider_responsibility' />
             <DisplayText t={t} value={values.additional_contacts} label='values.additional_contacts' />
 

@@ -4,8 +4,8 @@ import {
     DisplayArray,
     DisplayDescription,
     DisplayHeader,
-    DisplayObject,
-    DisplayText,
+    DisplayObject, DisplayStatus,
+    DisplayText, DisplayTextArray,
 } from '../../CustomComponents/DisplayComponents';
 import './index.scss';
 import {serviceDisplayPropTypes} from '../../../Types/types.displays';
@@ -19,13 +19,13 @@ function ServiceDisplay ({values, t, navigate}: serviceDisplayPropTypes): JSX.El
             <DisplayDescription t={t} label='service.description' />
 
             <DisplayText t={t} value={values.name} label='values.name' />
-            <DisplayText t={t} value={values.service_status} label='values.service_status' />
+            <DisplayStatus t={t} value={values.service_status} label='values.service_status' />
             <DisplayText t={t} value={values.description} label='values.description' />
-            <DisplayText t={t} value={values.contract} label='values.contract' />
+            <DisplayObject t={t} navigate={navigate} value={values.contract} label='values.contract' />
 
-            <DisplayText t={t} value={values.criticality} label='values.criticality' />
+            <DisplayStatus t={t} value={values.criticality} label='values.criticality' />
             <DisplayText t={t} value={values.service_level} label='values.service_level' />
-            <DisplayText t={t} value={values.service_type} label='values.service_type' />
+            <DisplayStatus t={t} value={values.service_type} label='values.service_type' />
             <DisplayText t={t} value={values.limitations} label='values.limitations' />
             <DisplayArray t={t} navigate={navigate} value={values.related_services} label='values.related_services' />
             <DisplayArray t={t} navigate={navigate} value={values.required_installations} label='values.required_installations' />
@@ -41,8 +41,8 @@ function ServiceDisplay ({values, t, navigate}: serviceDisplayPropTypes): JSX.El
 
             <DisplayDescription t={t} label='service.extra' />
 
-            <DisplayText t={t} value={values.operating_organization} label='values.operating_organization' />
-            <DisplayText t={t} value={values.validity_type} label='values.validity_type' />
+            <DisplayTextArray t={t} value={values.customership} label='values.customership' />
+            <DisplayStatus t={t} value={values.validity_type} label='values.validity_type' />
             {/* <DisplayText t={t} value={values.fileUrl} label='values.fileUrl' /> */}
 
         </Container>

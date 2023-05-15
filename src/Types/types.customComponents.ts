@@ -2,7 +2,7 @@ import React from 'react';
 import {
     appDependencyItemProps,
     contractDataProps,
-    licenseItemProps,
+    licenseItemProps, providerDataPropTypes,
     serverDataProps,
     serviceDataProps,
 } from './types.directories';
@@ -37,6 +37,18 @@ export interface visibilitySelectorProps {
     invalid: boolean
 }
 
+export interface staticSelectPropTypes {
+    label: string
+    validation?: object
+    value: string | undefined
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    options: string[]
+    id: string
+    placeholder: string
+    disabled: boolean
+    invalid: boolean
+}
+
 export interface customSelectionProps {
     onChange: (e: string) => void
     selections: string[]
@@ -54,7 +66,7 @@ export interface customSwitchProps {
     invalid: boolean
 }
 
-export interface customSelectProps {
+export interface searchableSelectPropTypes {
     label: string
     validation?: object
     value: object[] | object | undefined | null
@@ -67,11 +79,25 @@ export interface customSelectProps {
     isMulti: boolean
 }
 
+export interface asyncSelectPropTypes {
+    label: string
+    validation?: object
+    value: object[] | object | undefined | null
+    onChange: (value: MyOption | readonly MyOption[] | undefined | null, id: string) => void
+    endpoint: string
+    id: string
+    placeholder: string
+    disabled: boolean
+    invalid: boolean
+    isMulti: boolean
+    isSearchable: boolean
+}
+
 export interface MyOption {label: string, value: number}
 
 // Display components
 
-type ItemProps = serverDataProps | licenseItemProps | appDependencyItemProps | contractDataProps | serviceDataProps;
+type ItemProps = serverDataProps | licenseItemProps | appDependencyItemProps | contractDataProps | serviceDataProps | providerDataPropTypes;
 
 export interface basePropTypes {
     t: TFunction
@@ -86,6 +112,10 @@ export interface objectPropTypes extends basePropTypes {
 export interface arrayPropTypes extends basePropTypes {
     value: ItemProps[]
     navigate: NavigateFunction
+}
+
+export interface textArrayPropTypes extends basePropTypes {
+    value: ItemProps[]
 }
 
 export interface textPropTypes extends basePropTypes {

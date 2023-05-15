@@ -44,10 +44,26 @@ export interface applicationDataProps {
 }
 
 export interface providerDataPropTypes {
-    base_id: string
-    id_prefix: string
+    base_id?: string
+    id_prefix?: string
+    created_time?: string
+    last_modified_time?: string
     name: string
     description: string
+    visibility?: string
+    business_id: string
+    provider_type: string
+    full_address: string
+    switch_phone: string
+    general_email: string
+    support_phone: string
+    support_email: string
+    additional_contact: string
+    provider_user_contact: string
+    extra_url: string
+    related_contracts: contractDataProps[]
+    related_applications: applicationDataProps[]
+    related_services: serviceDataProps[]
 }
 
 // Types / Props for Directory data
@@ -70,7 +86,7 @@ export interface serviceDataProps {
     created_time?: string
     last_modified_time?: string
     service_status: string
-    operating_organization: string
+    customership: customerDataProps[]
     criticality: string
     service_level: string
     service_type: string
@@ -82,10 +98,10 @@ export interface serviceDataProps {
     provider_contact: string
     additional_contacts: string
     fileUrl: string | null
-    contract: string
+    contract: contractDataProps | null
     provider: providerDataPropTypes | null
-    related_services: []
-    required_installations: []
+    related_services: serviceDataProps[]
+    required_installations: applicationDataProps[]
     visibility: string
 }
 
@@ -201,8 +217,8 @@ export interface extendedApplicationDataProps {
     created_time?: string
     last_modified_time?: string
     classification: string
-    place_of_use: string
-    status: string
+    customership: customerDataProps[]
+    application_status: string
     person_register: boolean
     personal_info_logging: boolean
     install_info: string
@@ -218,20 +234,27 @@ export interface extendedApplicationDataProps {
     admin_users: string
     liability_professional_users: string
     holder_extra_info: string
-    provider: string
+    provider: providerDataPropTypes | null
     provider_responsibility: string
     additional_contacts: string
     known_issues: string
     contract: null
     fileUrl: string | null
     license: licenseItemProps | null
-    installed_server: serverDataProps | null
+    installed_server: serverDataProps[]
     service_dependency: ServiceDependencyDataProps[]
     integration: IntegrationsDataProps[]
-    application_dependency: appDependencyItemProps | null
+    application_dependency: appDependencyItemProps[]
 }
 
 export interface ServiceDependencyDataProps {
+    name: string
+    description: string
+    id_prefix: string
+    base_id: string
+}
+
+export interface customerDataProps {
     name: string
     description: string
     id_prefix: string

@@ -2,7 +2,7 @@ import {
     contractDataProps,
     extendedApplicationDataProps,
     extendedDirectoryDataProps,
-    LicenseDataProps, serverDataProps, serviceDataProps,
+    LicenseDataProps, providerDataPropTypes, serverDataProps, serviceDataProps,
 } from './types.directories';
 // eslint-disable-next-line import/named
 import {NavigateFunction} from 'react-router-dom';
@@ -41,6 +41,12 @@ export interface serverDisplayPropTypes {
 
 export interface serviceDisplayPropTypes {
     values: serviceDataProps
+    t: TFunction
+    navigate: NavigateFunction
+}
+
+export interface providerDisplayPropTypes {
+    values: providerDataPropTypes
     t: TFunction
     navigate: NavigateFunction
 }

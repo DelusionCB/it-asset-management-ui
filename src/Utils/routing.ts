@@ -20,6 +20,9 @@ export function getEndpoint (endpoint: string): string {
         case 'ser':
             path = 'service'
             break;
+        case 'pro':
+            path = 'provider'
+            break;
         default:
             path = ''
             break;

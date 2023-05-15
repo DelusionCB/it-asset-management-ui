@@ -3,7 +3,7 @@ import {extendedApplicationDataProps} from '../../../Types/types.directories';
 import {appDefaultValues} from '../../../Types/defaultValues';
 import TextField from '../../CustomComponents/TextField';
 import {Row} from 'reactstrap';
-import CSelect from '../../CustomComponents/CustomSelect';
+import SearchableSelect from '../../CustomComponents/SearchableSelect';
 import CSwitch from '../../CustomComponents/CustomSwitch';
 import {
     debouncedCheck,
@@ -14,6 +14,8 @@ import {useTranslation} from 'react-i18next';
 import ActionButtons from '../../ActionButtons/ActionButtons';
 import VisibilitySelector from '../../CustomComponents/VisibilitySelector';
 import {formTypes} from '../../../Types/types.forms';
+import StaticSelect from '../../CustomComponents/StaticSelect';
+import AsyncSelect from '../../CustomComponents/AsyncSelect';
 
 function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
     const [values, setValues] = useState<extendedApplicationDataProps>(appDefaultValues)
@@ -42,8 +44,8 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
             // Clear these fields if visibility is X -value
             handleClear<extendedApplicationDataProps>(
                 values,
-                ['contract', 'license', 'application_dependency', 'installed_server'],
-                ['service_dependency', 'integration'],
+                ['contract', 'license', 'provider'],
+                ['service_dependency', 'integration', 'application_dependency', 'installed_server', 'customership'],
                 setValues,
             )
         }
@@ -97,7 +99,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                 />
             </Row>
             <Row>
-                <TextField
+                <StaticSelect
                     id={'classification'}
                     disabled={false}
                     invalid={false}
@@ -105,19 +107,21 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.classification'}
                     value={values.classification}
-                    type='text'
+                    options={['tosi', 'tori', 'infra']}
                 />
             </Row>
             <Row>
-                <TextField
-                    id={'place_of_use'}
-                    disabled={false}
+                <AsyncSelect
+                    label={'values.customership'}
+                    endpoint='customership'
+                    id={'customership'}
+                    placeholder={'placeholder.customership'}
+                    disabled={values.visibility === 'hidden' || values.visibility === 'draft'}
                     invalid={false}
-                    label={'values.place_of_use'}
-                    onChange={(e) => { handleChange(e) }}
-                    placeholder={'placeholder.place_of_use'}
-                    value={values.place_of_use}
-                    type='text'
+                    isMulti={true}
+                    isSearchable={false}
+                    value={values.customership}
+                    onChange={(value, id) => { handleSelect(value, id); }}
                 />
             </Row>
             <Row>
@@ -153,6 +157,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                 />
             </Row>
             <Row>
+                {/*
                 <TextField
                     id={'keywords'}
                     disabled={false}
@@ -163,17 +168,18 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     placeholder={'placeholder.keywords'}
                     value={values.keywords}
                 />
+                */}
             </Row>
             <Row>
-                <TextField
-                    id={'status'}
+                <StaticSelect
+                    id={'application_status'}
                     disabled={false}
                     invalid={false}
-                    type='textarea'
-                    label={'values.status'}
+                    label={'values.application_status'}
                     onChange={(e) => { handleChange(e) }}
-                    placeholder={'placeholder.status'}
-                    value={values.status}
+                    placeholder={'placeholder.application_status'}
+                    value={values.application_status}
+                    options={['in_deployment', 'in_use', 'unused', 'shutdown', 'archived', 'undefined', 'unreleased', 'deleted']}
                 />
             </Row>
             <Row>
@@ -192,20 +198,20 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                 <h2>{t('application.dependency')}</h2>
             </Row>
             <Row>
-                <CSelect
+                <SearchableSelect
                     label={'values.installed_server'}
                     endpoint='server'
                     id={'installed_server'}
                     placeholder={'placeholder.server'}
                     disabled={values.visibility === 'hidden' || values.visibility === 'draft'}
                     invalid={false}
-                    isMulti={false}
+                    isMulti={true}
                     value={values.installed_server}
                     onChange={(value, id) => { handleSelect(value, id); }}
                 />
             </Row>
             <Row>
-                <CSelect
+                <SearchableSelect
                     label={'values.service_dependency'}
                     endpoint='service'
                     id={'service_dependency'}
@@ -218,7 +224,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                 />
             </Row>
             <Row>
-                <CSelect
+                <SearchableSelect
                     label={'values.integration'}
                     endpoint='integration'
                     id={'integration'}
@@ -231,7 +237,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                 />
             </Row>
             <Row>
-                <CSelect
+                <SearchableSelect
                     label={'values.license'}
                     endpoint='license'
                     id={'license'}
@@ -244,14 +250,14 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                 />
             </Row>
             <Row>
-                <CSelect
+                <SearchableSelect
                     label={'values.application_dependency'}
                     endpoint='application'
                     id={'application_dependency'}
                     placeholder={'placeholder.application_dependency'}
                     disabled={values.visibility === 'hidden' || values.visibility === 'draft'}
                     invalid={false}
-                    isMulti={false}
+                    isMulti={true}
                     value={values.application_dependency}
                     onChange={(value, id) => { handleSelect(value, id); }}
                 />
@@ -383,15 +389,16 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                 />
             </Row>
             <Row>
-                <TextField
-                    id={'provider'}
-                    disabled={false}
-                    invalid={false}
-                    type='text'
+                <SearchableSelect
                     label={'values.provider'}
-                    onChange={(e) => { handleChange(e) }}
+                    endpoint='provider'
+                    id={'provider'}
                     placeholder={'placeholder.provider'}
+                    disabled={values.visibility === 'hidden' || values.visibility === 'draft'}
+                    invalid={false}
+                    isMulti={false}
                     value={values.provider}
+                    onChange={(value, id) => { handleSelect(value, id); }}
                 />
             </Row>
             <Row>

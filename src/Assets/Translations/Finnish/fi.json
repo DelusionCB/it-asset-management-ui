@@ -9,6 +9,7 @@
         "description": "Kuvaus",
         "classification": "Luokittelu",
         "place_of_use": "Asiakkuus",
+        "customership": "Asiakkuus",
         "person_register": "Sisältääkö henkilörekisterin",
         "personal_info_logging": "Henkilötietojen katselun lokitus",
         "install_info": "Asennuksen lisätiedot",
@@ -37,6 +38,7 @@
         "applications": "Sovellukset",
         "services": "Palvelut",
         "status": "Tila",
+        "application_status": "Tila",
         "log_archives": "Lokitukset ja lokiarkistointi",
         "visibility": "Näkyvyys",
 
@@ -85,8 +87,21 @@
         "required_installations": "Tarvittavat sovellusasennukset",
         "valid_from_date": "Voimassaoloaika alkaen",
         "valid_until_date": "Voimassaoloaika päättyy",
-        "license_type": "Lisenssin tyyppi"
+        "license_type": "Lisenssin tyyppi",
 
+        "business_id": "Y-tunnus",
+        "provider_type": "Toimittajan tyyppi",
+        "full_address": "Osoite & toimipaikka",
+        "switch_phone": "Vaihteen puhelinnumero",
+        "general_email": "Yleinen sähköpostiosoite",
+        "support_phone": "Tuen puhelinnumero",
+        "support_email": "Tuen sähköpostiosoite",
+        "additional_contact": "Lisätiedot yhteydenottoihin liittyen",
+        "provider_user_contact": "Toimittajan yhteyshenkilöt",
+        "extra_url": "Kotisivut",
+        "related_contracts": "Sopimukset",
+        "related_applications": "Sovellukset",
+        "related_services_provider": "Palvelut"
     },
 
     "visibility": {
@@ -100,7 +115,43 @@
         "directory": "Kansio",
         "license": "Lisenssi",
         "server": "Palvelin",
-        "service": "Palvelu"
+        "service": "Palvelu",
+        "provider": "Toimittaja"
+    },
+
+    "select": {
+        "tosi": "TOSI",
+        "tori": "TORI",
+        "infra": "Infra",
+
+        "in_deployment": "Käyttöönotossa",
+        "in_use": "Käytössä",
+        "unused": "Ei käytössä",
+        "shutdown": "Alasajossa",
+        "archived": "Arkistoitu",
+        "undefined": "Määrittelyssä",
+        "unreleased": "Odottaa julkaisua",
+        "deleted": "Poistettu",
+
+        "critical": "Kriittinen",
+        "high": "Korkea",
+        "normal": "Normaali",
+        "low": "Matala",
+        "noclass": "Ei luokiteltu",
+
+        "onpremises": "OnPremises",
+        "iaas": "IaaS",
+        "paas": "PaaS",
+        "caas": "CaaS",
+        "faas": "FaaS",
+        "saas": "SaaS",
+        "other": "Muu",
+
+        "ongoing": "Jatkuva",
+        "temporary": "Määräaikainen",
+
+        "inhouse": "Inhouse",
+        "framework": "Puitesopimus"
     },
 
     "application": {
@@ -163,6 +214,14 @@
         "visibility": "Valitse palvelun näkyvyys",
         "responsibility": "Palvelun vastuut",
         "extra": "Lisätiedot ja linkit"
+    },
+
+    "provider": {
+        "pro": "Toimittaja",
+        "description": "Toimittajan kuvaus",
+        "contacts": "Toimittajan yhteystiedot",
+        "dependency": "Toimittajan sidokset",
+        "extra": "Lisätiedot"
     },
 
     "yes": "Kyllä",

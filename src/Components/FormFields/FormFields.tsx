@@ -3,6 +3,7 @@ import ApplicationForm from './Forms/ApplicationForm';
 import ArchiveSelection from '../CustomComponents/ArchiveSelection';
 import {Container, Row} from 'reactstrap';
 import DirectoryForm from './Forms/DirectoryForm';
+import ServiceForm from './Forms/ServiceForm';
 
 function FormFields (): JSX.Element {
     const [fieldType, setFieldType] = useState('application')
@@ -39,8 +40,10 @@ function FormFields (): JSX.Element {
                 )
             case 'service':
                 return (
-                    <div />
-                    // <ServiceForm type={fieldType} isDisabled={isDisabled} />
+                    <ServiceForm
+                        type={fieldType}
+                        isDisabled={isDisabled}
+                    />
                 )
             default:
                 return (<div />)

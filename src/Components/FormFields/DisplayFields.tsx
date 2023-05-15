@@ -2,7 +2,7 @@ import React from 'react';
 import {
     contractDataProps,
     extendedApplicationDataProps, extendedDirectoryDataProps,
-    LicenseDataProps, serverDataProps, serviceDataProps,
+    LicenseDataProps, providerDataPropTypes, serverDataProps, serviceDataProps,
 } from '../../Types/types.directories';
 import ApplicationDisplay from './Display/ApplicationDisplay';
 import DirectoryDisplay from './Display/DirectoryDisplay';
@@ -13,14 +13,15 @@ import ServiceDisplay from './Display/ServiceDisplay';
 import ServerDisplay from './Display/ServerDisplay';
 import './index.scss'
 import ContractDisplay from './Display/ContractDisplay';
+import ProviderDisplay from './Display/ProviderDisplay';
 
 interface displayFieldsProps<T> {
-    type: 'application' | 'directory' | 'license' | 'server' | 'service' | 'contract' | 'nopath' | string
+    type: 'application' | 'directory' | 'license' | 'server' | 'service' | 'contract' | 'provider' | 'nopath' | string
     item: T
     loading: boolean
 }
 
-function DisplayFields<T extends extendedApplicationDataProps | extendedDirectoryDataProps | LicenseDataProps | serverDataProps | serviceDataProps | contractDataProps> ({type, item, loading}: displayFieldsProps<T>): JSX.Element {
+function DisplayFields<T extends extendedApplicationDataProps | extendedDirectoryDataProps | LicenseDataProps | serverDataProps | serviceDataProps | contractDataProps | providerDataPropTypes> ({type, item, loading}: displayFieldsProps<T>): JSX.Element {
     const {t} = useTranslation()
     const navigate = useNavigate()
 
@@ -49,6 +50,10 @@ function DisplayFields<T extends extendedApplicationDataProps | extendedDirector
             case 'contract':
                 return (
                     <ContractDisplay navigate={navigate} t={t} values={item as contractDataProps} />
+                )
+            case 'provider':
+                return (
+                    <ProviderDisplay navigate={navigate} t={t} values={item as providerDataPropTypes} />
                 )
             case 'nopath':
                 return (

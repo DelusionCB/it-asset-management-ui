@@ -273,46 +273,132 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
           >
             values.classification
           </label>
-          <input
+          <select
             aria-invalid={false}
-            className="form-control"
+            className="form-select"
             disabled={false}
             id="classification"
             name="classification"
             onChange={[Function]}
             placeholder="placeholder.classification"
-            type="text"
-            value=""
-          />
+            value="tosi"
+          >
+            <option
+              value="tosi"
+            >
+              select.tosi
+            </option>
+            <option
+              value="tori"
+            >
+              select.tori
+            </option>
+            <option
+              value="infra"
+            >
+              select.infra
+            </option>
+          </select>
         </div>
       </div>
     </div>
     <div
       className="row"
     >
-      <div
-        className="textfield col"
-      >
+      <div>
         <div
           className="mb-3"
         >
           <label
             className="form-label"
-            htmlFor="place_of_use"
+            htmlFor="customership"
           >
-            values.place_of_use
+            values.customership
           </label>
-          <input
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="place_of_use"
-            name="place_of_use"
-            onChange={[Function]}
-            placeholder="placeholder.place_of_use"
-            type="text"
-            value=""
-          />
+          <div
+            className=" css-b62m3t-container"
+            onKeyDown={[Function]}
+          >
+            <span
+              className="css-1f43avz-a11yText-A11yText"
+              id="react-select-2-live-region"
+            />
+            <span
+              aria-atomic="false"
+              aria-live="polite"
+              aria-relevant="additions text"
+              className="css-1f43avz-a11yText-A11yText"
+            />
+            <div
+              className="option-search__control css-13cymwt-control"
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+            >
+              <div
+                className="option-search__value-container option-search__value-container--is-multi css-1fdsijx-ValueContainer"
+              >
+                <div
+                  className="option-search__placeholder css-1jqq78o-placeholder"
+                  id="react-select-2-placeholder"
+                >
+                  placeholder.customership
+                </div>
+                <input
+                  aria-autocomplete="list"
+                  aria-describedby="react-select-2-placeholder"
+                  aria-expanded={false}
+                  aria-haspopup={true}
+                  aria-invalid={false}
+                  aria-label="placeholder.customership"
+                  aria-labelledby="customership"
+                  aria-readonly={true}
+                  className="css-mohuvp-dummyInput-DummyInput"
+                  disabled={false}
+                  id="customership"
+                  inputMode="none"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  role="combobox"
+                  tabIndex={0}
+                  value=""
+                />
+              </div>
+              <div
+                className="option-search__indicators css-1hb7zxy-IndicatorsContainer"
+              >
+                <span
+                  className="option-search__indicator-separator css-1u9des2-indicatorSeparator"
+                />
+                <div
+                  aria-hidden="true"
+                  className="option-search__indicator option-search__dropdown-indicator css-1xc3v61-indicatorContainer"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="css-tj5bde-Svg"
+                    focusable="false"
+                    height={20}
+                    viewBox="0 0 20 20"
+                    width={20}
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div>
+              <input
+                name="customership"
+                type="hidden"
+                value=""
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -404,32 +490,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
     </div>
     <div
       className="row"
-    >
-      <div
-        className="textfield col"
-      >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="keywords"
-          >
-            values.keywords
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="keywords"
-            name="keywords"
-            onChange={[Function]}
-            placeholder="placeholder.keywords"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
+    />
     <div
       className="row"
     >
@@ -441,20 +502,61 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
         >
           <label
             className="form-label"
-            htmlFor="status"
+            htmlFor="application_status"
           >
-            values.status
+            values.application_status
           </label>
-          <textarea
+          <select
             aria-invalid={false}
-            className="form-control"
+            className="form-select"
             disabled={false}
-            id="status"
-            name="status"
+            id="application_status"
+            name="application_status"
             onChange={[Function]}
-            placeholder="placeholder.status"
-            value=""
-          />
+            placeholder="placeholder.application_status"
+            value="undefined"
+          >
+            <option
+              value="in_deployment"
+            >
+              select.in_deployment
+            </option>
+            <option
+              value="in_use"
+            >
+              select.in_use
+            </option>
+            <option
+              value="unused"
+            >
+              select.unused
+            </option>
+            <option
+              value="shutdown"
+            >
+              select.shutdown
+            </option>
+            <option
+              value="archived"
+            >
+              select.archived
+            </option>
+            <option
+              value="undefined"
+            >
+              select.undefined
+            </option>
+            <option
+              value="unreleased"
+            >
+              select.unreleased
+            </option>
+            <option
+              value="deleted"
+            >
+              select.deleted
+            </option>
+          </select>
         </div>
       </div>
     </div>
@@ -512,7 +614,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
           >
             <span
               className="css-1f43avz-a11yText-A11yText"
-              id="react-select-2-live-region"
+              id="react-select-3-live-region"
             />
             <span
               aria-atomic="false"
@@ -526,11 +628,11 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
               onTouchEnd={[Function]}
             >
               <div
-                className="option-search__value-container css-1fdsijx-ValueContainer"
+                className="option-search__value-container option-search__value-container--is-multi css-1fdsijx-ValueContainer"
               >
                 <div
                   className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-2-placeholder"
+                  id="react-select-3-placeholder"
                 >
                   placeholder.server
                 </div>
@@ -540,7 +642,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
                 >
                   <input
                     aria-autocomplete="list"
-                    aria-describedby="react-select-2-placeholder"
+                    aria-describedby="react-select-3-placeholder"
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-invalid={false}
@@ -606,11 +708,13 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
                 </div>
               </div>
             </div>
-            <input
-              name="installed_server"
-              type="hidden"
-              value=""
-            />
+            <div>
+              <input
+                name="installed_server"
+                type="hidden"
+                value=""
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -634,7 +738,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
           >
             <span
               className="css-1f43avz-a11yText-A11yText"
-              id="react-select-3-live-region"
+              id="react-select-4-live-region"
             />
             <span
               aria-atomic="false"
@@ -652,7 +756,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
               >
                 <div
                   className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-3-placeholder"
+                  id="react-select-4-placeholder"
                 >
                   placeholder.service_dependency
                 </div>
@@ -662,7 +766,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
                 >
                   <input
                     aria-autocomplete="list"
-                    aria-describedby="react-select-3-placeholder"
+                    aria-describedby="react-select-4-placeholder"
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-invalid={false}
@@ -758,7 +862,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
           >
             <span
               className="css-1f43avz-a11yText-A11yText"
-              id="react-select-4-live-region"
+              id="react-select-5-live-region"
             />
             <span
               aria-atomic="false"
@@ -776,7 +880,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
               >
                 <div
                   className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-4-placeholder"
+                  id="react-select-5-placeholder"
                 >
                   placeholder.integration
                 </div>
@@ -786,7 +890,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
                 >
                   <input
                     aria-autocomplete="list"
-                    aria-describedby="react-select-4-placeholder"
+                    aria-describedby="react-select-5-placeholder"
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-invalid={false}
@@ -875,7 +979,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
           >
             <span
               className="css-1f43avz-a11yText-A11yText"
-              id="react-select-5-live-region"
+              id="react-select-6-live-region"
             />
             <span
               aria-atomic="false"
@@ -893,7 +997,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
               >
                 <div
                   className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-5-placeholder"
+                  id="react-select-6-placeholder"
                 >
                   placeholder.license
                 </div>
@@ -903,7 +1007,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
                 >
                   <input
                     aria-autocomplete="list"
-                    aria-describedby="react-select-5-placeholder"
+                    aria-describedby="react-select-6-placeholder"
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-invalid={false}
@@ -997,7 +1101,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
           >
             <span
               className="css-1f43avz-a11yText-A11yText"
-              id="react-select-6-live-region"
+              id="react-select-7-live-region"
             />
             <span
               aria-atomic="false"
@@ -1011,11 +1115,11 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
               onTouchEnd={[Function]}
             >
               <div
-                className="option-search__value-container css-1fdsijx-ValueContainer"
+                className="option-search__value-container option-search__value-container--is-multi css-1fdsijx-ValueContainer"
               >
                 <div
                   className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-6-placeholder"
+                  id="react-select-7-placeholder"
                 >
                   placeholder.application_dependency
                 </div>
@@ -1025,7 +1129,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
                 >
                   <input
                     aria-autocomplete="list"
-                    aria-describedby="react-select-6-placeholder"
+                    aria-describedby="react-select-7-placeholder"
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-invalid={false}
@@ -1091,11 +1195,13 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
                 </div>
               </div>
             </div>
-            <input
-              name="application_dependency"
-              type="hidden"
-              value=""
-            />
+            <div>
+              <input
+                name="application_dependency"
+                type="hidden"
+                value=""
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -1400,9 +1506,7 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
     <div
       className="row"
     >
-      <div
-        className="textfield col"
-      >
+      <div>
         <div
           className="mb-3"
         >
@@ -1412,17 +1516,112 @@ exports[`<FormFields /> Snapshot renders correctly 1`] = `
           >
             values.provider
           </label>
-          <input
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="provider"
-            name="provider"
-            onChange={[Function]}
-            placeholder="placeholder.provider"
-            type="text"
-            value=""
-          />
+          <div
+            className=" css-b62m3t-container"
+            onKeyDown={[Function]}
+          >
+            <span
+              className="css-1f43avz-a11yText-A11yText"
+              id="react-select-8-live-region"
+            />
+            <span
+              aria-atomic="false"
+              aria-live="polite"
+              aria-relevant="additions text"
+              className="css-1f43avz-a11yText-A11yText"
+            />
+            <div
+              className="option-search__control css-13cymwt-control"
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+            >
+              <div
+                className="option-search__value-container css-1fdsijx-ValueContainer"
+              >
+                <div
+                  className="option-search__placeholder css-1jqq78o-placeholder"
+                  id="react-select-8-placeholder"
+                >
+                  placeholder.provider
+                </div>
+                <div
+                  className="option-search__input-container css-qbdosj-Input"
+                  data-value=""
+                >
+                  <input
+                    aria-autocomplete="list"
+                    aria-describedby="react-select-8-placeholder"
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-invalid={false}
+                    aria-label="placeholder.provider"
+                    aria-labelledby="provider"
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    className="option-search__input"
+                    disabled={false}
+                    id="provider"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    role="combobox"
+                    spellCheck="false"
+                    style={
+                      {
+                        "background": 0,
+                        "border": 0,
+                        "color": "inherit",
+                        "font": "inherit",
+                        "gridArea": "1 / 2",
+                        "label": "input",
+                        "margin": 0,
+                        "minWidth": "2px",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={0}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                className="option-search__indicators css-1hb7zxy-IndicatorsContainer"
+              >
+                <span
+                  className="option-search__indicator-separator css-1u9des2-indicatorSeparator"
+                />
+                <div
+                  aria-hidden="true"
+                  className="option-search__indicator option-search__dropdown-indicator css-1xc3v61-indicatorContainer"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="css-tj5bde-Svg"
+                    focusable="false"
+                    height={20}
+                    viewBox="0 0 20 20"
+                    width={20}
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <input
+              name="provider"
+              type="hidden"
+              value=""
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -136,6 +136,28 @@ exports[`<Search /> Snapshot renders correctly 1`] = `
               />
             </div>
           </div>
+          <div>
+            <div
+              className="form-check"
+            >
+              <label
+                className="form-check-label"
+                htmlFor="provider-5"
+              >
+                radios.provider
+              </label>
+              <input
+                aria-disabled={false}
+                checked={false}
+                className="form-check-input"
+                disabled={false}
+                id="provider-5"
+                name="provider"
+                onChange={[Function]}
+                type="radio"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

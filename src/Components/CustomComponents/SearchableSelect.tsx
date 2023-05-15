@@ -4,9 +4,9 @@ import {useTranslation} from 'react-i18next';
 import client from '../../Api/Client';
 import AsyncSelect from 'react-select/async';
 import './index.scss'
-import {customSelectProps, MyOption} from '../../Types/types.customComponents';
+import {MyOption, searchableSelectPropTypes} from '../../Types/types.customComponents';
 
-function CSelect ({label, value, onChange, endpoint, id, placeholder, disabled, invalid, isMulti = false}: customSelectProps): JSX.Element {
+function SearchableSelect ({label, value, onChange, endpoint, id, placeholder, disabled, invalid, isMulti = false}: searchableSelectPropTypes): JSX.Element {
     const {t} = useTranslation()
     const [selectedValue, setValue] = useState<any>(isMulti ? [] : {})
 
@@ -129,4 +129,4 @@ function CSelect ({label, value, onChange, endpoint, id, placeholder, disabled, 
     )
 }
 
-export default CSelect;
+export default SearchableSelect;
