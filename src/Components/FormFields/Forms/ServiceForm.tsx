@@ -65,7 +65,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     onChange={(e) => { handleChange(e); }}
                     disabled={false}
                     id='visibility'
-                    label={'values.visibility'}
+                    label={'service.values.visibility'}
                     invalid={false}
                     options={['draft', 'hidden', 'published']}
                     placeholder={'placeholder.visibility'}
@@ -79,7 +79,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     id='name'
                     disabled={false}
                     invalid={false}
-                    label={'values.name'}
+                    label={'service.values.name'}
                     onChange={(e) => { handleChange(e); }}
                     placeholder={'placeholder.name'}
                     value={values.name}
@@ -91,7 +91,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     id={'service_status'}
                     disabled={false}
                     invalid={false}
-                    label={'values.service_status'}
+                    label={'service.values.service_status'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.service_status'}
                     value={values.service_status}
@@ -104,7 +104,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.description'}
+                    label={'service.values.description'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.description'}
                     value={values.description}
@@ -112,7 +112,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.contract'}
+                    label={'service.values.contract'}
                     endpoint='contract'
                     id={'contract'}
                     placeholder={'placeholder.contract'}
@@ -128,7 +128,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     id={'criticality'}
                     disabled={false}
                     invalid={false}
-                    label={'values.criticality'}
+                    label={'service.values.criticality'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.criticality'}
                     value={values.criticality}
@@ -141,7 +141,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='text'
-                    label={'values.service_level'}
+                    label={'service.values.service_level'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.service_level'}
                     value={values.service_level}
@@ -152,7 +152,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     id={'service_type'}
                     disabled={false}
                     invalid={false}
-                    label={'values.service_type'}
+                    label={'service.values.service_type'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.service_type'}
                     value={values.service_type}
@@ -165,7 +165,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.limitations'}
+                    label={'service.values.limitations'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.limitations'}
                     value={values.limitations}
@@ -173,7 +173,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.related_services'}
+                    label={'service.values.related_services'}
                     endpoint='service'
                     id={'related_services'}
                     placeholder={'placeholder.related_services'}
@@ -186,7 +186,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.required_installations'}
+                    label={'service.values.required_installations'}
                     endpoint='application'
                     id={'required_installations'}
                     placeholder={'placeholder.required_installations'}
@@ -206,7 +206,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='text'
-                    label={'values.product_owner'}
+                    label={'service.values.product_owner'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.product_owner'}
                     value={values.product_owner}
@@ -218,7 +218,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='text'
-                    label={'values.service_holder'}
+                    label={'service.values.service_holder'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.service_holder'}
                     value={values.service_holder}
@@ -226,7 +226,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.provider'}
+                    label={'service.values.provider'}
                     endpoint='provider'
                     id={'provider'}
                     placeholder={'placeholder.provider'}
@@ -243,7 +243,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='text'
-                    label={'values.provider_role'}
+                    label={'service.values.provider_role'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.provider_role'}
                     value={values.provider_role}
@@ -255,7 +255,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='text'
-                    label={'values.provider_contact'}
+                    label={'service.values.provider_contact'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.provider_contact'}
                     value={values.provider_contact}
@@ -267,7 +267,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.additional_contacts'}
+                    label={'service.values.additional_contacts'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.additional_contacts'}
                     value={values.additional_contacts}
@@ -278,7 +278,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <AsyncSelect
-                    label={'values.customership'}
+                    label={'service.values.customership'}
                     endpoint='customership'
                     id={'customership'}
                     placeholder={'placeholder.customership'}
@@ -295,7 +295,7 @@ function ServiceForm ({isDisabled, type}: formTypes): JSX.Element {
                     id={'validity_type'}
                     disabled={false}
                     invalid={false}
-                    label={'values.validity_type'}
+                    label={'service.values.validity_type'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.validity_type'}
                     value={values.validity_type}

@@ -1,7 +1,12 @@
 import React from 'react';
 import {
     extendedDirectoryDataProps,
-    extendedApplicationDataProps, serviceDataProps,
+    extendedApplicationDataProps,
+    serviceDataProps,
+    integrationDataPropTypes,
+    serverDataPropTypes,
+    licenseDataPropTypes,
+    providerDataPropTypes,
 } from '../Types/types.directories';
 import _, {debounce} from 'lodash';
 
@@ -22,6 +27,50 @@ export function handleServiceChange (
     e: React.ChangeEvent<HTMLInputElement>,
     values: serviceDataProps,
     setValues: React.Dispatch<React.SetStateAction<serviceDataProps>>,
+): void {
+    setValues({
+        ...values,
+        [e.target.name]: e.target.value,
+    });
+}
+
+export function handleIntegrationChange (
+    e: React.ChangeEvent<HTMLInputElement>,
+    values: integrationDataPropTypes,
+    setValues: React.Dispatch<React.SetStateAction<integrationDataPropTypes>>,
+): void {
+    setValues({
+        ...values,
+        [e.target.name]: e.target.value,
+    });
+}
+
+export function handleServerChange (
+    e: React.ChangeEvent<HTMLInputElement>,
+    values: serverDataPropTypes,
+    setValues: React.Dispatch<React.SetStateAction<serverDataPropTypes>>,
+): void {
+    setValues({
+        ...values,
+        [e.target.name]: e.target.value,
+    });
+}
+
+export function handleProviderChange (
+    e: React.ChangeEvent<HTMLInputElement>,
+    values: providerDataPropTypes,
+    setValues: React.Dispatch<React.SetStateAction<providerDataPropTypes>>,
+): void {
+    setValues({
+        ...values,
+        [e.target.name]: e.target.value,
+    });
+}
+
+export function handleLicenseChange (
+    e: React.ChangeEvent<HTMLInputElement>,
+    values: licenseDataPropTypes,
+    setValues: React.Dispatch<React.SetStateAction<licenseDataPropTypes>>,
 ): void {
     setValues({
         ...values,
@@ -60,6 +109,18 @@ export function handleDirectorySelect (
     });
 }
 
+export function handleProviderSelect (
+    value: {} | [] | undefined | null,
+    id: string,
+    values: providerDataPropTypes,
+    setValues: React.Dispatch<React.SetStateAction<providerDataPropTypes>>,
+): void {
+    setValues({
+        ...values,
+        [id]: value,
+    });
+}
+
 export function handleServiceSelect (
     value: {} | [] | undefined | null,
     id: string,
@@ -72,11 +133,47 @@ export function handleServiceSelect (
     });
 }
 
+export function handleIntegrationSelect (
+    value: {} | [] | undefined | null,
+    id: string,
+    values: integrationDataPropTypes,
+    setValues: React.Dispatch<React.SetStateAction<integrationDataPropTypes>>,
+): void {
+    setValues({
+        ...values,
+        [id]: value,
+    });
+}
+
 export function handleApplicationSelect (
     value: {} | [] | undefined | null,
     id: string,
     values: extendedApplicationDataProps,
     setValues: React.Dispatch<React.SetStateAction<extendedApplicationDataProps>>,
+): void {
+    setValues({
+        ...values,
+        [id]: value,
+    });
+}
+
+export function handleServerSelect (
+    value: {} | [] | undefined | null,
+    id: string,
+    values: serverDataPropTypes,
+    setValues: React.Dispatch<React.SetStateAction<serverDataPropTypes>>,
+): void {
+    setValues({
+        ...values,
+        [id]: value,
+    });
+}
+
+export function handleLicenseSelect (
+    value: {} | [] | undefined | null,
+    id: string,
+    values: licenseDataPropTypes,
+    setValues: React.Dispatch<React.SetStateAction<licenseDataPropTypes>>,
 ): void {
     setValues({
         ...values,

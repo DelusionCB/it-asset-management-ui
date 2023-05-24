@@ -79,7 +79,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     id='name'
                     disabled={false}
                     invalid={false}
-                    label={'values.name'}
+                    label={'application.values.name'}
                     onChange={(e) => { handleChange(e); }}
                     placeholder={'placeholder.name'}
                     value={values.name}
@@ -92,7 +92,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.description'}
+                    label={'application.values.description'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.description'}
                     value={values.description}
@@ -103,7 +103,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     id={'classification'}
                     disabled={false}
                     invalid={false}
-                    label={'values.classification'}
+                    label={'application.values.classification'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.classification'}
                     value={values.classification}
@@ -112,7 +112,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <AsyncSelect
-                    label={'values.customership'}
+                    label={'application.values.customership'}
                     endpoint='customership'
                     id={'customership'}
                     placeholder={'placeholder.customership'}
@@ -130,7 +130,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     value={values.person_register}
-                    label={'values.person_register'}
+                    label={'application.values.person_register'}
                     onChange={(e) => { handleChange(e, true) }}
                 />
             </Row>
@@ -140,7 +140,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     value={values.personal_info_logging}
-                    label={'values.personal_info_logging'}
+                    label={'application.values.personal_info_logging'}
                     onChange={(e) => { handleChange(e, true) }}
                 />
             </Row>
@@ -150,7 +150,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.install_info'}
+                    label={'application.values.install_info'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.install_info'}
                     value={values.install_info}
@@ -163,7 +163,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.keywords'}
+                    label={'application.values.keywords'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.keywords'}
                     value={values.keywords}
@@ -175,7 +175,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     id={'application_status'}
                     disabled={false}
                     invalid={false}
-                    label={'values.application_status'}
+                    label={'application.values.application_status'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.application_status'}
                     value={values.application_status}
@@ -188,7 +188,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.log_archives'}
+                    label={'application.values.log_archives'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.log_archives'}
                     value={values.log_archives}
@@ -199,7 +199,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.installed_server'}
+                    label={'application.values.installed_server'}
                     endpoint='server'
                     id={'installed_server'}
                     placeholder={'placeholder.server'}
@@ -212,7 +212,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.service_dependency'}
+                    label={'application.values.service_dependency'}
                     endpoint='service'
                     id={'service_dependency'}
                     placeholder={'placeholder.service_dependency'}
@@ -225,11 +225,11 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.integration'}
+                    label={'application.values.integration'}
                     endpoint='integration'
                     id={'integration'}
                     placeholder={'placeholder.integration'}
-                    disabled={true}
+                    disabled={false}
                     invalid={false}
                     isMulti={true}
                     value={values.integration}
@@ -238,7 +238,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.license'}
+                    label={'application.values.license'}
                     endpoint='license'
                     id={'license'}
                     placeholder={'placeholder.license'}
@@ -251,7 +251,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.application_dependency'}
+                    label={'application.values.application_dependency'}
                     endpoint='application'
                     id={'application_dependency'}
                     placeholder={'placeholder.application_dependency'}
@@ -271,7 +271,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.update_practice'}
+                    label={'application.values.update_practice'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.update_practice'}
                     value={values.update_practice}
@@ -283,7 +283,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.security_practice_monitoring'}
+                    label={'application.values.security_practice_monitoring'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.security_practice_monitoring'}
                     value={values.security_practice_monitoring}
@@ -295,7 +295,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.recovery_practices_convalescence'}
+                    label={'application.values.recovery_practices_convalescence'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.recovery_practices_convalescence'}
                     value={values.recovery_practices_convalescence}
@@ -307,7 +307,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='text'
-                    label={'values.user_rights_management'}
+                    label={'application.values.user_rights_management'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.user_rights_management'}
                     value={values.user_rights_management}
@@ -319,7 +319,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.security_solutions'}
+                    label={'application.values.security_solutions'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'security_solutions'}
                     value={values.security_solutions}
@@ -334,7 +334,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='text'
-                    label={'values.product_owner'}
+                    label={'application.values.product_owner'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.product_owner'}
                     value={values.product_owner}
@@ -346,7 +346,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='text'
-                    label={'values.application_holder'}
+                    label={'application.values.application_holder'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.application_holder'}
                     value={values.application_holder}
@@ -358,7 +358,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.admin_users'}
+                    label={'application.values.admin_users'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.admin_users'}
                     value={values.admin_users}
@@ -370,7 +370,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.liability_professional_users'}
+                    label={'application.values.liability_professional_users'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.liability_professional_users'}
                     value={values.liability_professional_users}
@@ -382,7 +382,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.holder_extra_info'}
+                    label={'application.values.holder_extra_info'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.holder_extra_info'}
                     value={values.holder_extra_info}
@@ -390,7 +390,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.provider'}
+                    label={'application.values.provider'}
                     endpoint='provider'
                     id={'provider'}
                     placeholder={'placeholder.provider'}
@@ -407,7 +407,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.provider_responsibility'}
+                    label={'application.values.provider_responsibility'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.provider_responsibility'}
                     value={values.provider_responsibility}
@@ -419,7 +419,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.additional_contacts'}
+                    label={'application.values.additional_contacts'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.additional_contacts'}
                     value={values.additional_contacts}
@@ -434,7 +434,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.known_issues'}
+                    label={'application.values.known_issues'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.known_issues'}
                     value={values.known_issues}
@@ -446,7 +446,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={true}
                     invalid={false}
                     type='file'
-                    label={'values.fileUrl'}
+                    label={'application.values.fileUrl'}
                     onChange={() => { }}
                     placeholder={'placeholder.fileUrl'}
                 />

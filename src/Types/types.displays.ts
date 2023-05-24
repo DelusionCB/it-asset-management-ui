@@ -1,52 +1,47 @@
 import {
-    contractDataProps,
+    contractDataPropTypes,
     extendedApplicationDataProps,
-    extendedDirectoryDataProps,
-    LicenseDataProps, providerDataPropTypes, serverDataProps, serviceDataProps,
+    extendedDirectoryDataProps, integrationDataPropTypes,
+    licenseDataPropTypes, providerDataPropTypes, serverDataPropTypes, serviceDataProps,
 } from './types.directories';
 // eslint-disable-next-line import/named
 import {NavigateFunction} from 'react-router-dom';
 // eslint-disable-next-line import/named
 import {TFunction} from 'i18next';
 
-export interface appDisplayPropTypes {
+interface basePropTypes {
+    t: TFunction
+    navigate: NavigateFunction
+}
+
+export interface appDisplayPropTypes extends basePropTypes {
     values: extendedApplicationDataProps
-    t: TFunction
-    navigate: NavigateFunction
 }
 
-export interface contractDisplayPropTypes {
-    values: contractDataProps
-    t: TFunction
-    navigate: NavigateFunction
+export interface contractDisplayPropTypes extends basePropTypes {
+    values: contractDataPropTypes
 }
 
-export interface directoryDisplayPropTypes {
+export interface directoryDisplayPropTypes extends basePropTypes {
     values: extendedDirectoryDataProps
-    t: TFunction
-    navigate: NavigateFunction
 }
 
-export interface licenseDisplayPropTypes {
-    values: LicenseDataProps
-    t: TFunction
-    navigate: NavigateFunction
+export interface licenseDisplayPropTypes extends basePropTypes {
+    values: licenseDataPropTypes
 }
 
-export interface serverDisplayPropTypes {
-    values: serverDataProps
-    t: TFunction
-    navigate: NavigateFunction
+export interface serverDisplayPropTypes extends basePropTypes {
+    values: serverDataPropTypes
 }
 
-export interface serviceDisplayPropTypes {
+export interface serviceDisplayPropTypes extends basePropTypes {
     values: serviceDataProps
-    t: TFunction
-    navigate: NavigateFunction
 }
 
-export interface providerDisplayPropTypes {
+export interface providerDisplayPropTypes extends basePropTypes {
     values: providerDataPropTypes
-    t: TFunction
-    navigate: NavigateFunction
+}
+
+export interface integrationDisplayPropTypes extends basePropTypes {
+    values: integrationDataPropTypes
 }

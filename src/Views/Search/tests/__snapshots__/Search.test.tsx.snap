@@ -20,7 +20,7 @@ exports[`<Search /> Snapshot renders correctly 1`] = `
           className="selection-header"
         >
           <h1>
-            select-archive
+            select-archive-search
           </h1>
         </div>
         <div
@@ -153,6 +153,28 @@ exports[`<Search /> Snapshot renders correctly 1`] = `
                 disabled={false}
                 id="provider-5"
                 name="provider"
+                onChange={[Function]}
+                type="radio"
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="form-check"
+            >
+              <label
+                className="form-check-label"
+                htmlFor="contract-6"
+              >
+                radios.contract
+              </label>
+              <input
+                aria-disabled={false}
+                checked={false}
+                className="form-check-input"
+                disabled={false}
+                id="contract-6"
+                name="contract"
                 onChange={[Function]}
                 type="radio"
               />

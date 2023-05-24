@@ -80,7 +80,7 @@ exports[`<DirectoryFields /> Snapshot renders correctly 1`] = `
           className="form-label"
           htmlFor="name"
         >
-          values.name
+          directory.values.name
         </label>
         <input
           aria-invalid={false}
@@ -109,7 +109,7 @@ exports[`<DirectoryFields /> Snapshot renders correctly 1`] = `
           className="form-label"
           htmlFor="description"
         >
-          values.description
+          directory.values.description
         </label>
         <textarea
           aria-invalid={false}
@@ -142,7 +142,7 @@ exports[`<DirectoryFields /> Snapshot renders correctly 1`] = `
           className="form-label"
           htmlFor="applications"
         >
-          values.applications
+          directory.values.applications
         </label>
         <div
           className=" css-b62m3t-container"
@@ -266,7 +266,7 @@ exports[`<DirectoryFields /> Snapshot renders correctly 1`] = `
           className="form-label"
           htmlFor="servers"
         >
-          values.servers
+          directory.values.servers
         </label>
         <div
           className=" css-b62m3t-container"
@@ -390,7 +390,7 @@ exports[`<DirectoryFields /> Snapshot renders correctly 1`] = `
           className="form-label"
           htmlFor="services"
         >
-          values.services
+          directory.values.services
         </label>
         <div
           className=" css-b62m3t-container"

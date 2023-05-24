@@ -8,7 +8,7 @@ import {
     textPropTypes,
     arrayPropTypes,
     objectPropTypes,
-    textArrayPropTypes,
+    textArrayPropTypes, urlPropTypes,
 } from '../../Types/types.customComponents'
 
 export function DisplayHeader ({t, label}: basePropTypes): JSX.Element {
@@ -60,7 +60,7 @@ export function DisplayStatus ({t, label, value}: textPropTypes): JSX.Element {
     )
 }
 
-export function DisplayUrl ({t, label, value}: textPropTypes): JSX.Element {
+export function DisplayUrl ({t, label, value}: urlPropTypes): JSX.Element {
     return (
         <Row className='display'>
             <Row>
@@ -78,14 +78,11 @@ export function DisplayArray ({t, navigate, value, label}: arrayPropTypes): JSX.
             {value?.length
                 ? value.map((child, key: number) => (
                     <div className='array' key={key}>
-                        <Row><h3>Sidos Nro. {key + 1}</h3></Row>
                         <Row>
-                            <h4>{t('values.name')}:</h4>
-                            <p>{child.name}</p>
+                            <h4>{key + 1}. {child.name}</h4>
                         </Row>
                         <Row>
-                            <h4>{t('values.description')}:</h4>
-                            <p>{child.description.length > 180 ? child.description.slice(0, 180) + '...' : child.description}</p>
+                            <h4>{child.description.length > 180 ? child.description.slice(0, 180) + '...' : child.description}</h4>
                         </Row>
                         <Row>
                             <Button
@@ -135,12 +132,10 @@ export function DisplayObject ({t, navigate, value, label}: objectPropTypes): JS
             {value
                 ? <div className='object'>
                     <Row>
-                        <h4>{t('values.name')}:</h4>
-                        <p>{value.name}</p>
+                        <h4>{value.name}</h4>
                     </Row>
                     <Row>
-                        <h4>{t('values.description')}:</h4>
-                        <p>{value.description.length > 180 ? value.description.slice(0, 180) + '...' : value.description}</p>
+                        <h4>{value.description.length > 180 ? value.description.slice(0, 180) + '...' : value.description}</h4>
                     </Row>
                     <Row>
                         <Button

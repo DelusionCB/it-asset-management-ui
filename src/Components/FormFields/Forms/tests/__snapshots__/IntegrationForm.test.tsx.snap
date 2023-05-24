@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LicenseForm /> Snapshot renders correctly 1`] = `
+exports[`<IntegrationForm /> Snapshot renders correctly 1`] = `
 [
   <div
     className="row"
   >
     <h1>
-      license.create
+      integration.create
     </h1>
   </div>,
   <div
     className="row"
   >
     <h2>
-      license.visibility
+      integration.visibility
     </h2>
   </div>,
   <div
@@ -64,7 +64,7 @@ exports[`<LicenseForm /> Snapshot renders correctly 1`] = `
     className="row"
   >
     <h2>
-      license.description
+      application.description
     </h2>
   </div>,
   <div
@@ -80,7 +80,7 @@ exports[`<LicenseForm /> Snapshot renders correctly 1`] = `
           className="form-label"
           htmlFor="name"
         >
-          license.values.name
+          integration.values.name
         </label>
         <input
           aria-invalid={false}
@@ -109,7 +109,7 @@ exports[`<LicenseForm /> Snapshot renders correctly 1`] = `
           className="form-label"
           htmlFor="description"
         >
-          license.values.description
+          integration.values.description
         </label>
         <textarea
           aria-invalid={false}
@@ -127,160 +127,15 @@ exports[`<LicenseForm /> Snapshot renders correctly 1`] = `
   <div
     className="row"
   >
-    <div
-      className="textfield col"
-    >
-      <div
-        className="mb-3"
-      >
-        <label
-          className="form-label"
-          htmlFor="valid_from_date"
-        >
-          license.values.valid_from_date
-        </label>
-        <input
-          aria-invalid={false}
-          className="form-control"
-          disabled={false}
-          id="valid_from_date"
-          name="valid_from_date"
-          onChange={[Function]}
-          placeholder="placeholder.valid_from_date"
-          type="date"
-          value=""
-        />
-      </div>
-    </div>
-  </div>,
-  <div
-    className="row"
-  >
-    <div
-      className="textfield col"
-    >
-      <div
-        className="mb-3"
-      >
-        <label
-          className="form-label"
-          htmlFor="valid_until_date"
-        >
-          license.values.valid_until_date
-        </label>
-        <input
-          aria-invalid={false}
-          className="form-control"
-          disabled={false}
-          id="valid_until_date"
-          name="valid_until_date"
-          onChange={[Function]}
-          placeholder="placeholder.valid_until_date"
-          type="date"
-          value=""
-        />
-      </div>
-    </div>
-  </div>,
-  <div
-    className="row"
-  >
-    <div
-      className="textfield col"
-    >
-      <div
-        className="mb-3"
-      >
-        <label
-          className="form-label"
-          htmlFor="audits"
-        >
-          license.values.audits
-        </label>
-        <textarea
-          aria-invalid={false}
-          className="form-control"
-          disabled={false}
-          id="audits"
-          name="audits"
-          onChange={[Function]}
-          placeholder="placeholder.audits"
-          value=""
-        />
-      </div>
-    </div>
-  </div>,
-  <div
-    className="row"
-  >
-    <div
-      className="textfield col"
-    >
-      <div
-        className="mb-3"
-      >
-        <label
-          className="form-label"
-          htmlFor="license_type"
-        >
-          license.values.license_type
-        </label>
-        <select
-          aria-invalid={false}
-          className="form-select"
-          disabled={false}
-          id="license_type"
-          name="license_type"
-          onChange={[Function]}
-          placeholder="placeholder.license_type"
-          value="other"
-        >
-          <option
-            value="ea"
-          >
-            select.ea
-          </option>
-          <option
-            value="ees"
-          >
-            select.ees
-          </option>
-          <option
-            value="sa"
-          >
-            select.sa
-          </option>
-          <option
-            value="sce"
-          >
-            select.sce
-          </option>
-          <option
-            value="oracle"
-          >
-            select.oracle
-          </option>
-          <option
-            value="other"
-          >
-            select.other
-          </option>
-        </select>
-      </div>
-    </div>
-  </div>,
-  <div
-    className="row"
-  >
     <div>
       <div
         className="mb-3"
       >
         <label
           className="form-label"
-          htmlFor="contract"
+          htmlFor="server_platform"
         >
-          license.values.contract
+          integration.values.server_platform
         </label>
         <div
           className=" css-b62m3t-container"
@@ -308,7 +163,7 @@ exports[`<LicenseForm /> Snapshot renders correctly 1`] = `
                 className="option-search__placeholder css-1jqq78o-placeholder"
                 id="react-select-2-placeholder"
               >
-                placeholder.contract
+                placeholder.server_platform
               </div>
               <div
                 className="option-search__input-container css-qbdosj-Input"
@@ -320,14 +175,14 @@ exports[`<LicenseForm /> Snapshot renders correctly 1`] = `
                   aria-expanded={false}
                   aria-haspopup={true}
                   aria-invalid={false}
-                  aria-label="placeholder.contract"
-                  aria-labelledby="contract"
+                  aria-label="placeholder.server_platform"
+                  aria-labelledby="server_platform"
                   autoCapitalize="none"
                   autoComplete="off"
                   autoCorrect="off"
                   className="option-search__input"
                   disabled={false}
-                  id="contract"
+                  id="server_platform"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
@@ -383,11 +238,60 @@ exports[`<LicenseForm /> Snapshot renders correctly 1`] = `
             </div>
           </div>
           <input
-            name="contract"
+            name="server_platform"
             type="hidden"
             value=""
           />
         </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="row"
+  >
+    <div
+      className="textfield col"
+    >
+      <div
+        className="mb-3"
+      >
+        <label
+          className="form-label"
+          htmlFor="environment_type"
+        >
+          integration.values.environment_type
+        </label>
+        <select
+          aria-invalid={false}
+          className="form-select"
+          disabled={false}
+          id="environment_type"
+          name="environment_type"
+          onChange={[Function]}
+          placeholder="placeholder.environment_type"
+          value="prod"
+        >
+          <option
+            value="dev"
+          >
+            select.dev
+          </option>
+          <option
+            value="test"
+          >
+            select.test
+          </option>
+          <option
+            value="stage"
+          >
+            select.stage
+          </option>
+          <option
+            value="prod"
+          >
+            select.prod
+          </option>
+        </select>
       </div>
     </div>
   </div>,
@@ -397,7 +301,7 @@ exports[`<LicenseForm /> Snapshot renders correctly 1`] = `
       onClick={[Function]}
       type="button"
     >
-      license.create
+      integration.create
     </button>
   </div>,
 ]

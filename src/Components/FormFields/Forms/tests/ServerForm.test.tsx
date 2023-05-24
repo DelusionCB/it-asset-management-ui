@@ -1,17 +1,17 @@
 import React from 'react';
 import * as TestRenderer from 'react-test-renderer';
-import LicenseForm from '../LicenseForm';
 import {BrowserRouter} from 'react-router-dom'
 import '@testing-library/jest-dom'
+import ServerForm from '../ServerForm';
 
-describe('<LicenseForm />', () => {
+describe('<ServerForm />', () => {
     let renderer: TestRenderer.ReactTestRenderer;
 
     // Render the component before tests
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <LicenseForm type='license' isDisabled={jest.fn()} />
+                <ServerForm type='server' isDisabled={jest.fn()} />
             </BrowserRouter>,
         );
     });

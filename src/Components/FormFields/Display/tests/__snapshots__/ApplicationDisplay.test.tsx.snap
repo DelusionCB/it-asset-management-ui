@@ -135,6 +135,14 @@ exports[`<ApplicationDisplay /> Snapshot renders correctly 1`] = `
     <h3>
       :
     </h3>
+    <h4 />
+  </div>
+  <div
+    className="display row"
+  >
+    <h3>
+      :
+    </h3>
     <div>
       <h4 />
     </div>

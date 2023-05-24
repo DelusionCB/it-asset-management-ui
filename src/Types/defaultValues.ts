@@ -1,9 +1,9 @@
 import {
-    contractDataProps, DirectoryResults,
+    contractDataPropTypes, DirectoryResults,
     extendedApplicationDataProps,
-    extendedDirectoryDataProps,
-    LicenseDataProps, providerDataPropTypes,
-    serverDataProps, serviceDataProps,
+    extendedDirectoryDataProps, integrationDataPropTypes,
+    licenseDataPropTypes, providerDataPropTypes,
+    serverDataPropTypes, serviceDataProps,
 } from './types.directories';
 
 export const appDefaultValues: extendedApplicationDataProps = {
@@ -41,32 +41,26 @@ export const appDefaultValues: extendedApplicationDataProps = {
     application_dependency: [],
 }
 
-export const licenseDefaultValues: LicenseDataProps = {
-    base_id: '',
-    id_prefix: '',
+export const licenseDefaultValues: licenseDataPropTypes = {
+    visibility: 'published',
     name: '',
     description: '',
-    created_time: '',
-    last_modified_time: '',
     valid_from_date: '',
     valid_until_date: '',
-    license_type: '',
+    audits: '',
+    license_type: 'other',
     fileUrl: null,
-    contract: '',
+    contract: null,
 }
 
-export const serverDefaultValues: serverDataProps = {
+export const serverDefaultValues: serverDataPropTypes = {
+    visibility: 'published',
     name: '',
     description: '',
-    base_id: '',
-    id_prefix: '',
     applications: [],
-    created_time: '',
-    last_modified_time: '',
-    visibility: '',
     server_role: '',
     service_level: '',
-    operating_organization: '',
+    customership: [],
     place_of_use: '',
     product_owner: '',
     server_model: '',
@@ -80,7 +74,7 @@ export const serverDefaultValues: serverDataProps = {
     maintenance_window: '',
     device_criticality: '',
     security_level: '',
-    status: '',
+    server_status: '',
     install_date: '',
     ip_address: '',
     updates: '',
@@ -98,11 +92,24 @@ export const serverDefaultValues: serverDataProps = {
     mac_address: '',
 }
 
-export const contractDefaultValues: contractDataProps = {
+export const contractDefaultValues: contractDataPropTypes = {
+    visibility: 'published',
     name: '',
     description: '',
-    placeholder: '',
-    visibility: 'published',
+    contract_number: '',
+    contract_type: 'consultation',
+    provider_contact: '',
+    invoices_per_year: 0,
+    value_per_year: 0,
+    place_of_use: '',
+    valid_from_date: '',
+    valid_until_date: '',
+    contract_continuation: '',
+    contract_decisions: '',
+    contract_holder: '',
+    fileUrl: null,
+    provider: null,
+    related_applications: [],
 }
 
 export const directoryDefaultValues: extendedDirectoryDataProps = {
@@ -161,4 +168,12 @@ export const directoryDefaultResults: DirectoryResults = {
     next: null,
     previous: null,
     results: [],
+}
+
+export const integrationDefaultValues: integrationDataPropTypes = {
+    name: '',
+    description: '',
+    server_platform: null,
+    environment_type: 'prod',
+    visibility: 'published',
 }

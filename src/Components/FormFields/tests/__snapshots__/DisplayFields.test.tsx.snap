@@ -130,6 +130,50 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             />
           </div>
         </div>
+        <div>
+          <div
+            className="form-check"
+          >
+            <label
+              className="form-check-label"
+              htmlFor="integration-5"
+            >
+              radios.integration
+            </label>
+            <input
+              aria-disabled={false}
+              checked={false}
+              className="form-check-input"
+              disabled={false}
+              id="integration-5"
+              name="integration"
+              onChange={[Function]}
+              type="radio"
+            />
+          </div>
+        </div>
+        <div>
+          <div
+            className="form-check"
+          >
+            <label
+              className="form-check-label"
+              htmlFor="provider-6"
+            >
+              radios.provider
+            </label>
+            <input
+              aria-disabled={false}
+              checked={false}
+              className="form-check-input"
+              disabled={false}
+              id="provider-6"
+              name="provider"
+              onChange={[Function]}
+              type="radio"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -214,7 +258,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="name"
           >
-            values.name
+            application.values.name
           </label>
           <input
             aria-invalid={false}
@@ -243,7 +287,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="description"
           >
-            values.description
+            application.values.description
           </label>
           <textarea
             aria-invalid={false}
@@ -271,7 +315,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="classification"
           >
-            values.classification
+            application.values.classification
           </label>
           <select
             aria-invalid={false}
@@ -313,7 +357,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="customership"
           >
-            values.customership
+            application.values.customership
           </label>
           <div
             className=" css-b62m3t-container"
@@ -415,7 +459,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-check-label"
             htmlFor="person_register"
           >
-            values.person_register
+            application.values.person_register
           </label>
           <input
             aria-checked={false}
@@ -444,7 +488,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-check-label"
             htmlFor="personal_info_logging"
           >
-            values.personal_info_logging
+            application.values.personal_info_logging
           </label>
           <input
             aria-checked={false}
@@ -473,7 +517,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="install_info"
           >
-            values.install_info
+            application.values.install_info
           </label>
           <textarea
             aria-invalid={false}
@@ -504,7 +548,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="application_status"
           >
-            values.application_status
+            application.values.application_status
           </label>
           <select
             aria-invalid={false}
@@ -573,7 +617,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="log_archives"
           >
-            values.log_archives
+            application.values.log_archives
           </label>
           <textarea
             aria-invalid={false}
@@ -606,7 +650,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="installed_server"
           >
-            values.installed_server
+            application.values.installed_server
           </label>
           <div
             className=" css-b62m3t-container"
@@ -730,7 +774,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="service_dependency"
           >
-            values.service_dependency
+            application.values.service_dependency
           </label>
           <div
             className=" css-b62m3t-container"
@@ -854,10 +898,10 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="integration"
           >
-            values.integration
+            application.values.integration
           </label>
           <div
-            className="option-search--is-disabled css-3iigni-container"
+            className=" css-b62m3t-container"
             onKeyDown={[Function]}
           >
             <span
@@ -871,7 +915,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
               className="css-1f43avz-a11yText-A11yText"
             />
             <div
-              className="option-search__control option-search__control--is-disabled css-16xfy0z-control"
+              className="option-search__control css-13cymwt-control"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
@@ -885,7 +929,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
                   placeholder.integration
                 </div>
                 <div
-                  className="option-search__input-container css-1h01tm3-Input"
+                  className="option-search__input-container css-qbdosj-Input"
                   data-value=""
                 >
                   <input
@@ -900,7 +944,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
                     autoComplete="off"
                     autoCorrect="off"
                     className="option-search__input"
-                    disabled={true}
+                    disabled={false}
                     id="integration"
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -933,7 +977,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
                 className="option-search__indicators css-1hb7zxy-IndicatorsContainer"
               >
                 <span
-                  className="option-search__indicator-separator css-894a34-indicatorSeparator"
+                  className="option-search__indicator-separator css-1u9des2-indicatorSeparator"
                 />
                 <div
                   aria-hidden="true"
@@ -956,6 +1000,13 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
                 </div>
               </div>
             </div>
+            <div>
+              <input
+                name="integration"
+                type="hidden"
+                value=""
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -971,7 +1022,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="license"
           >
-            values.license
+            application.values.license
           </label>
           <div
             className=" css-b62m3t-container"
@@ -1093,7 +1144,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="application_dependency"
           >
-            values.application_dependency
+            application.values.application_dependency
           </label>
           <div
             className=" css-b62m3t-container"
@@ -1226,7 +1277,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="update_practice"
           >
-            values.update_practice
+            application.values.update_practice
           </label>
           <textarea
             aria-invalid={false}
@@ -1254,7 +1305,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="security_practice_monitoring"
           >
-            values.security_practice_monitoring
+            application.values.security_practice_monitoring
           </label>
           <textarea
             aria-invalid={false}
@@ -1282,7 +1333,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="recovery_practices_convalescence"
           >
-            values.recovery_practices_convalescence
+            application.values.recovery_practices_convalescence
           </label>
           <textarea
             aria-invalid={false}
@@ -1310,7 +1361,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="user_rights_management"
           >
-            values.user_rights_management
+            application.values.user_rights_management
           </label>
           <input
             aria-invalid={false}
@@ -1339,7 +1390,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="security_solutions"
           >
-            values.security_solutions
+            application.values.security_solutions
           </label>
           <textarea
             aria-invalid={false}
@@ -1374,7 +1425,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="product_owner"
           >
-            values.product_owner
+            application.values.product_owner
           </label>
           <input
             aria-invalid={false}
@@ -1403,7 +1454,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="application_holder"
           >
-            values.application_holder
+            application.values.application_holder
           </label>
           <input
             aria-invalid={false}
@@ -1432,7 +1483,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="admin_users"
           >
-            values.admin_users
+            application.values.admin_users
           </label>
           <textarea
             aria-invalid={false}
@@ -1460,7 +1511,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="liability_professional_users"
           >
-            values.liability_professional_users
+            application.values.liability_professional_users
           </label>
           <textarea
             aria-invalid={false}
@@ -1488,7 +1539,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="holder_extra_info"
           >
-            values.holder_extra_info
+            application.values.holder_extra_info
           </label>
           <textarea
             aria-invalid={false}
@@ -1514,7 +1565,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="provider"
           >
-            values.provider
+            application.values.provider
           </label>
           <div
             className=" css-b62m3t-container"
@@ -1638,7 +1689,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="provider_responsibility"
           >
-            values.provider_responsibility
+            application.values.provider_responsibility
           </label>
           <textarea
             aria-invalid={false}
@@ -1666,7 +1717,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="additional_contacts"
           >
-            values.additional_contacts
+            application.values.additional_contacts
           </label>
           <textarea
             aria-invalid={false}
@@ -1701,7 +1752,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="known_issues"
           >
-            values.known_issues
+            application.values.known_issues
           </label>
           <textarea
             aria-invalid={false}
@@ -1729,7 +1780,7 @@ exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
             className="form-label"
             htmlFor="fileUrl"
           >
-            values.fileUrl
+            application.values.fileUrl
           </label>
           <input
             aria-invalid={false}

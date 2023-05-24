@@ -14,7 +14,6 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             obj.person_register = values.person_register
             obj.personal_info_logging = values.personal_info_logging
             obj.install_info = values.install_info
-            obj.keywords = values.keywords
             obj.update_practice = values.update_practice
             obj.security_practice_monitoring = values.security_practice_monitoring
             obj.recovery_practices_convalescence = values.recovery_practices_convalescence
@@ -53,6 +52,12 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
                 obj.provider = values.provider.value
             }
 
+            if (!values.keywords) {
+                obj.keywords = []
+            } else {
+                obj.keywords = values.keywords.map((item: any) => item.value)
+            }
+
             if (!values.installed_server) {
                 obj.installed_server = []
             } else {
@@ -85,9 +90,6 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             if (values.last_modified_time) {
                 obj.last_modified_time = values.last_modified_time
             }
-            if (values.id) {
-                obj.id = values.id
-            }
             if (values.base_id) {
                 obj.base_id = values.base_id
             }
@@ -113,6 +115,16 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
                 obj.services = []
             } else {
                 obj.services = values.services.map((item: any) => item.value)
+            }
+
+            if (values.created_time) {
+                obj.created_time = values.created_time
+            }
+            if (values.last_modified_time) {
+                obj.last_modified_time = values.last_modified_time
+            }
+            if (values.base_id) {
+                obj.base_id = values.base_id
             }
             break;
         case 'service':
@@ -162,6 +174,186 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             } else {
                 obj.contract = values.contract.value
             }
+
+            if (values.created_time) {
+                obj.created_time = values.created_time
+            }
+            if (values.last_modified_time) {
+                obj.last_modified_time = values.last_modified_time
+            }
+            if (values.base_id) {
+                obj.base_id = values.base_id
+            }
+            if (values.id_prefix) {
+                obj.id_prefix = values.id_prefix
+            }
+            break;
+        case 'server':
+            // General data
+            obj.name = values.name
+            obj.description = values.description
+            obj.visibility = values.visibility
+
+            obj.server_role = values.server_role
+            obj.service_level = values.service_level
+            obj.place_of_use = values.place_of_use
+            obj.product_owner = values.product_owner
+            obj.server_model = values.server_model
+            obj.backup_data = values.backup_data
+            obj.backup_device = values.backup_device
+            obj.public_ip_addresses = values.public_ip_addresses
+            obj.dns_names = values.dns_names
+            obj.server_type = values.server_type
+            obj.environment_type = values.environment_type
+            obj.dedicated = values.dedicated
+            obj.maintenance_window = values.maintenance_window
+            obj.device_criticality = values.device_criticality
+            obj.security_level = values.security_level
+            obj.server_status = values.server_status
+            obj.install_date = values.install_date
+            obj.ip_address = values.ip_address
+            obj.updates = values.updates
+            obj.verification_practices = values.verification_practices
+            obj.recovery_practices_convalescence = values.recovery_practices_convalescence
+            obj.logging = values.logging
+            obj.access_rights_management = values.access_rights_management
+            obj.security_solutions = values.security_solutions
+            obj.external_rights = values.external_rights
+            obj.domain_name = values.domain_name
+            obj.sub_domain = values.sub_domain
+            obj.ip_address_type = values.ip_address_type
+            obj.subnet_mask = values.subnet_mask
+            obj.default_gateway = values.default_gateway
+            obj.mac_address = values.mac_address
+
+            if (values.applications.length === 0) {
+                obj.applications = []
+            } else {
+                obj.applications = values.applications.map((item: any) => item.value)
+            }
+
+            if (values.customership.length === 0) {
+                obj.customership = []
+            } else {
+                obj.customership = values.customership.map((item: any) => item.value)
+            }
+
+            if (values.created_time) {
+                obj.created_time = values.created_time
+            }
+            if (values.last_modified_time) {
+                obj.last_modified_time = values.last_modified_time
+            }
+            if (values.base_id) {
+                obj.base_id = values.base_id
+            }
+            if (values.id_prefix) {
+                obj.id_prefix = values.id_prefix
+            }
+            break;
+        case 'integration':
+            // General data
+            obj.name = values.name
+            obj.description = values.description
+            obj.visibility = values.visibility
+            obj.environment_type = values.environment_type
+
+            if (!values.server_platform) {
+                obj.server_platform = null
+            } else {
+                obj.server_platform = values.server_platform.value
+            }
+
+            if (values.created_time) {
+                obj.created_time = values.created_time
+            }
+            if (values.last_modified_time) {
+                obj.last_modified_time = values.last_modified_time
+            }
+            if (values.base_id) {
+                obj.base_id = values.base_id
+            }
+            if (values.id_prefix) {
+                obj.id_prefix = values.id_prefix
+            }
+            break;
+        case 'provider':
+            // General data
+            obj.name = values.name
+            obj.description = values.description
+            obj.visibility = values.visibility
+
+            obj.business_id = values.business_id
+            obj.provider_type = values.provider_type
+            obj.full_address = values.full_address
+            obj.switch_phone = values.switch_phone
+            obj.general_email = values.general_email
+            obj.support_phone = values.support_phone
+            obj.support_email = values.support_email
+            obj.additional_contact = values.additional_contact
+            obj.provider_user_contact = values.provider_user_contact
+            obj.extra_url = values.extra_url
+
+            if (values.related_contracts.length === 0) {
+                obj.related_contracts = []
+            } else {
+                obj.related_contracts = values.related_contracts.map((item: any) => item.value)
+            }
+
+            if (values.related_applications.length === 0) {
+                obj.related_applications = []
+            } else {
+                obj.related_applications = values.related_applications.map((item: any) => item.value)
+            }
+
+            if (values.related_services.length === 0) {
+                obj.related_services = []
+            } else {
+                obj.related_services = values.related_services.map((item: any) => item.value)
+            }
+
+            if (values.created_time) {
+                obj.created_time = values.created_time
+            }
+            if (values.last_modified_time) {
+                obj.last_modified_time = values.last_modified_time
+            }
+            if (values.base_id) {
+                obj.base_id = values.base_id
+            }
+            if (values.id_prefix) {
+                obj.id_prefix = values.id_prefix
+            }
+            break;
+        case 'license':
+            // General data
+            obj.name = values.name
+            obj.description = values.description
+            obj.visibility = values.visibility
+            obj.valid_from_date = values.valid_from_date
+            obj.valid_until_date = values.valid_until_date
+            obj.license_type = values.license_type
+            obj.audits = values.audits
+
+            if (!values.contract) {
+                obj.contract = null
+            } else {
+                obj.contract = values.contract.value
+            }
+
+            if (values.created_time) {
+                obj.created_time = values.created_time
+            }
+            if (values.last_modified_time) {
+                obj.last_modified_time = values.last_modified_time
+            }
+            if (values.base_id) {
+                obj.base_id = values.base_id
+            }
+            if (values.id_prefix) {
+                obj.id_prefix = values.id_prefix
+            }
+            break;
     }
     return obj
 }

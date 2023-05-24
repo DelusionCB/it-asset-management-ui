@@ -17,30 +17,30 @@ function ProviderDisplay ({values, t, navigate}: providerDisplayPropTypes): JSX.
 
             <DisplayDescription t={t} label='provider.description' />
 
-            <DisplayText t={t} value={values.name} label='values.name' />
-            <DisplayText t={t} value={values.description} label='values.description' />
-            <DisplayText t={t} value={values.business_id} label='values.business_id' />
-            <DisplayStatus t={t} value={values.provider_type} label='values.provider_type' />
+            <DisplayText t={t} value={values.name} label='provider.values.name' />
+            <DisplayText t={t} value={values.description} label='provider.values.description' />
+            <DisplayText t={t} value={values.business_id} label='provider.values.business_id' />
+            <DisplayStatus t={t} value={values.provider_type} label='provider.values.provider_type' />
 
             <DisplayDescription t={t} label='provider.contacts' />
 
-            <DisplayText t={t} value={values.full_address} label='values.full_address' />
-            <DisplayText t={t} value={values.switch_phone} label='values.switch_phone' />
-            <DisplayText t={t} value={values.general_email} label='values.general_email' />
-            <DisplayText t={t} value={values.support_phone} label='values.support_phone' />
-            <DisplayText t={t} value={values.support_email} label='values.support_email' />
-            <DisplayText t={t} value={values.additional_contact} label='values.additional_contact' />
+            <DisplayText t={t} value={values.full_address} label='provider.values.full_address' />
+            <DisplayText t={t} value={values.switch_phone} label='provider.values.switch_phone' />
+            <DisplayText t={t} value={values.general_email} label='provider.values.general_email' />
+            <DisplayText t={t} value={values.support_phone} label='provider.values.support_phone' />
+            <DisplayText t={t} value={values.support_email} label='provider.values.support_email' />
+            <DisplayText t={t} value={values.additional_contact} label='provider.values.additional_contact' />
 
             <DisplayDescription t={t} label='provider.dependency' />
 
-            <DisplayArray value={values.related_services} navigate={navigate} t={t} label='values.related_services_provider' />
-            <DisplayArray value={values.related_applications} navigate={navigate} t={t} label='values.related_applications' />
-            <DisplayArray value={values.related_contracts} navigate={navigate} t={t} label='values.related_contracts' />
-            <DisplayText value={values.provider_user_contact} t={t} label='values.provider_user_contact' />
+            <DisplayArray value={values.related_services} navigate={navigate} t={t} label='provider.values.related_services' />
+            <DisplayArray value={values.related_applications} navigate={navigate} t={t} label='provider.values.related_applications' />
+            <DisplayArray value={values.related_contracts} navigate={navigate} t={t} label='provider.values.related_contracts' />
+            <DisplayText value={values.provider_user_contact} t={t} label='provider.values.provider_user_contact' />
 
             <DisplayDescription t={t} label='provider.extra' />
 
-            <DisplayUrl value={values.extra_url} t={t} label='values.extra_url' />
+            <DisplayUrl value={values.extra_url} t={t} label='provider.values.extra_url' />
 
         </Container>
     )

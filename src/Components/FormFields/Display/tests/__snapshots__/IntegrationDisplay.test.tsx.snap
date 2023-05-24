@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LicenseDisplay /> Snapshot renders correctly 1`] = `
+exports[`<IntegrationDisplay /> Snapshot renders correctly 1`] = `
 <div
   className="directory-wrapper container"
 >
@@ -37,51 +37,21 @@ exports[`<LicenseDisplay /> Snapshot renders correctly 1`] = `
   <div
     className="display row"
   >
-    <div
-      className="row"
-    >
-      <h3 />
-      <p />
-    </div>
-  </div>
-  <div
-    className="display row"
-  >
-    <div
-      className="row"
-    >
-      <h3 />
-      <p />
-    </div>
-  </div>
-  <div
-    className="display row"
-  >
-    <div
-      className="row"
-    >
-      <h3 />
-      <p />
-    </div>
-  </div>
-  <div
-    className="display row"
-  >
-    <div
-      className="row"
-    >
-      <h3 />
-      <p />
-    </div>
-  </div>
-  <div
-    className="display row"
-  >
     <h3>
       :
     </h3>
     <div>
       <h4 />
+    </div>
+  </div>
+  <div
+    className="display row"
+  >
+    <div
+      className="row"
+    >
+      <h3 />
+      <p />
     </div>
   </div>
 </div>

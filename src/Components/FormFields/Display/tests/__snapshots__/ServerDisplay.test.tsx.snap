@@ -47,12 +47,10 @@ exports[`<ServerDisplay /> Snapshot renders correctly 1`] = `
   <div
     className="display row"
   >
-    <div
-      className="row"
-    >
-      <h3 />
-      <p />
-    </div>
+    <h3>
+      :
+    </h3>
+    <h4 />
   </div>
   <div
     className="display row"

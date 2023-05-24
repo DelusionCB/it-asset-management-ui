@@ -73,7 +73,7 @@ function DirectoryForm ({isDisabled, type}: formTypes): JSX.Element {
                     id='name'
                     disabled={false}
                     invalid={false}
-                    label={'values.name'}
+                    label={'directory.values.name'}
                     onChange={(e) => { handleChange(e); }}
                     placeholder={'placeholder.name'}
                     value={values.name}
@@ -86,7 +86,7 @@ function DirectoryForm ({isDisabled, type}: formTypes): JSX.Element {
                     disabled={false}
                     invalid={false}
                     type='textarea'
-                    label={'values.description'}
+                    label={'directory.values.description'}
                     onChange={(e) => { handleChange(e) }}
                     placeholder={'placeholder.description'}
                     value={values.description}
@@ -97,7 +97,7 @@ function DirectoryForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.applications'}
+                    label={'directory.values.applications'}
                     endpoint='application'
                     id={'applications'}
                     placeholder={'placeholder.applications'}
@@ -110,7 +110,7 @@ function DirectoryForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.servers'}
+                    label={'directory.values.servers'}
                     endpoint='server'
                     id={'servers'}
                     placeholder={'placeholder.servers'}
@@ -123,7 +123,7 @@ function DirectoryForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <Row>
                 <SearchableSelect
-                    label={'values.services'}
+                    label={'directory.values.services'}
                     endpoint='service'
                     id={'services'}
                     placeholder={'placeholder.services'}

@@ -1,9 +1,9 @@
 import React from 'react';
 import {
     appDependencyItemProps,
-    contractDataProps,
+    contractDataPropTypes, integrationDataPropTypes,
     licenseItemProps, providerDataPropTypes,
-    serverDataProps,
+    serverDataPropTypes,
     serviceDataProps,
 } from './types.directories';
 
@@ -12,13 +12,12 @@ import {NavigateFunction} from 'react-router-dom';
 // eslint-disable-next-line import/named
 import {TFunction} from 'i18next';
 
-
 export interface textFieldProps {
     label: string
     validation?: object
     value?: string | undefined
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    type: 'text' | 'file' | 'textarea'
+    type: 'text' | 'file' | 'textarea' | 'date' | 'email'
     id: string
     placeholder: string
     disabled: boolean
@@ -97,7 +96,7 @@ export interface MyOption {label: string, value: number}
 
 // Display components
 
-type ItemProps = serverDataProps | licenseItemProps | appDependencyItemProps | contractDataProps | serviceDataProps | providerDataPropTypes;
+type ItemProps = serverDataPropTypes | licenseItemProps | appDependencyItemProps | contractDataPropTypes | serviceDataProps | providerDataPropTypes | integrationDataPropTypes;
 
 export interface basePropTypes {
     t: TFunction
@@ -119,6 +118,10 @@ export interface textArrayPropTypes extends basePropTypes {
 }
 
 export interface textPropTypes extends basePropTypes {
+    value: string | number
+}
+
+export interface urlPropTypes extends basePropTypes {
     value: string
 }
 

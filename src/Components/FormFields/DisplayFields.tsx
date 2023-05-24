@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-    contractDataProps,
-    extendedApplicationDataProps, extendedDirectoryDataProps,
-    LicenseDataProps, providerDataPropTypes, serverDataProps, serviceDataProps,
+    contractDataPropTypes,
+    extendedApplicationDataProps, extendedDirectoryDataProps, integrationDataPropTypes,
+    licenseDataPropTypes, providerDataPropTypes, serverDataPropTypes, serviceDataProps,
 } from '../../Types/types.directories';
 import ApplicationDisplay from './Display/ApplicationDisplay';
 import DirectoryDisplay from './Display/DirectoryDisplay';
@@ -14,14 +14,29 @@ import ServerDisplay from './Display/ServerDisplay';
 import './index.scss'
 import ContractDisplay from './Display/ContractDisplay';
 import ProviderDisplay from './Display/ProviderDisplay';
+import IntegrationDisplay from './Display/IntegrationDisplay';
 
 interface displayFieldsProps<T> {
-    type: 'application' | 'directory' | 'license' | 'server' | 'service' | 'contract' | 'provider' | 'nopath' | string
+    type: 'application' | 'directory' | 'license' | 'server' | 'service' | 'contract' | 'provider' | 'integration' | 'nopath' | string
     item: T
     loading: boolean
 }
 
-function DisplayFields<T extends extendedApplicationDataProps | extendedDirectoryDataProps | LicenseDataProps | serverDataProps | serviceDataProps | contractDataProps | providerDataPropTypes> ({type, item, loading}: displayFieldsProps<T>): JSX.Element {
+function DisplayFields<T extends
+extendedApplicationDataProps |
+extendedDirectoryDataProps |
+licenseDataPropTypes |
+serverDataPropTypes |
+serviceDataProps |
+contractDataPropTypes |
+providerDataPropTypes |
+integrationDataPropTypes
+>
+({
+    type,
+    item,
+    loading,
+}: displayFieldsProps<T>): JSX.Element {
     const {t} = useTranslation()
     const navigate = useNavigate()
 
@@ -37,11 +52,11 @@ function DisplayFields<T extends extendedApplicationDataProps | extendedDirector
                 )
             case 'license':
                 return (
-                    <LicenseDisplay navigate={navigate} t={t} values={item as LicenseDataProps} />
+                    <LicenseDisplay navigate={navigate} t={t} values={item as licenseDataPropTypes} />
                 )
             case 'server':
                 return (
-                    <ServerDisplay navigate={navigate} t={t} values={item as serverDataProps} />
+                    <ServerDisplay navigate={navigate} t={t} values={item as serverDataPropTypes} />
                 )
             case 'service':
                 return (
@@ -49,11 +64,15 @@ function DisplayFields<T extends extendedApplicationDataProps | extendedDirector
                 )
             case 'contract':
                 return (
-                    <ContractDisplay navigate={navigate} t={t} values={item as contractDataProps} />
+                    <ContractDisplay navigate={navigate} t={t} values={item as contractDataPropTypes} />
                 )
             case 'provider':
                 return (
                     <ProviderDisplay navigate={navigate} t={t} values={item as providerDataPropTypes} />
+                )
+            case 'integration':
+                return (
+                    <IntegrationDisplay navigate={navigate} t={t} values={item as integrationDataPropTypes} />
                 )
             case 'nopath':
                 return (

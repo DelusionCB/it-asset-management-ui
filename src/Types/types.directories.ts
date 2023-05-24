@@ -61,7 +61,7 @@ export interface providerDataPropTypes {
     additional_contact: string
     provider_user_contact: string
     extra_url: string
-    related_contracts: contractDataProps[]
+    related_contracts: contractDataPropTypes[]
     related_applications: applicationDataProps[]
     related_services: serviceDataProps[]
 }
@@ -98,10 +98,23 @@ export interface serviceDataProps {
     provider_contact: string
     additional_contacts: string
     fileUrl: string | null
-    contract: contractDataProps | null
+    contract: contractDataPropTypes | null
     provider: providerDataPropTypes | null
     related_services: serviceDataProps[]
     required_installations: applicationDataProps[]
+    visibility: string
+}
+
+export interface integrationDataPropTypes {
+    base_id?: string
+    base_token?: string
+    id_prefix?: string
+    name: string
+    description: string
+    created_time?: string
+    last_modified_time?: string
+    server_platform: serverDataPropTypes | null
+    environment_type: string
     visibility: string
 }
 
@@ -110,7 +123,7 @@ export interface extendedDirectoryDataProps {
     description: string
     base_id?: string
     applications: applicationDataProps[]
-    servers: serverDataProps[]
+    servers: serverDataPropTypes[]
     services: serviceDataProps[]
     created_time?: string
     last_modified_time?: string
@@ -118,36 +131,51 @@ export interface extendedDirectoryDataProps {
     visibility: string
 }
 
-export interface contractDataProps {
-    name: string
-    description: string
+export interface contractDataPropTypes {
     base_id?: string
     created_time?: string
     last_modified_time?: string
-    placeholder: string
     id_prefix?: string
     visibility: string
-}
-
-export interface LicenseDataProps {
-    base_id?: string
-    id_prefix?: string
     name: string
     description: string
+    contract_number: string
+    contract_type: string
+    provider_contact: string
+    invoices_per_year: number
+    value_per_year: number
+    place_of_use: string
+    valid_from_date: string
+    valid_until_date: string
+    contract_continuation: string
+    contract_decisions: string
+    contract_holder: string
+    fileUrl: string | null
+    provider: providerDataPropTypes | null
+    related_applications: applicationDataProps[]
+}
+
+export interface licenseDataPropTypes {
+    base_id?: string
+    id_prefix?: string
+    visibility: string
+    name: string
+    description: string
+    audits: string
     created_time?: string
     last_modified_time?: string
     valid_from_date: string
     valid_until_date: string
     license_type: string
     fileUrl: string | null
-    contract: string
+    contract: contractDataPropTypes | null
 }
 
 export interface DirectoryItemProps {
     data: applicationDataProps
 }
 
-export interface serverDataProps {
+export interface serverDataPropTypes {
     name: string
     description: string
     base_id?: string
@@ -157,7 +185,7 @@ export interface serverDataProps {
     last_modified_time?: string
     visibility: string
     server_role: string
-    operating_organization: string
+    customership: customerDataProps[]
     place_of_use: string
     product_owner: string
     server_model: string
@@ -172,7 +200,7 @@ export interface serverDataProps {
     device_criticality: string
     security_level: string
     service_level: string
-    status: string
+    server_status: string
     install_date: string
     ip_address: string
     updates: string
@@ -241,7 +269,7 @@ export interface extendedApplicationDataProps {
     contract: null
     fileUrl: string | null
     license: licenseItemProps | null
-    installed_server: serverDataProps[]
+    installed_server: serverDataPropTypes[]
     service_dependency: ServiceDependencyDataProps[]
     integration: IntegrationsDataProps[]
     application_dependency: appDependencyItemProps[]
