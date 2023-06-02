@@ -6,17 +6,29 @@ import {postData} from '../../Api/Utils/archiveUtils';
 import {useNavigate} from 'react-router-dom'
 import {actionButtonPropTypes} from '../../Types/types.components';
 
-function ActionButton ({values, action, type}: actionButtonPropTypes): JSX.Element {
+function ActionButton ({values, action, type, mode, disabled = false}: actionButtonPropTypes): JSX.Element {
     const {t} = useTranslation()
     const navigate = useNavigate()
 
     function handleAction (): void {
         switch (action) {
-            case 'create' || 'edit':
+            case 'create':
+            case 'save':
                 void postData(navigate, action, type, values)
                 break;
-            case 'copy':
-
+            case 'edit':
+                navigate(`/archive/${action}/${values.base_id}`, {
+                    state: {
+                        api: type,
+                        id: values.base_id,
+                        action,
+                    },
+                });
+                window.scrollTo({top: 0, behavior: 'smooth'});
+                break;
+            case 'cancel':
+                navigate(-1)
+                window.scrollTo({top: 0, behavior: 'smooth'});
                 break;
         }
     }
@@ -25,8 +37,9 @@ function ActionButton ({values, action, type}: actionButtonPropTypes): JSX.Eleme
         <Button
             className='action-button'
             onClick={() => { handleAction(); }}
+            disabled={disabled}
         >
-            {t(`${type}.${action}`)}
+            {t(`button.${action}`)}
         </Button>
     )
 }

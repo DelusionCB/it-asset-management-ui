@@ -9,6 +9,7 @@ import {
 } from '../../CustomComponents/DisplayComponents';
 import './index.scss';
 import {licenseDisplayPropTypes} from '../../../Types/types.displays';
+import ActionButtons from '../../ActionButtons/ActionButtons';
 
 function LicenseDisplay ({values, t, navigate}: licenseDisplayPropTypes): JSX.Element {
     return (
@@ -29,7 +30,11 @@ function LicenseDisplay ({values, t, navigate}: licenseDisplayPropTypes): JSX.El
 
             <DisplayObject t={t} navigate={navigate} value={values.contract} label='license.values.contract' />
             {/* <DisplayText t={t} value={values.fileUrl} label='values.fileUrl' /> */}
-
+            <ActionButtons
+                values={values}
+                type={'license'}
+                mode={'display'}
+            />
         </Container>
     )
 }

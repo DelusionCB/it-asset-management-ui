@@ -11,7 +11,7 @@ describe('<FormFields />', () => {
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <FormFields />
+                <FormFields mode='create' params={{}} loading={false} />
             </BrowserRouter>,
         );
     });

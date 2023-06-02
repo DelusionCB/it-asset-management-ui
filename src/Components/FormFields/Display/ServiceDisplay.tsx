@@ -9,6 +9,7 @@ import {
 } from '../../CustomComponents/DisplayComponents';
 import './index.scss';
 import {serviceDisplayPropTypes} from '../../../Types/types.displays';
+import ActionButtons from '../../ActionButtons/ActionButtons';
 
 function ServiceDisplay ({values, t, navigate}: serviceDisplayPropTypes): JSX.Element {
     return (
@@ -44,7 +45,11 @@ function ServiceDisplay ({values, t, navigate}: serviceDisplayPropTypes): JSX.El
             <DisplayTextArray t={t} value={values.customership} label='service.values.customership' />
             <DisplayStatus t={t} value={values.validity_type} label='service.values.validity_type' />
             {/* <DisplayText t={t} value={values.fileUrl} label='values.fileUrl' /> */}
-
+            <ActionButtons
+                values={values}
+                type={'service'}
+                mode={'display'}
+            />
         </Container>
     )
 }

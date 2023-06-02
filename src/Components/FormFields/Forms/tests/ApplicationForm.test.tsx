@@ -11,7 +11,7 @@ describe('<ApplicationForm  />', () => {
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <ApplicationForm type='application' isDisabled={jest.fn()} />
+                <ApplicationForm editValues={{}} mode='create' type='application' isDisabled={jest.fn()} />
             </BrowserRouter>,
         );
     });

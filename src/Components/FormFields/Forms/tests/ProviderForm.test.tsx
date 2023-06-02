@@ -11,7 +11,7 @@ describe('<ProviderForm />', () => {
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <ProviderForm type='provider' isDisabled={jest.fn()} />
+                <ProviderForm editValues={{}} mode='create' type='provider' isDisabled={jest.fn()} />
             </BrowserRouter>,
         );
     });

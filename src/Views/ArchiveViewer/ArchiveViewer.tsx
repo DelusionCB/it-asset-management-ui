@@ -6,7 +6,7 @@ import {Spinner} from 'reactstrap';
 import Back from '../../Components/CustomComponents/BackButton';
 import './index.scss'
 
-function FormViewer (): JSX.Element {
+function ArchiveViewer (): JSX.Element {
     const params = useLocation();
     const directParams = useParams();
     const [item, setItem] = useState<any>({});
@@ -56,4 +56,4 @@ function FormViewer (): JSX.Element {
     }
 }
 
-export default FormViewer;
+export default ArchiveViewer;

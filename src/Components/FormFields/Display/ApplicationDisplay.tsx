@@ -10,6 +10,7 @@ import {
 } from '../../CustomComponents/DisplayComponents';
 import './index.scss';
 import {appDisplayPropTypes} from '../../../Types/types.displays';
+import ActionButtons from '../../ActionButtons/ActionButtons';
 
 function ApplicationDisplay ({values, t, navigate}: appDisplayPropTypes): JSX.Element {
     return (
@@ -68,6 +69,11 @@ function ApplicationDisplay ({values, t, navigate}: appDisplayPropTypes): JSX.El
 
             <DisplayText t={t} value={values.known_issues} label='application.values.known_issues' />
             {/* <DisplayText t={t} value={values.fileUrl} label='values.fileUrl' /> */}
+            <ActionButtons
+                values={values}
+                type={'application'}
+                mode={'display'}
+            />
         </Container>
     );
 }

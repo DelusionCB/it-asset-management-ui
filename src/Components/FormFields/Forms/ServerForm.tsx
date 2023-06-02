@@ -15,7 +15,7 @@ import AsyncSelect from '../../CustomComponents/AsyncSelect';
 import SearchableSelect from '../../CustomComponents/SearchableSelect';
 import ActionButtons from '../../ActionButtons/ActionButtons';
 
-function ServerForm ({isDisabled, type}: formTypes): JSX.Element {
+function ServerForm ({isDisabled, type, mode, editValues}: formTypes): JSX.Element {
     const [values, setValues] = useState<serverDataPropTypes>(serverDefaultValues)
     const {t} = useTranslation()
 
@@ -28,13 +28,21 @@ function ServerForm ({isDisabled, type}: formTypes): JSX.Element {
     }
 
     useEffect(() => {
-        // Invoke debouncedCheck with updated values
-        debouncedCheck(values, serverDefaultValues, isDisabled);
+        if (Object.keys(editValues).length !== 0 && mode === 'edit') {
+            setValues(editValues)
+        }
+    }, [editValues, mode])
 
-        // Cleanup function to cancel debounce on unmount
-        return () => {
-            debouncedCheck.cancel();
-        };
+    useEffect(() => {
+        if (mode !== 'edit') {
+            // Invoke debouncedCheck with updated values
+            debouncedCheck(values, serverDefaultValues, isDisabled);
+
+            // Cleanup function to cancel debounce on unmount
+            return () => {
+                debouncedCheck.cancel();
+            };
+        }
     }, [values]);
 
     useEffect(() => {
@@ -43,7 +51,7 @@ function ServerForm ({isDisabled, type}: formTypes): JSX.Element {
             handleClear<serverDataPropTypes>(
                 values,
                 [],
-                [],
+                ['applications'],
                 setValues,
             )
         }
@@ -52,7 +60,7 @@ function ServerForm ({isDisabled, type}: formTypes): JSX.Element {
     return (
         <>
             <Row>
-                <h1>{t('server.create')}</h1>
+                <h1>{t(`server.${mode}`)}</h1>
             </Row>
             <Row>
                 <h2>{t('server.visibility')}</h2>
@@ -512,8 +520,8 @@ function ServerForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <ActionButtons
                 values={values}
-                actions={['create']}
                 type={type}
+                mode={mode}
             />
         </>
     );

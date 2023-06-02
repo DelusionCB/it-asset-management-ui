@@ -1157,13 +1157,24 @@ exports[`<ServiceForm /> Snapshot renders correctly 1`] = `
       </div>
     </div>
   </div>,
-  <div>
+  <div
+    className="action-buttons"
+  >
     <button
       className="action-button btn btn-secondary"
+      disabled={false}
       onClick={[Function]}
       type="button"
     >
-      service.create
+      button.cancel
+    </button>
+    <button
+      className="action-button btn btn-secondary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      button.create
     </button>
   </div>,
 ]

@@ -4,7 +4,7 @@ import './index.scss'
 import {Link} from 'react-router-dom';
 import {gridPropTypes, itemPropTypes} from '../../Types/types.components';
 
-function Item ({key, item, t}: itemPropTypes): JSX.Element {
+function Item ({itemKey, item, t}: itemPropTypes): JSX.Element {
     function getIcon (type: string): JSX.Element {
         let icon = ''
         switch (type) {
@@ -34,7 +34,7 @@ function Item ({key, item, t}: itemPropTypes): JSX.Element {
     }
 
     return (
-        <div className="col-xs-12 col-md-6 col-lg-4" key={key}>
+        <div className="col-xs-12 col-md-6 col-lg-4" key={itemKey}>
             <Link
                 aria-label={`${t('redirect', {value: item.name})}`}
                 className='link-item'
@@ -59,7 +59,7 @@ function Item ({key, item, t}: itemPropTypes): JSX.Element {
 function ItemGrid ({items, t}: gridPropTypes): JSX.Element {
     return (
         <div className="row event-grid">
-            {items.map((item, key) => <Item t={t} item={item} key={key}/>)}
+            {items.map((item, key) => <Item t={t} item={item} itemKey={key}/>)}
         </div>
     )
 }

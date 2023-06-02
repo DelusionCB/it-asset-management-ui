@@ -1,17 +1,17 @@
 import React from 'react';
 import * as TestRenderer from 'react-test-renderer';
-import FormViewer from '../FormViewer';
+import ArchiveViewer from '../ArchiveViewer';
 import {BrowserRouter} from 'react-router-dom'
 import '@testing-library/jest-dom'
 
-describe('<FormViewer />', () => {
+describe('<ArchiveViewer />', () => {
     let renderer: TestRenderer.ReactTestRenderer;
 
     // Render the component before tests
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <FormViewer />
+                <ArchiveViewer />
             </BrowserRouter>,
         );
     });

@@ -2,1806 +2,469 @@
 
 exports[`<DisplayFields /> Snapshot renders correctly 1`] = `
 <div
-  className="container"
+  className="display-fields"
 >
   <div
-    className="row"
+    className="directory-wrapper container"
   >
     <div
-      className="selection-wrapper"
-    >
-      <div
-        className="selection-header"
-      >
-        <h1>
-          select-archive
-        </h1>
-      </div>
-      <div
-        className="selection-radios"
-      >
-        <div>
-          <div
-            className="form-check"
-          >
-            <label
-              className="form-check-label"
-              htmlFor="application-0"
-            >
-              radios.application
-            </label>
-            <input
-              aria-disabled={false}
-              checked={true}
-              className="form-check-input"
-              disabled={false}
-              id="application-0"
-              name="application"
-              onChange={[Function]}
-              type="radio"
-            />
-          </div>
-        </div>
-        <div>
-          <div
-            className="form-check"
-          >
-            <label
-              className="form-check-label"
-              htmlFor="directory-1"
-            >
-              radios.directory
-            </label>
-            <input
-              aria-disabled={false}
-              checked={false}
-              className="form-check-input"
-              disabled={false}
-              id="directory-1"
-              name="directory"
-              onChange={[Function]}
-              type="radio"
-            />
-          </div>
-        </div>
-        <div>
-          <div
-            className="form-check"
-          >
-            <label
-              className="form-check-label"
-              htmlFor="license-2"
-            >
-              radios.license
-            </label>
-            <input
-              aria-disabled={false}
-              checked={false}
-              className="form-check-input"
-              disabled={false}
-              id="license-2"
-              name="license"
-              onChange={[Function]}
-              type="radio"
-            />
-          </div>
-        </div>
-        <div>
-          <div
-            className="form-check"
-          >
-            <label
-              className="form-check-label"
-              htmlFor="server-3"
-            >
-              radios.server
-            </label>
-            <input
-              aria-disabled={false}
-              checked={false}
-              className="form-check-input"
-              disabled={false}
-              id="server-3"
-              name="server"
-              onChange={[Function]}
-              type="radio"
-            />
-          </div>
-        </div>
-        <div>
-          <div
-            className="form-check"
-          >
-            <label
-              className="form-check-label"
-              htmlFor="service-4"
-            >
-              radios.service
-            </label>
-            <input
-              aria-disabled={false}
-              checked={false}
-              className="form-check-input"
-              disabled={false}
-              id="service-4"
-              name="service"
-              onChange={[Function]}
-              type="radio"
-            />
-          </div>
-        </div>
-        <div>
-          <div
-            className="form-check"
-          >
-            <label
-              className="form-check-label"
-              htmlFor="integration-5"
-            >
-              radios.integration
-            </label>
-            <input
-              aria-disabled={false}
-              checked={false}
-              className="form-check-input"
-              disabled={false}
-              id="integration-5"
-              name="integration"
-              onChange={[Function]}
-              type="radio"
-            />
-          </div>
-        </div>
-        <div>
-          <div
-            className="form-check"
-          >
-            <label
-              className="form-check-label"
-              htmlFor="provider-6"
-            >
-              radios.provider
-            </label>
-            <input
-              aria-disabled={false}
-              checked={false}
-              className="form-check-input"
-              disabled={false}
-              id="provider-6"
-              name="provider"
-              onChange={[Function]}
-              type="radio"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="row"
+      className="display-header row"
     >
       <h1>
-        application.create
+        application.app
       </h1>
     </div>
     <div
-      className="row"
-    >
-      <h2>
-        application.visibility
-      </h2>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="textfield col"
-      >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="visibility"
-          >
-            values.visibility
-          </label>
-          <select
-            aria-invalid={false}
-            className="form-select"
-            disabled={false}
-            id="visibility"
-            name="visibility"
-            onChange={[Function]}
-            placeholder="placeholder.visibility"
-            value="published"
-          >
-            <option
-              value="draft"
-            >
-              visibility.draft
-            </option>
-            <option
-              value="hidden"
-            >
-              visibility.hidden
-            </option>
-            <option
-              value="published"
-            >
-              visibility.published
-            </option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
+      className="display-description row"
     >
       <h2>
         application.description
       </h2>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="name"
-          >
-            application.values.name
-          </label>
-          <input
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="name"
-            name="name"
-            onChange={[Function]}
-            placeholder="placeholder.name"
-            type="text"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.name
+        </h3>
+        <p>
+          Application Name
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="description"
-          >
-            application.values.description
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="description"
-            name="description"
-            onChange={[Function]}
-            placeholder="placeholder.description"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.description
+        </h3>
+        <p>
+          Application Description
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="classification"
-          >
-            application.values.classification
-          </label>
-          <select
-            aria-invalid={false}
-            className="form-select"
-            disabled={false}
-            id="classification"
-            name="classification"
-            onChange={[Function]}
-            placeholder="placeholder.classification"
-            value="tosi"
-          >
-            <option
-              value="tosi"
-            >
-              select.tosi
-            </option>
-            <option
-              value="tori"
-            >
-              select.tori
-            </option>
-            <option
-              value="infra"
-            >
-              select.infra
-            </option>
-          </select>
-        </div>
+        <h3>
+          application.values.classification
+        </h3>
+        <p>
+          Application Classification
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
-      <div>
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="customership"
-          >
-            application.values.customership
-          </label>
-          <div
-            className=" css-b62m3t-container"
-            onKeyDown={[Function]}
-          >
-            <span
-              className="css-1f43avz-a11yText-A11yText"
-              id="react-select-2-live-region"
-            />
-            <span
-              aria-atomic="false"
-              aria-live="polite"
-              aria-relevant="additions text"
-              className="css-1f43avz-a11yText-A11yText"
-            />
-            <div
-              className="option-search__control css-13cymwt-control"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
-            >
-              <div
-                className="option-search__value-container option-search__value-container--is-multi css-1fdsijx-ValueContainer"
-              >
-                <div
-                  className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-2-placeholder"
-                >
-                  placeholder.customership
-                </div>
-                <input
-                  aria-autocomplete="list"
-                  aria-describedby="react-select-2-placeholder"
-                  aria-expanded={false}
-                  aria-haspopup={true}
-                  aria-invalid={false}
-                  aria-label="placeholder.customership"
-                  aria-labelledby="customership"
-                  aria-readonly={true}
-                  className="css-mohuvp-dummyInput-DummyInput"
-                  disabled={false}
-                  id="customership"
-                  inputMode="none"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  role="combobox"
-                  tabIndex={0}
-                  value=""
-                />
-              </div>
-              <div
-                className="option-search__indicators css-1hb7zxy-IndicatorsContainer"
-              >
-                <span
-                  className="option-search__indicator-separator css-1u9des2-indicatorSeparator"
-                />
-                <div
-                  aria-hidden="true"
-                  className="option-search__indicator option-search__dropdown-indicator css-1xc3v61-indicatorContainer"
-                  onMouseDown={[Function]}
-                  onTouchEnd={[Function]}
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="css-tj5bde-Svg"
-                    focusable="false"
-                    height={20}
-                    viewBox="0 0 20 20"
-                    width={20}
-                  >
-                    <path
-                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div>
-              <input
-                name="customership"
-                type="hidden"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <h3>
+        application.values.customership
+        :
+      </h3>
+      <h4>
+        no-connections
+      </h4>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="switches col"
+        className="row"
       >
-        <div
-          className="form-check form-switch"
-        >
-          <label
-            className="form-check-label"
-            htmlFor="person_register"
-          >
-            application.values.person_register
-          </label>
-          <input
-            aria-checked={false}
-            aria-invalid={false}
-            checked={false}
-            className="form-check-input"
-            disabled={false}
-            id="person_register"
-            name="person_register"
-            onChange={[Function]}
-            type="checkbox"
-          />
-        </div>
+        <h3>
+          application.values.application_status
+        </h3>
+        <p>
+          select.Active
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="switches col"
+        className="row"
       >
-        <div
-          className="form-check form-switch"
-        >
-          <label
-            className="form-check-label"
-            htmlFor="personal_info_logging"
-          >
-            application.values.personal_info_logging
-          </label>
-          <input
-            aria-checked={false}
-            aria-invalid={false}
-            checked={false}
-            className="form-check-input"
-            disabled={false}
-            id="personal_info_logging"
-            name="personal_info_logging"
-            onChange={[Function]}
-            type="checkbox"
-          />
-        </div>
+        <h3>
+          application.values.person_register
+          :
+        </h3>
+        <p>
+          yes
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="install_info"
-          >
-            application.values.install_info
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="install_info"
-            name="install_info"
-            onChange={[Function]}
-            placeholder="placeholder.install_info"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.personal_info_logging
+          :
+        </h3>
+        <p>
+          no
+        </p>
       </div>
     </div>
     <div
-      className="row"
-    />
-    <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="application_status"
-          >
-            application.values.application_status
-          </label>
-          <select
-            aria-invalid={false}
-            className="form-select"
-            disabled={false}
-            id="application_status"
-            name="application_status"
-            onChange={[Function]}
-            placeholder="placeholder.application_status"
-            value="undefined"
-          >
-            <option
-              value="in_deployment"
-            >
-              select.in_deployment
-            </option>
-            <option
-              value="in_use"
-            >
-              select.in_use
-            </option>
-            <option
-              value="unused"
-            >
-              select.unused
-            </option>
-            <option
-              value="shutdown"
-            >
-              select.shutdown
-            </option>
-            <option
-              value="archived"
-            >
-              select.archived
-            </option>
-            <option
-              value="undefined"
-            >
-              select.undefined
-            </option>
-            <option
-              value="unreleased"
-            >
-              select.unreleased
-            </option>
-            <option
-              value="deleted"
-            >
-              select.deleted
-            </option>
-          </select>
-        </div>
+        <h3>
+          application.values.install_info
+        </h3>
+        <p>
+          Installation Info
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="log_archives"
-          >
-            application.values.log_archives
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="log_archives"
-            name="log_archives"
-            onChange={[Function]}
-            placeholder="placeholder.log_archives"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.keywords
+        </h3>
+        <p>
+          Keyword 1, Keyword 2
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display-description row"
     >
       <h2>
         application.dependency
       </h2>
     </div>
     <div
-      className="row"
+      className="display row"
     >
+      <h3>
+        application.values.installed_server
+        :
+      </h3>
+      <h4>
+        no-connections
+      </h4>
+    </div>
+    <div
+      className="display row"
+    >
+      <h3>
+        application.values.service_dependency
+        :
+      </h3>
+      <h4>
+        no-connections
+      </h4>
+    </div>
+    <div
+      className="display row"
+    >
+      <h3>
+        application.values.integration
+        :
+      </h3>
+      <h4>
+        no-connections
+      </h4>
+    </div>
+    <div
+      className="display row"
+    >
+      <h3>
+        application.values.license
+        :
+      </h3>
       <div>
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="installed_server"
-          >
-            application.values.installed_server
-          </label>
-          <div
-            className=" css-b62m3t-container"
-            onKeyDown={[Function]}
-          >
-            <span
-              className="css-1f43avz-a11yText-A11yText"
-              id="react-select-3-live-region"
-            />
-            <span
-              aria-atomic="false"
-              aria-live="polite"
-              aria-relevant="additions text"
-              className="css-1f43avz-a11yText-A11yText"
-            />
-            <div
-              className="option-search__control css-13cymwt-control"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
-            >
-              <div
-                className="option-search__value-container option-search__value-container--is-multi css-1fdsijx-ValueContainer"
-              >
-                <div
-                  className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-3-placeholder"
-                >
-                  placeholder.server
-                </div>
-                <div
-                  className="option-search__input-container css-qbdosj-Input"
-                  data-value=""
-                >
-                  <input
-                    aria-autocomplete="list"
-                    aria-describedby="react-select-3-placeholder"
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-invalid={false}
-                    aria-label="placeholder.server"
-                    aria-labelledby="installed_server"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    className="option-search__input"
-                    disabled={false}
-                    id="installed_server"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    role="combobox"
-                    spellCheck="false"
-                    style={
-                      {
-                        "background": 0,
-                        "border": 0,
-                        "color": "inherit",
-                        "font": "inherit",
-                        "gridArea": "1 / 2",
-                        "label": "input",
-                        "margin": 0,
-                        "minWidth": "2px",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "100%",
-                      }
-                    }
-                    tabIndex={0}
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-              <div
-                className="option-search__indicators css-1hb7zxy-IndicatorsContainer"
-              >
-                <span
-                  className="option-search__indicator-separator css-1u9des2-indicatorSeparator"
-                />
-                <div
-                  aria-hidden="true"
-                  className="option-search__indicator option-search__dropdown-indicator css-1xc3v61-indicatorContainer"
-                  onMouseDown={[Function]}
-                  onTouchEnd={[Function]}
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="css-tj5bde-Svg"
-                    focusable="false"
-                    height={20}
-                    viewBox="0 0 20 20"
-                    width={20}
-                  >
-                    <path
-                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div>
-              <input
-                name="installed_server"
-                type="hidden"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
+        <h4>
+          no-connections
+        </h4>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
+      <h3>
+        application.values.contract
+        :
+      </h3>
       <div>
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="service_dependency"
-          >
-            application.values.service_dependency
-          </label>
-          <div
-            className=" css-b62m3t-container"
-            onKeyDown={[Function]}
-          >
-            <span
-              className="css-1f43avz-a11yText-A11yText"
-              id="react-select-4-live-region"
-            />
-            <span
-              aria-atomic="false"
-              aria-live="polite"
-              aria-relevant="additions text"
-              className="css-1f43avz-a11yText-A11yText"
-            />
-            <div
-              className="option-search__control css-13cymwt-control"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
-            >
-              <div
-                className="option-search__value-container option-search__value-container--is-multi css-1fdsijx-ValueContainer"
-              >
-                <div
-                  className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-4-placeholder"
-                >
-                  placeholder.service_dependency
-                </div>
-                <div
-                  className="option-search__input-container css-qbdosj-Input"
-                  data-value=""
-                >
-                  <input
-                    aria-autocomplete="list"
-                    aria-describedby="react-select-4-placeholder"
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-invalid={false}
-                    aria-label="placeholder.service_dependency"
-                    aria-labelledby="service_dependency"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    className="option-search__input"
-                    disabled={false}
-                    id="service_dependency"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    role="combobox"
-                    spellCheck="false"
-                    style={
-                      {
-                        "background": 0,
-                        "border": 0,
-                        "color": "inherit",
-                        "font": "inherit",
-                        "gridArea": "1 / 2",
-                        "label": "input",
-                        "margin": 0,
-                        "minWidth": "2px",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "100%",
-                      }
-                    }
-                    tabIndex={0}
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-              <div
-                className="option-search__indicators css-1hb7zxy-IndicatorsContainer"
-              >
-                <span
-                  className="option-search__indicator-separator css-1u9des2-indicatorSeparator"
-                />
-                <div
-                  aria-hidden="true"
-                  className="option-search__indicator option-search__dropdown-indicator css-1xc3v61-indicatorContainer"
-                  onMouseDown={[Function]}
-                  onTouchEnd={[Function]}
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="css-tj5bde-Svg"
-                    focusable="false"
-                    height={20}
-                    viewBox="0 0 20 20"
-                    width={20}
-                  >
-                    <path
-                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div>
-              <input
-                name="service_dependency"
-                type="hidden"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
+        <h4>
+          no-connections
+        </h4>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
-      <div>
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="integration"
-          >
-            application.values.integration
-          </label>
-          <div
-            className=" css-b62m3t-container"
-            onKeyDown={[Function]}
-          >
-            <span
-              className="css-1f43avz-a11yText-A11yText"
-              id="react-select-5-live-region"
-            />
-            <span
-              aria-atomic="false"
-              aria-live="polite"
-              aria-relevant="additions text"
-              className="css-1f43avz-a11yText-A11yText"
-            />
-            <div
-              className="option-search__control css-13cymwt-control"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
-            >
-              <div
-                className="option-search__value-container option-search__value-container--is-multi css-1fdsijx-ValueContainer"
-              >
-                <div
-                  className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-5-placeholder"
-                >
-                  placeholder.integration
-                </div>
-                <div
-                  className="option-search__input-container css-qbdosj-Input"
-                  data-value=""
-                >
-                  <input
-                    aria-autocomplete="list"
-                    aria-describedby="react-select-5-placeholder"
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-invalid={false}
-                    aria-label="placeholder.integration"
-                    aria-labelledby="integration"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    className="option-search__input"
-                    disabled={false}
-                    id="integration"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    role="combobox"
-                    spellCheck="false"
-                    style={
-                      {
-                        "background": 0,
-                        "border": 0,
-                        "color": "inherit",
-                        "font": "inherit",
-                        "gridArea": "1 / 2",
-                        "label": "input",
-                        "margin": 0,
-                        "minWidth": "2px",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "100%",
-                      }
-                    }
-                    tabIndex={0}
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-              <div
-                className="option-search__indicators css-1hb7zxy-IndicatorsContainer"
-              >
-                <span
-                  className="option-search__indicator-separator css-1u9des2-indicatorSeparator"
-                />
-                <div
-                  aria-hidden="true"
-                  className="option-search__indicator option-search__dropdown-indicator css-1xc3v61-indicatorContainer"
-                  onMouseDown={[Function]}
-                  onTouchEnd={[Function]}
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="css-tj5bde-Svg"
-                    focusable="false"
-                    height={20}
-                    viewBox="0 0 20 20"
-                    width={20}
-                  >
-                    <path
-                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div>
-              <input
-                name="integration"
-                type="hidden"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <h3>
+        application.values.application_dependency
+        :
+      </h3>
+      <h4>
+        no-connections
+      </h4>
     </div>
     <div
-      className="row"
-    >
-      <div>
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="license"
-          >
-            application.values.license
-          </label>
-          <div
-            className=" css-b62m3t-container"
-            onKeyDown={[Function]}
-          >
-            <span
-              className="css-1f43avz-a11yText-A11yText"
-              id="react-select-6-live-region"
-            />
-            <span
-              aria-atomic="false"
-              aria-live="polite"
-              aria-relevant="additions text"
-              className="css-1f43avz-a11yText-A11yText"
-            />
-            <div
-              className="option-search__control css-13cymwt-control"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
-            >
-              <div
-                className="option-search__value-container css-1fdsijx-ValueContainer"
-              >
-                <div
-                  className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-6-placeholder"
-                >
-                  placeholder.license
-                </div>
-                <div
-                  className="option-search__input-container css-qbdosj-Input"
-                  data-value=""
-                >
-                  <input
-                    aria-autocomplete="list"
-                    aria-describedby="react-select-6-placeholder"
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-invalid={false}
-                    aria-label="placeholder.license"
-                    aria-labelledby="license"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    className="option-search__input"
-                    disabled={false}
-                    id="license"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    role="combobox"
-                    spellCheck="false"
-                    style={
-                      {
-                        "background": 0,
-                        "border": 0,
-                        "color": "inherit",
-                        "font": "inherit",
-                        "gridArea": "1 / 2",
-                        "label": "input",
-                        "margin": 0,
-                        "minWidth": "2px",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "100%",
-                      }
-                    }
-                    tabIndex={0}
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-              <div
-                className="option-search__indicators css-1hb7zxy-IndicatorsContainer"
-              >
-                <span
-                  className="option-search__indicator-separator css-1u9des2-indicatorSeparator"
-                />
-                <div
-                  aria-hidden="true"
-                  className="option-search__indicator option-search__dropdown-indicator css-1xc3v61-indicatorContainer"
-                  onMouseDown={[Function]}
-                  onTouchEnd={[Function]}
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="css-tj5bde-Svg"
-                    focusable="false"
-                    height={20}
-                    viewBox="0 0 20 20"
-                    width={20}
-                  >
-                    <path
-                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <input
-              name="license"
-              type="hidden"
-              value=""
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div>
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="application_dependency"
-          >
-            application.values.application_dependency
-          </label>
-          <div
-            className=" css-b62m3t-container"
-            onKeyDown={[Function]}
-          >
-            <span
-              className="css-1f43avz-a11yText-A11yText"
-              id="react-select-7-live-region"
-            />
-            <span
-              aria-atomic="false"
-              aria-live="polite"
-              aria-relevant="additions text"
-              className="css-1f43avz-a11yText-A11yText"
-            />
-            <div
-              className="option-search__control css-13cymwt-control"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
-            >
-              <div
-                className="option-search__value-container option-search__value-container--is-multi css-1fdsijx-ValueContainer"
-              >
-                <div
-                  className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-7-placeholder"
-                >
-                  placeholder.application_dependency
-                </div>
-                <div
-                  className="option-search__input-container css-qbdosj-Input"
-                  data-value=""
-                >
-                  <input
-                    aria-autocomplete="list"
-                    aria-describedby="react-select-7-placeholder"
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-invalid={false}
-                    aria-label="placeholder.application_dependency"
-                    aria-labelledby="application_dependency"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    className="option-search__input"
-                    disabled={false}
-                    id="application_dependency"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    role="combobox"
-                    spellCheck="false"
-                    style={
-                      {
-                        "background": 0,
-                        "border": 0,
-                        "color": "inherit",
-                        "font": "inherit",
-                        "gridArea": "1 / 2",
-                        "label": "input",
-                        "margin": 0,
-                        "minWidth": "2px",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "100%",
-                      }
-                    }
-                    tabIndex={0}
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-              <div
-                className="option-search__indicators css-1hb7zxy-IndicatorsContainer"
-              >
-                <span
-                  className="option-search__indicator-separator css-1u9des2-indicatorSeparator"
-                />
-                <div
-                  aria-hidden="true"
-                  className="option-search__indicator option-search__dropdown-indicator css-1xc3v61-indicatorContainer"
-                  onMouseDown={[Function]}
-                  onTouchEnd={[Function]}
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="css-tj5bde-Svg"
-                    focusable="false"
-                    height={20}
-                    viewBox="0 0 20 20"
-                    width={20}
-                  >
-                    <path
-                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div>
-              <input
-                name="application_dependency"
-                type="hidden"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
+      className="display-description row"
     >
       <h2>
         application.continuity
       </h2>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="update_practice"
-          >
-            application.values.update_practice
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="update_practice"
-            name="update_practice"
-            onChange={[Function]}
-            placeholder="placeholder.update_practice"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.update_practice
+        </h3>
+        <p>
+          Update Practice
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="security_practice_monitoring"
-          >
-            application.values.security_practice_monitoring
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="security_practice_monitoring"
-            name="security_practice_monitoring"
-            onChange={[Function]}
-            placeholder="placeholder.security_practice_monitoring"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.security_practice_monitoring
+        </h3>
+        <p>
+          Security Practice Monitoring
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="recovery_practices_convalescence"
-          >
-            application.values.recovery_practices_convalescence
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="recovery_practices_convalescence"
-            name="recovery_practices_convalescence"
-            onChange={[Function]}
-            placeholder="placeholder.recovery_practices_convalescence"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.recovery_practices_convalescence
+        </h3>
+        <p>
+          Recovery Practices Convalescence
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="user_rights_management"
-          >
-            application.values.user_rights_management
-          </label>
-          <input
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="user_rights_management"
-            name="user_rights_management"
-            onChange={[Function]}
-            placeholder="placeholder.user_rights_management"
-            type="text"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.user_rights_management
+        </h3>
+        <p>
+          User Rights Management
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="security_solutions"
-          >
-            application.values.security_solutions
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="security_solutions"
-            name="security_solutions"
-            onChange={[Function]}
-            placeholder="security_solutions"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.security_solutions
+        </h3>
+        <p>
+          Security Solutions
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display-description row"
     >
       <h2>
         application.responsibility
       </h2>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="product_owner"
-          >
-            application.values.product_owner
-          </label>
-          <input
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="product_owner"
-            name="product_owner"
-            onChange={[Function]}
-            placeholder="placeholder.product_owner"
-            type="text"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.product_owner
+        </h3>
+        <p>
+          Product Owner
+        </p>
+      </div>
+    </div>
+    <div
+      className="display row"
+    >
+      <div
+        className="row"
+      >
+        <h3>
+          application.values.application_holder
+        </h3>
+        <p>
+          Application Holder
+        </p>
+      </div>
+    </div>
+    <div
+      className="display row"
+    >
+      <div
+        className="row"
+      >
+        <h3>
+          application.values.admin_users
+        </h3>
+        <p>
+          Admin Users
+        </p>
+      </div>
+    </div>
+    <div
+      className="display row"
+    >
+      <div
+        className="row"
+      >
+        <h3>
+          application.values.liability_professional_users
+        </h3>
+        <p>
+          Liability Professional Users
+        </p>
+      </div>
+    </div>
+    <div
+      className="display row"
+    >
+      <div
+        className="row"
+      >
+        <h3>
+          application.values.holder_extra_info
+        </h3>
+        <p>
+          Holder Extra Info
+        </p>
       </div>
     </div>
     <div
       className="row"
     >
-      <div
-        className="textfield col"
-      >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="application_holder"
-          >
-            application.values.application_holder
-          </label>
-          <input
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="application_holder"
-            name="application_holder"
-            onChange={[Function]}
-            placeholder="placeholder.application_holder"
-            type="text"
-            value=""
-          />
-        </div>
-      </div>
+      <h3>
+        Käyttöoikeusvastaavat:
+      </h3>
+      <p />
     </div>
     <div
-      className="row"
+      className="display row"
     >
-      <div
-        className="textfield col"
-      >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="admin_users"
-          >
-            application.values.admin_users
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="admin_users"
-            name="admin_users"
-            onChange={[Function]}
-            placeholder="placeholder.admin_users"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="textfield col"
-      >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="liability_professional_users"
-          >
-            application.values.liability_professional_users
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="liability_professional_users"
-            name="liability_professional_users"
-            onChange={[Function]}
-            placeholder="placeholder.liability_professional_users"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="textfield col"
-      >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="holder_extra_info"
-          >
-            application.values.holder_extra_info
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="holder_extra_info"
-            name="holder_extra_info"
-            onChange={[Function]}
-            placeholder="placeholder.holder_extra_info"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
+      <h3>
+        application.values.provider
+        :
+      </h3>
       <div>
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="provider"
-          >
-            application.values.provider
-          </label>
-          <div
-            className=" css-b62m3t-container"
-            onKeyDown={[Function]}
-          >
-            <span
-              className="css-1f43avz-a11yText-A11yText"
-              id="react-select-8-live-region"
-            />
-            <span
-              aria-atomic="false"
-              aria-live="polite"
-              aria-relevant="additions text"
-              className="css-1f43avz-a11yText-A11yText"
-            />
-            <div
-              className="option-search__control css-13cymwt-control"
-              onMouseDown={[Function]}
-              onTouchEnd={[Function]}
-            >
-              <div
-                className="option-search__value-container css-1fdsijx-ValueContainer"
-              >
-                <div
-                  className="option-search__placeholder css-1jqq78o-placeholder"
-                  id="react-select-8-placeholder"
-                >
-                  placeholder.provider
-                </div>
-                <div
-                  className="option-search__input-container css-qbdosj-Input"
-                  data-value=""
-                >
-                  <input
-                    aria-autocomplete="list"
-                    aria-describedby="react-select-8-placeholder"
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-invalid={false}
-                    aria-label="placeholder.provider"
-                    aria-labelledby="provider"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    className="option-search__input"
-                    disabled={false}
-                    id="provider"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    role="combobox"
-                    spellCheck="false"
-                    style={
-                      {
-                        "background": 0,
-                        "border": 0,
-                        "color": "inherit",
-                        "font": "inherit",
-                        "gridArea": "1 / 2",
-                        "label": "input",
-                        "margin": 0,
-                        "minWidth": "2px",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "100%",
-                      }
-                    }
-                    tabIndex={0}
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-              <div
-                className="option-search__indicators css-1hb7zxy-IndicatorsContainer"
-              >
-                <span
-                  className="option-search__indicator-separator css-1u9des2-indicatorSeparator"
-                />
-                <div
-                  aria-hidden="true"
-                  className="option-search__indicator option-search__dropdown-indicator css-1xc3v61-indicatorContainer"
-                  onMouseDown={[Function]}
-                  onTouchEnd={[Function]}
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="css-tj5bde-Svg"
-                    focusable="false"
-                    height={20}
-                    viewBox="0 0 20 20"
-                    width={20}
-                  >
-                    <path
-                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <input
-              name="provider"
-              type="hidden"
-              value=""
-            />
-          </div>
-        </div>
+        <h4>
+          no-connections
+        </h4>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="provider_responsibility"
-          >
-            application.values.provider_responsibility
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="provider_responsibility"
-            name="provider_responsibility"
-            onChange={[Function]}
-            placeholder="placeholder.provider_responsibility"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.provider_responsibility
+        </h3>
+        <p>
+          Provider Responsibility
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="additional_contacts"
-          >
-            application.values.additional_contacts
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="additional_contacts"
-            name="additional_contacts"
-            onChange={[Function]}
-            placeholder="placeholder.additional_contacts"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.additional_contacts
+        </h3>
+        <p>
+          Additional Contacts
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="display-description row"
     >
       <h2>
         application.extra
       </h2>
     </div>
     <div
-      className="row"
+      className="display row"
     >
       <div
-        className="textfield col"
+        className="row"
       >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="known_issues"
-          >
-            application.values.known_issues
-          </label>
-          <textarea
-            aria-invalid={false}
-            className="form-control"
-            disabled={false}
-            id="known_issues"
-            name="known_issues"
-            onChange={[Function]}
-            placeholder="placeholder.known_issues"
-            value=""
-          />
-        </div>
+        <h3>
+          application.values.known_issues
+        </h3>
+        <p>
+          Known Issues
+        </p>
       </div>
     </div>
     <div
-      className="row"
+      className="action-buttons"
     >
-      <div
-        className="textfield col"
-      >
-        <div
-          className="mb-3"
-        >
-          <label
-            className="form-label"
-            htmlFor="fileUrl"
-          >
-            application.values.fileUrl
-          </label>
-          <input
-            aria-invalid={false}
-            className="form-control"
-            disabled={true}
-            id="fileUrl"
-            name="fileUrl"
-            onChange={[Function]}
-            placeholder="placeholder.fileUrl"
-            type="file"
-          />
-        </div>
-      </div>
-    </div>
-    <div>
       <button
-        className="action-button btn btn-secondary"
+        className="action-button btn btn-secondary disabled"
+        disabled={true}
         onClick={[Function]}
         type="button"
       >
-        application.create
+        button.copy
+      </button>
+      <button
+        className="action-button btn btn-secondary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        button.edit
       </button>
     </div>
   </div>

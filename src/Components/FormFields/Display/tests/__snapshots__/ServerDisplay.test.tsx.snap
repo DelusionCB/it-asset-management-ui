@@ -385,5 +385,25 @@ exports[`<ServerDisplay /> Snapshot renders correctly 1`] = `
     </h3>
     <h4 />
   </div>
+  <div
+    className="action-buttons"
+  >
+    <button
+      className="action-button btn btn-secondary disabled"
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      button.copy
+    </button>
+    <button
+      className="action-button btn btn-secondary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      button.edit
+    </button>
+  </div>
 </div>
 `;

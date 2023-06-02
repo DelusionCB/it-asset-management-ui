@@ -17,7 +17,7 @@ import {formTypes} from '../../../Types/types.forms';
 import StaticSelect from '../../CustomComponents/StaticSelect';
 import AsyncSelect from '../../CustomComponents/AsyncSelect';
 
-function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
+function ApplicationForm ({isDisabled, type, mode, editValues}: formTypes): JSX.Element {
     const [values, setValues] = useState<extendedApplicationDataProps>(appDefaultValues)
     const {t} = useTranslation()
 
@@ -30,13 +30,21 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
     }
 
     useEffect(() => {
-        // Invoke debouncedCheck with updated values
-        debouncedCheck(values, appDefaultValues, isDisabled);
+        if (Object.keys(editValues).length !== 0 && mode === 'edit') {
+            setValues(editValues)
+        }
+    }, [editValues, mode])
 
-        // Cleanup function to cancel debounce on unmount
-        return () => {
-            debouncedCheck.cancel();
-        };
+    useEffect(() => {
+        if (mode !== 'edit') {
+            // Invoke debouncedCheck with updated values
+            debouncedCheck(values, appDefaultValues, isDisabled);
+
+            // Cleanup function to cancel debounce on unmount
+            return () => {
+                debouncedCheck.cancel();
+            };
+        }
     }, [values]);
 
     useEffect(() => {
@@ -54,7 +62,7 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
     return (
         <>
             <Row>
-                <h1>{t('application.create')}</h1>
+                <h1>{t(`application.${mode}`)}</h1>
             </Row>
             <Row>
                 <h2>{t('application.visibility')}</h2>
@@ -453,8 +461,8 @@ function ApplicationForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <ActionButtons
                 values={values}
-                actions={['create']}
                 type={type}
+                mode={mode}
             />
         </>
     );

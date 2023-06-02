@@ -11,7 +11,7 @@ import StaticSelect from '../../CustomComponents/StaticSelect';
 import SearchableSelect from '../../CustomComponents/SearchableSelect';
 import ActionButtons from '../../ActionButtons/ActionButtons';
 
-function ProviderForm ({isDisabled, type}: formTypes): JSX.Element {
+function ProviderForm ({isDisabled, type, mode, editValues}: formTypes): JSX.Element {
     const [values, setValues] = useState<providerDataPropTypes>(providerDefaultValues)
     const {t} = useTranslation()
 
@@ -24,13 +24,21 @@ function ProviderForm ({isDisabled, type}: formTypes): JSX.Element {
     }
 
     useEffect(() => {
-        // Invoke debouncedCheck with updated values
-        debouncedCheck(values, providerDefaultValues, isDisabled);
+        if (Object.keys(editValues).length !== 0 && mode === 'edit') {
+            setValues(editValues)
+        }
+    }, [editValues, mode])
 
-        // Cleanup function to cancel debounce on unmount
-        return () => {
-            debouncedCheck.cancel();
-        };
+    useEffect(() => {
+        if (mode !== 'edit') {
+            // Invoke debouncedCheck with updated values
+            debouncedCheck(values, providerDefaultValues, isDisabled);
+
+            // Cleanup function to cancel debounce on unmount
+            return () => {
+                debouncedCheck.cancel();
+            };
+        }
     }, [values]);
 
     useEffect(() => {
@@ -39,7 +47,7 @@ function ProviderForm ({isDisabled, type}: formTypes): JSX.Element {
             handleClear<providerDataPropTypes>(
                 values,
                 [],
-                [],
+                ['related_services', 'related_applications', 'related_contracts'],
                 setValues,
             )
         }
@@ -48,7 +56,7 @@ function ProviderForm ({isDisabled, type}: formTypes): JSX.Element {
     return (
         <>
             <Row>
-                <h1>{t('provider.create')}</h1>
+                <h1>{t(`provider.${mode}`)}</h1>
             </Row>
             <Row>
                 <h2>{t('provider.visibility')}</h2>
@@ -262,8 +270,8 @@ function ProviderForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <ActionButtons
                 values={values}
-                actions={['create']}
                 type={type}
+                mode={mode}
             />
         </>
     );

@@ -11,7 +11,7 @@ describe('<ActionButtons />', () => {
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <ActionButtons actions={['edit', 'create']} type='application' values={{}}/>,
+                <ActionButtons mode='create' type='application' values={{}}/>,
             </BrowserRouter>,
         );
     });

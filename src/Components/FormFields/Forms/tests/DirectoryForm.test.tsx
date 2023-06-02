@@ -11,7 +11,7 @@ describe('<DirectoryFields />', () => {
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <DirectoryForm type='directory' isDisabled={jest.fn()} />
+                <DirectoryForm editValues={{}} mode='create' type='directory' isDisabled={jest.fn()} />
             </BrowserRouter>,
         );
     });

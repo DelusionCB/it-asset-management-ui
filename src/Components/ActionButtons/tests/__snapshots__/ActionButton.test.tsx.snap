@@ -4,10 +4,11 @@ exports[`<ActionButton /> Snapshot renders correctly 1`] = `
 [
   <button
     className="action-button btn btn-secondary"
+    disabled={false}
     onClick={[Function]}
     type="button"
   >
-    application.create
+    button.create
   </button>,
   ",",
 ]

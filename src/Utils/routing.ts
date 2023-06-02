@@ -23,6 +23,9 @@ export function getEndpoint (endpoint: string): string {
         case 'pro':
             path = 'provider'
             break;
+        case 'int':
+            path = 'integration'
+            break;
         default:
             path = ''
             break;

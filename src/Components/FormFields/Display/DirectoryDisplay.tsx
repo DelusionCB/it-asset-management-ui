@@ -3,6 +3,7 @@ import {Container} from 'reactstrap';
 import {DisplayArray, DisplayDescription, DisplayHeader, DisplayText} from '../../CustomComponents/DisplayComponents';
 import './index.scss';
 import {directoryDisplayPropTypes} from '../../../Types/types.displays';
+import ActionButtons from '../../ActionButtons/ActionButtons';
 
 function DirectoryDisplay ({values, t, navigate}: directoryDisplayPropTypes): JSX.Element {
     return (
@@ -19,6 +20,11 @@ function DirectoryDisplay ({values, t, navigate}: directoryDisplayPropTypes): JS
             <DisplayArray navigate={navigate} t={t} value={values.applications} label='directory.values.applications' />
             <DisplayArray navigate={navigate} t={t} value={values.services} label='directory.values.services' />
             <DisplayArray navigate={navigate} t={t} value={values.servers} label='directory.values.servers' />
+            <ActionButtons
+                values={values}
+                type={'directory'}
+                mode={'display'}
+            />
         </Container>
     );
 }

@@ -9,6 +9,8 @@ import {
     providerDataPropTypes,
 } from '../Types/types.directories';
 import _, {debounce} from 'lodash';
+import {getItemData} from '../Api/Utils/fetchUtils';
+import {mapAPIDataToUIFormat} from '../Api/Utils/archiveUtils'
 
 // Handle changes
 
@@ -209,4 +211,18 @@ export function handleClear<T extends Record<string, any>> (
         });
     }
     setValues(newState);
+}
+
+export function setData (setEditValues: (values: any) => void, setFieldType: (values: string) => void, setLoading: (isLoading: boolean) => void, params: any): void {
+    setLoading(true)
+    if (params.state) {
+        void getItemData({itemId: params.state.id, apiPath: params.state.api})
+            .then((res) => {
+                setEditValues(mapAPIDataToUIFormat(params.state.api, res));
+            })
+            .finally(() => {
+                setFieldType(params.state.api)
+                setLoading(false)
+            });
+    }
 }

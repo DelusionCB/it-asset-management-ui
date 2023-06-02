@@ -11,7 +11,7 @@ import SearchableSelect from '../../CustomComponents/SearchableSelect';
 import ActionButtons from '../../ActionButtons/ActionButtons';
 import StaticSelect from '../../CustomComponents/StaticSelect';
 
-function LicenseForm ({isDisabled, type}: formTypes): JSX.Element {
+function LicenseForm ({isDisabled, type, mode, editValues}: formTypes): JSX.Element {
     const [values, setValues] = useState<licenseDataPropTypes>(licenseDefaultValues)
     const {t} = useTranslation()
 
@@ -24,13 +24,21 @@ function LicenseForm ({isDisabled, type}: formTypes): JSX.Element {
     }
 
     useEffect(() => {
-        // Invoke debouncedCheck with updated values
-        debouncedCheck(values, licenseDefaultValues, isDisabled);
+        if (Object.keys(editValues).length !== 0 && mode === 'edit') {
+            setValues(editValues)
+        }
+    }, [editValues, mode])
 
-        // Cleanup function to cancel debounce on unmount
-        return () => {
-            debouncedCheck.cancel();
-        };
+    useEffect(() => {
+        if (mode !== 'edit') {
+            // Invoke debouncedCheck with updated values
+            debouncedCheck(values, licenseDefaultValues, isDisabled);
+
+            // Cleanup function to cancel debounce on unmount
+            return () => {
+                debouncedCheck.cancel();
+            };
+        }
     }, [values]);
 
     useEffect(() => {
@@ -48,7 +56,7 @@ function LicenseForm ({isDisabled, type}: formTypes): JSX.Element {
     return (
         <>
             <Row>
-                <h1>{t('license.create')}</h1>
+                <h1>{t(`license.${mode}`)}</h1>
             </Row>
             <Row>
                 <h2>{t('license.visibility')}</h2>
@@ -155,8 +163,8 @@ function LicenseForm ({isDisabled, type}: formTypes): JSX.Element {
             </Row>
             <ActionButtons
                 values={values}
-                actions={['create']}
                 type={type}
+                mode={mode}
             />
         </>
     );

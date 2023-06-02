@@ -11,7 +11,7 @@ describe('<ServerForm />', () => {
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <ServerForm type='server' isDisabled={jest.fn()} />
+                <ServerForm editValues={{}} mode='create' type='server' isDisabled={jest.fn()} />
             </BrowserRouter>,
         );
     });

@@ -9,6 +9,7 @@ import {
 } from '../../CustomComponents/DisplayComponents';
 import './index.scss';
 import {integrationDisplayPropTypes} from '../../../Types/types.displays';
+import ActionButtons from '../../ActionButtons/ActionButtons';
 
 function IntegrationDisplay ({values, t, navigate}: integrationDisplayPropTypes): JSX.Element {
     return (
@@ -25,7 +26,11 @@ function IntegrationDisplay ({values, t, navigate}: integrationDisplayPropTypes)
             <DisplayObject value={values.server_platform} navigate={navigate} t={t} label='integration.values.server_platform' />
 
             <DisplayStatus value={values.environment_type} t={t} label='integration.values.environment_type' />
-
+            <ActionButtons
+                values={values}
+                type={'integration'}
+                mode={'display'}
+            />
         </Container>
     )
 }

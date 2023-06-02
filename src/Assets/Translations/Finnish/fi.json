@@ -4,6 +4,7 @@
     "loading": "Ladataan...",
     "search-minimum-length": "Syötä vähintään 3 merkkiä",
     "search-no-results": "Ei tuloksia",
+    "create-new": "Luo uusi arkistointi",
     "values": {
         "visibility": "Näkyvyys"
     },
@@ -303,6 +304,14 @@
             "environment_type": "Ympäristö",
             "server_platform": "Alusta"
         }
+    },
+
+    "button": {
+        "edit": "Muokkaa",
+        "create": "Tallenna",
+        "copy": "Kopioi uuden pohjaksi",
+        "cancel": "Peruuta",
+        "save": "Tallenna muutokset"
     },
 
     "yes": "Kyllä",

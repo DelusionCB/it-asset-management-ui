@@ -3,6 +3,12 @@
 import {NavigateFunction} from 'react-router-dom';
 // eslint-disable-next-line import/named
 import {TFunction} from 'i18next';
+import {
+    appDependencyItemProps,
+    contractDataPropTypes, integrationDataPropTypes,
+    licenseItemProps, providerDataPropTypes,
+    serverDataPropTypes, serviceDataProps
+} from "./types.directories";
 
 // ItemGrid & Item
 
@@ -14,7 +20,7 @@ interface objectItem {
 }
 
 export interface itemPropTypes {
-    key: number
+    itemKey: number
     item: objectItem
     t: TFunction
 }
@@ -34,13 +40,15 @@ export interface searchBarPropTypes {
 // ActionButton & ActionButtons
 
 export interface actionButtonPropTypes {
-    values: object
+    values: any
     action: string
     type: string
+    mode: string
+    disabled: boolean
 }
 
 export interface ActionPropTypes {
-    values: object
-    actions: string[]
+    values: any
     type: string
+    mode: string
 }

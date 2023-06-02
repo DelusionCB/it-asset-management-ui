@@ -9,6 +9,7 @@ import {
 } from '../../CustomComponents/DisplayComponents';
 import './index.scss';
 import {serverDisplayPropTypes} from '../../../Types/types.displays';
+import ActionButtons from '../../ActionButtons/ActionButtons';
 
 function ServerDisplay ({values, t, navigate}: serverDisplayPropTypes): JSX.Element {
     return (
@@ -70,7 +71,11 @@ function ServerDisplay ({values, t, navigate}: serverDisplayPropTypes): JSX.Elem
             <DisplayArray t={t} navigate={navigate} value={values.applications} label='server.values.applications' />
 
             {/* <DisplayDescription t={t} label='server.extra' /> */}
-
+            <ActionButtons
+                values={values}
+                type={'server'}
+                mode={'display'}
+            />
         </Container>
     )
 }

@@ -27,22 +27,38 @@ exports[`<Header /> Snapshot renders correctly 1`] = `
         <li
           className="nav-item"
         >
-          <a
-            href="/archive/create/new"
+          <button
+            aria-label="create-new"
+            className="navlink-button btn btn-secondary"
             onClick={[Function]}
+            role="link"
+            type="button"
           >
-            Luo uusi arkistointi
-          </a>
+            <span>
+              create-new
+            </span>
+            <i
+              className="bi bi-plus"
+            />
+          </button>
         </li>
         <li
           className="nav-item"
         >
-          <a
-            href="/search"
+          <button
+            aria-label="archive-fetch"
+            className="navlink-button btn btn-secondary"
             onClick={[Function]}
+            role="link"
+            type="button"
           >
-            Etsi arkistoja
-          </a>
+            <span>
+              archive-fetch
+            </span>
+            <i
+              className="bi bi-search"
+            />
+          </button>
         </li>
       </ul>
     </div>

@@ -13,17 +13,17 @@ import Footer from '../../Components/Footer/Footer';
 
 // Views
 import Homepage from '../Homepage/Homepage';
-import FormViewer from '../FormViewer/FormViewer';
+import ArchiveViewer from '../ArchiveViewer/ArchiveViewer';
 import Search from '../Search/Search';
-import FormFields from '../../Components/FormFields/FormFields';
+import ArchiveForms from '../ArchiveForms/ArchiveForms';
 
 const App: React.FC = () => {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<Homepage />} />
-                <Route path="/:path/:id" element={<FormViewer />} />
-                <Route path="/archive/:action/:id" element={<FormFields />} />
+                <Route path="/:path/:id" element={<ArchiveViewer />} />
+                <Route path="/archive/:action/:id" element={<ArchiveForms />} />
                 <Route path="/search" element={<Search />} />
             </Route>
         </Routes>

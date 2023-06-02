@@ -1,18 +1,34 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ApplicationForm from './Forms/ApplicationForm';
 import ArchiveSelection from '../CustomComponents/ArchiveSelection';
-import {Container, Row} from 'reactstrap';
+import {Container, Row, Spinner} from 'reactstrap';
 import DirectoryForm from './Forms/DirectoryForm';
 import ServiceForm from './Forms/ServiceForm';
 import IntegrationForm from './Forms/IntegrationForm';
 import ServerForm from './Forms/ServerForm';
 import LicenseForm from './Forms/LicenseForm';
 import ProviderForm from './Forms/ProviderForm';
+import {setData} from '../../Utils/helpers';
 
-function FormFields (): JSX.Element {
+interface formPropTypes {
+    loading: boolean
+    mode: string
+    params: any
+}
+
+function FormFields ({loading, mode, params}: formPropTypes): JSX.Element {
     const [fieldType, setFieldType] = useState('application')
-
     const [disabled, isDisabled] = useState(false)
+    const [editValues, setEditValues] = useState<any>({})
+    const [isLoading, setLoading] = useState(true)
+
+    useEffect(() => {
+        if (!loading && mode === 'edit') {
+            setData(setEditValues, setFieldType, setLoading, params)
+        } else if (!loading && mode === 'create') {
+            setLoading(false)
+        }
+    }, [mode])
 
     function getFormFields (): JSX.Element {
         switch (fieldType) {
@@ -21,6 +37,8 @@ function FormFields (): JSX.Element {
                     <ApplicationForm
                         type={fieldType}
                         isDisabled={isDisabled}
+                        mode={mode}
+                        editValues={editValues}
                     />
                 )
             case 'directory':
@@ -28,19 +46,26 @@ function FormFields (): JSX.Element {
                     <DirectoryForm
                         type={fieldType}
                         isDisabled={isDisabled}
+                        mode={mode}
+                        editValues={editValues}
                     />
                 )
             case 'license':
                 return (
                     <LicenseForm
                         type={fieldType}
-                        isDisabled={isDisabled} />
+                        isDisabled={isDisabled}
+                        mode={mode}
+                        editValues={editValues}
+                    />
                 )
             case 'server':
                 return (
                     <ServerForm
                         type={fieldType}
                         isDisabled={isDisabled}
+                        mode={mode}
+                        editValues={editValues}
                     />
                 )
             case 'integration':
@@ -48,6 +73,8 @@ function FormFields (): JSX.Element {
                     <IntegrationForm
                         type={fieldType}
                         isDisabled={isDisabled}
+                        mode={mode}
+                        editValues={editValues}
                     />
                 )
             case 'service':
@@ -55,6 +82,8 @@ function FormFields (): JSX.Element {
                     <ServiceForm
                         type={fieldType}
                         isDisabled={isDisabled}
+                        mode={mode}
+                        editValues={editValues}
                     />
                 )
             case 'provider':
@@ -62,28 +91,41 @@ function FormFields (): JSX.Element {
                     <ProviderForm
                         type={fieldType}
                         isDisabled={isDisabled}
+                        mode={mode}
+                        editValues={editValues}
                     />
                 )
             default:
-                return (<div />)
+                return (<div/>)
         }
     }
-
-    return (
-        <Container>
-            <Row>
-                <ArchiveSelection
-                    onChange={(e) => { setFieldType(e); }}
-                    selections={['application', 'directory', 'license', 'server', 'service', 'integration', 'provider']}
-                    disabled={disabled}
-                    label='select-archive'
-                />
-            </Row>
-            <Row>
-                {getFormFields()}
-            </Row>
-        </Container>
-    );
+    if (isLoading && mode === '') {
+        return (
+            <Spinner animation="border" role="status">
+                    Ladataan...
+            </Spinner>
+        )
+    } else {
+        return (
+            <Container>
+                {mode !== 'edit' &&
+                    <Row>
+                        <ArchiveSelection
+                            onChange={(e) => {
+                                setFieldType(e);
+                            }}
+                            selections={['application', 'directory', 'license', 'server', 'service', 'integration', 'provider']}
+                            disabled={disabled || mode === 'edit'}
+                            label='select-archive'
+                        />
+                    </Row>
+                }
+                <Row>
+                    {!isLoading && getFormFields()}
+                </Row>
+            </Container>
+        );
+    }
 }
 
 export default FormFields;

@@ -8,6 +8,7 @@ import {
 } from '../../CustomComponents/DisplayComponents';
 import './index.scss';
 import {providerDisplayPropTypes} from '../../../Types/types.displays';
+import ActionButtons from '../../ActionButtons/ActionButtons';
 
 function ProviderDisplay ({values, t, navigate}: providerDisplayPropTypes): JSX.Element {
     return (
@@ -41,7 +42,11 @@ function ProviderDisplay ({values, t, navigate}: providerDisplayPropTypes): JSX.
             <DisplayDescription t={t} label='provider.extra' />
 
             <DisplayUrl value={values.extra_url} t={t} label='provider.values.extra_url' />
-
+            <ActionButtons
+                values={values}
+                type={'provider'}
+                mode={'display'}
+            />
         </Container>
     )
 }

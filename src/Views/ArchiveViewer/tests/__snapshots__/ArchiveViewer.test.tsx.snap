@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FormViewer /> Snapshot renders correctly 1`] = `
+exports[`<ArchiveViewer /> Snapshot renders correctly 1`] = `
 <div
   animation="border"
   className="spinner-border"

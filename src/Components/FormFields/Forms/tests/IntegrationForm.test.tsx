@@ -11,7 +11,7 @@ describe('<IntegrationForm />', () => {
     beforeAll(() => {
         renderer = TestRenderer.create(
             <BrowserRouter>
-                <IntegrationForm type='integration' isDisabled={jest.fn()} />
+                <IntegrationForm editValues={{}} mode='create' type='integration' isDisabled={jest.fn()} />
             </BrowserRouter>,
         );
     });
