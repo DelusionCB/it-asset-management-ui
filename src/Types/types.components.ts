@@ -1,14 +1,6 @@
 
 // eslint-disable-next-line import/named
-import {NavigateFunction} from 'react-router-dom';
-// eslint-disable-next-line import/named
 import {TFunction} from 'i18next';
-import {
-    appDependencyItemProps,
-    contractDataPropTypes, integrationDataPropTypes,
-    licenseItemProps, providerDataPropTypes,
-    serverDataPropTypes, serviceDataProps
-} from "./types.directories";
 
 // ItemGrid & Item
 
@@ -43,7 +35,6 @@ export interface actionButtonPropTypes {
     values: any
     action: string
     type: string
-    mode: string
     disabled: boolean
 }
 
@@ -51,4 +42,12 @@ export interface ActionPropTypes {
     values: any
     type: string
     mode: string
+}
+
+export interface ConfirmationModalPropTypes {
+    onConfirm: () => void
+    onCancel: () => void
+    t: TFunction
+    values: any
+    type: string
 }

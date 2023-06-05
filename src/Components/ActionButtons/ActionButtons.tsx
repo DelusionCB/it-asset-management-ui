@@ -10,7 +10,6 @@ function ActionButtons ({values, type, mode}: ActionPropTypes): JSX.Element {
                 values={values}
                 action={action}
                 type={type}
-                mode={mode}
                 disabled={isDisabled}
             />
         )
@@ -21,12 +20,14 @@ function ActionButtons ({values, type, mode}: ActionPropTypes): JSX.Element {
     const cancelButton = getButtons('cancel', false)
     const saveButton = getButtons('save', false)
     const copyButton = getButtons('copy', true)
+    const deleteButton = getButtons('delete', false)
 
     return (
         <div className='action-buttons'>
             {mode === 'display' && copyButton}
             {mode !== 'display' && cancelButton}
             {mode === 'create' && createButton}
+            {mode === 'display' && deleteButton}
             {mode === 'display' && editButton}
             {mode === 'edit' && saveButton}
         </div>

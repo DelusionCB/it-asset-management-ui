@@ -402,6 +402,14 @@ exports[`<ServerDisplay /> Snapshot renders correctly 1`] = `
       onClick={[Function]}
       type="button"
     >
+      button.delete
+    </button>
+    <button
+      className="action-button btn btn-secondary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
       button.edit
     </button>
   </div>

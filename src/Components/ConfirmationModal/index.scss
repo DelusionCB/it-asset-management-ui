@@ -1,0 +1,30 @@
+
+.confirmation-modal {
+
+    .-header {
+        background-color: var(--primary-color);
+        padding: 10px;
+        border-bottom: 2px solid var(--secondary-color);
+        color: white;
+    }
+
+    .-body {
+        font-size: 1.5rem;
+    }
+
+    .-footer {
+        button {
+            font-size: 1.25rem;
+            border: 2px solid black;
+            &:hover, &:focus, &:active {
+                border: 2px solid var(--secondary-color);
+            }
+        }
+        .-do {
+            background-color: var(--danger-color);
+        }
+        .-cancel {
+            background-color: var(--primary-color);
+        }
+    }
+}

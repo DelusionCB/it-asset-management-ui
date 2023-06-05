@@ -791,3 +791,13 @@ export async function postData (navigate: Function, action: string, endpoint: st
         });
     }
 }
+
+export async function deleteData (navigate: Function, action: string, endpoint: string, id: string): Promise<void> {
+    try {
+        await client.delete(`${endpoint}/${id}/`)
+    } catch (e: any) {
+        throw Error(e)
+    } finally {
+        navigate(`/`);
+    }
+}

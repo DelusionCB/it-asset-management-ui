@@ -310,8 +310,24 @@
         "edit": "Muokkaa",
         "create": "Tallenna",
         "copy": "Kopioi uuden pohjaksi",
+        "delete": "Poista",
         "cancel": "Peruuta",
         "save": "Tallenna muutokset"
+    },
+
+    "modal": {
+        "header": "Vahvistus",
+        "body": {
+            "application": "Haluatko varmasti poistaa sovelluksen: '{{value}}'?",
+            "directory": "Haluatko varmasti poistaa kansion: '{{value}}'?",
+            "provider": "Haluatko varmasti poistaa toimittajan: '{{value}}'?",
+            "integration": "Haluatko varmasti poistaa integraation: '{{value}}'?",
+            "license": "Haluatko varmasti poistaa lisenssin: '{{value}}'?",
+            "service": "Haluatko varmasti poistaa palvelun: '{{value}}'?",
+            "server": "Haluatko varmasti poistaa palvelimen: '{{value}}'?"
+        },
+        "doAction": "Poista",
+        "cancelAction": "Peruuta"
     },
 
     "yes": "Kyllä",

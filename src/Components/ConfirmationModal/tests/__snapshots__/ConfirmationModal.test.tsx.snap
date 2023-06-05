@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConfirmationModal /> Snapshot renders correctly 1`] = `
+<div
+  className=""
+>
+  <div
+    className="modal fade"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    role="dialog"
+    style={
+      {
+        "display": "block",
+      }
+    }
+    tabIndex="-1"
+  >
+    <div
+      className="modal-dialog confirmation-modal modal-dialog-centered"
+      role="document"
+    >
+      <div
+        className="modal-content"
+      >
+        <div
+          className="-header modal-header"
+        >
+          <h1
+            className="modal-title"
+          />
+        </div>
+        <div
+          className="-body modal-body"
+        >
+          <div>
+            <div />
+          </div>
+        </div>
+        <div
+          className="-footer modal-footer"
+        >
+          <button
+            className="-do btn btn-secondary"
+            onClick={[Function]}
+            type="button"
+          />
+          <button
+            className="-cancel btn btn-secondary"
+            onClick={[Function]}
+            type="button"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="modal-backdrop fade"
+  />
+</div>
+`;

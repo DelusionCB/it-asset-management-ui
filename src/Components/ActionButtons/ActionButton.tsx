@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Button} from 'reactstrap';
 import {useTranslation} from 'react-i18next';
 import './index.scss'
-import {postData} from '../../Api/Utils/archiveUtils';
+import {deleteData, postData} from '../../Api/Utils/archiveUtils';
 import {useNavigate} from 'react-router-dom'
 import {actionButtonPropTypes} from '../../Types/types.components';
+import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 
-function ActionButton ({values, action, type, mode, disabled = false}: actionButtonPropTypes): JSX.Element {
+function ActionButton ({values, action, type, disabled = false}: actionButtonPropTypes): JSX.Element {
+    const [showConfirmation, setShowConfirmation] = useState(false);
     const {t} = useTranslation()
     const navigate = useNavigate()
 
@@ -30,17 +32,38 @@ function ActionButton ({values, action, type, mode, disabled = false}: actionBut
                 navigate(-1)
                 window.scrollTo({top: 0, behavior: 'smooth'});
                 break;
+            case 'delete':
+                setShowConfirmation(true);
+                break;
+        }
+    }
+
+    function handleConfirm (): void {
+        switch (action) {
+            case 'delete':
+                void deleteData(navigate, action, type, values.base_id)
         }
     }
 
     return (
-        <Button
-            className='action-button'
-            onClick={() => { handleAction(); }}
-            disabled={disabled}
-        >
-            {t(`button.${action}`)}
-        </Button>
+        <>
+            {showConfirmation && (
+                <ConfirmationModal
+                    onConfirm={() => { handleConfirm() }}
+                    onCancel={() => { setShowConfirmation(false); }}
+                    values={values}
+                    t={t}
+                    type={type}
+                />
+            )}
+            <Button
+                className='action-button'
+                onClick={() => { handleAction(); }}
+                disabled={disabled}
+            >
+                {t(`button.${action}`)}
+            </Button>
+        </>
     )
 }
 
