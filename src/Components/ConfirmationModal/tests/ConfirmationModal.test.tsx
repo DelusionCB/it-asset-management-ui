@@ -9,7 +9,7 @@ jest.mock('react-dom', () => {
 
     return {
         ...original,
-        createPortal: (node) => node,
+        createPortal: (node: React.ReactNode) => node,
     };
 });
 
