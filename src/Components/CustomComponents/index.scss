@@ -6,7 +6,8 @@
     .selection-radios {
         margin: 1.75rem;
         display: flex;
-        justify-content: space-evenly;
+        flex-wrap: wrap;
+        justify-content: space-between;
         input {
             height: 1.5rem;
             width: 1.5rem;

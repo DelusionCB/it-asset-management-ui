@@ -31,7 +31,7 @@ function ServiceForm ({isDisabled, type, mode, editValues}: formTypes): JSX.Elem
     }
 
     useEffect(() => {
-        if (Object.keys(editValues).length !== 0 && mode === 'edit') {
+        if (Object.keys(editValues).length !== 0 && (mode === 'edit' || mode === 'copy')) {
             setValues(editValues)
         }
     }, [editValues, mode])

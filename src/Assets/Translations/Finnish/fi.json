@@ -82,6 +82,7 @@
         "app": "Sovellus",
         "create": "Luo uusi sovellus",
         "edit": "Muokkaa sovellusta",
+        "copy": "Viimeistele kopio",
         "description": "Kuvaus",
         "dependency": "Sidokset",
         "continuity": "Jatkuvuus, kriittisyys & palautumistiedot",
@@ -127,9 +128,10 @@
         "dir": "Kansio",
         "create": "Luo uusi kansio",
         "edit": "Muokkaa kansiota",
+        "copy": "Viimeistele kopio",
         "description": "Kuvaus",
         "dependency": "Sidokset",
-        "visibility": "Valitse sovelluksen näkyvyys",
+        "visibility": "Valitse kansion näkyvyys",
         "values": {
             "name": "Nimi",
             "description": "Kuvaus",
@@ -143,6 +145,7 @@
         "srv": "Palvelin",
         "create": "Luo uusi palvelin",
         "edit": "Muokkaa palvelinta",
+        "copy": "Viimeistele kopio",
         "description": "Kuvaus",
         "info": "Tiedot",
         "status": "Tilatiedot",
@@ -194,6 +197,7 @@
         "lcn": "Lisenssi",
         "create": "Luo uusi lisenssi",
         "edit": "Muokkaa lisenssiä",
+        "copy": "Viimeistele kopio",
         "description": "Lisenssin kuvaus",
         "dependency": "Lisenssin sidokset",
         "visibility": "Valitse lisenssin näkyvyys",
@@ -213,6 +217,7 @@
         "description": "Kuvaus",
         "create": "Luo uusi sopimus",
         "edit": "Muokkaa sopimusta",
+        "copy": "Viimeistele kopio",
         "visibility": "Valitse sopimuksen näkyvyys",
         "values": {
             "name": "Nimi",
@@ -238,6 +243,7 @@
         "description": "Kuvaus",
         "create": "Luo uusi palvelu",
         "edit": "Muokkaa palvelua",
+        "copy": "Viimeistele kopio",
         "visibility": "Valitse palvelun näkyvyys",
         "responsibility": "Vastuut",
         "extra": "Lisätiedot ja linkit",
@@ -266,6 +272,7 @@
     "provider": {
         "create": "Luo uusi toimittaja",
         "edit": "Muokkaa toimittajaa",
+        "copy": "Viimeistele kopio",
         "pro": "Toimittaja",
         "description": "Kuvaus",
         "contacts": "Yhteystiedot",
@@ -296,6 +303,7 @@
         "description": "Kuvaus",
         "create": "Luo uusi integraatio",
         "edit": "Muokkaa integraatiota",
+        "copy": "Viimeistele kopio",
         "visibility": "Valitse integraation näkyvyys",
 
         "values": {

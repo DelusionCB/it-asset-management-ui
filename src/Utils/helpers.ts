@@ -213,12 +213,12 @@ export function handleClear<T extends Record<string, any>> (
     setValues(newState);
 }
 
-export function setData (setEditValues: (values: any) => void, setFieldType: (values: string) => void, setLoading: (isLoading: boolean) => void, params: any): void {
+export function setData (setEditValues: (values: any) => void, setFieldType: (values: string) => void, setLoading: (isLoading: boolean) => void, params: any, mode: string): void {
     setLoading(true)
     if (params.state) {
         void getItemData({itemId: params.state.id, apiPath: params.state.api})
             .then((res) => {
-                setEditValues(mapAPIDataToUIFormat(params.state.api, res));
+                setEditValues(mapAPIDataToUIFormat(params.state.api, res, mode));
             })
             .finally(() => {
                 setFieldType(params.state.api)

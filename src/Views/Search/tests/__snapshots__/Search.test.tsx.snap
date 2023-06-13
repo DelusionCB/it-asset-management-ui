@@ -180,6 +180,28 @@ exports[`<Search /> Snapshot renders correctly 1`] = `
               />
             </div>
           </div>
+          <div>
+            <div
+              className="form-check"
+            >
+              <label
+                className="form-check-label"
+                htmlFor="integration-7"
+              >
+                radios.integration
+              </label>
+              <input
+                aria-disabled={false}
+                checked={false}
+                className="form-check-input"
+                disabled={false}
+                id="integration-7"
+                name="integration"
+                onChange={[Function]}
+                type="radio"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

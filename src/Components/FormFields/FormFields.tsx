@@ -23,8 +23,8 @@ function FormFields ({loading, mode, params}: formPropTypes): JSX.Element {
     const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
-        if (!loading && mode === 'edit') {
-            setData(setEditValues, setFieldType, setLoading, params)
+        if (!loading && (mode === 'edit' || mode === 'copy')) {
+            setData(setEditValues, setFieldType, setLoading, params, mode)
         } else if (!loading && mode === 'create') {
             setLoading(false)
         }
@@ -108,14 +108,14 @@ function FormFields ({loading, mode, params}: formPropTypes): JSX.Element {
     } else {
         return (
             <Container>
-                {mode !== 'edit' &&
+                {mode === 'create' &&
                     <Row>
                         <ArchiveSelection
                             onChange={(e) => {
                                 setFieldType(e);
                             }}
                             selections={['application', 'directory', 'license', 'server', 'service', 'integration', 'provider']}
-                            disabled={disabled || mode === 'edit'}
+                            disabled={disabled}
                             label='select-archive'
                         />
                     </Row>

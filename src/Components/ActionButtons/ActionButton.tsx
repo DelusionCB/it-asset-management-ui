@@ -35,6 +35,15 @@ function ActionButton ({values, action, type, disabled = false}: actionButtonPro
             case 'delete':
                 setShowConfirmation(true);
                 break;
+            case 'copy':
+                navigate(`/archive/${action}/new`, {
+                    state: {
+                        api: type,
+                        id: values.base_id,
+                        action,
+                    },
+                });
+                break;
         }
     }
 

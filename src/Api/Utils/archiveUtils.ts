@@ -4,11 +4,26 @@ type formatValues = Record<string, any>;
 
 function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Object {
     const obj: formatValues = {}
+
+    // Shared data
+    obj.name = values.name
+    obj.description = values.description
+    obj.visibility = values.visibility
+
+    if (values.created_time) {
+        obj.created_time = values.created_time
+    }
+    if (values.last_modified_time) {
+        obj.last_modified_time = values.last_modified_time
+    }
+    if (values.base_id) {
+        obj.base_id = values.base_id
+    }
+    if (values.id_prefix) {
+        obj.id_prefix = values.id_prefix
+    }
     switch (type) {
         case 'application':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
             obj.classification = values.classification
             obj.status = values.status
             obj.person_register = values.person_register
@@ -28,111 +43,24 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             obj.provider_responsibility = values.provider_responsibility
             obj.additional_contacts = values.additional_contacts
             obj.known_issues = values.known_issues
-            obj.visibility = values.visibility
 
-            if (!values.fileUrl) {
-                obj.fileUrl = null
-            } else {
-                obj.fileUrl = values.fileUrl
-            }
-            if (!values.license) {
-                obj.license = null
-            } else {
-                obj.license = values.license.value
-            }
-            if (!values.contract) {
-                obj.contract = null
-            } else {
-                obj.contract = values.contract.value
-            }
-
-            if (!values.provider) {
-                obj.provider = null
-            } else {
-                obj.provider = values.provider.value
-            }
-
-            if (!values.keywords) {
-                obj.keywords = []
-            } else {
-                obj.keywords = values.keywords.map((item: any) => item.value)
-            }
-
-            if (!values.installed_server) {
-                obj.installed_server = []
-            } else {
-                obj.installed_server = values.installed_server.map((item: any) => item.value)
-            }
-            if (!values.application_dependency) {
-                obj.application_dependency = []
-            } else {
-                obj.application_dependency = values.application_dependency.map((item: any) => item.value)
-            }
-            if (values.service_dependency.length === 0) {
-                obj.service_dependency = []
-            } else {
-                obj.service_dependency = values.service_dependency.map((item: any) => item.value)
-            }
-            if (values.customership.length === 0) {
-                obj.customership = []
-            } else {
-                obj.customership = values.customership.map((item: any) => item.value)
-            }
-            if (values.integration.length === 0) {
-                obj.integration = []
-            } else {
-                obj.integration = values.integration.map((item: any) => item.value)
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
+            obj.fileUrl = values.fileUrl || null;
+            obj.license = values.license ? values.license.value : null;
+            obj.contract = values.contract ? values.contract.value : null;
+            obj.provider = values.provider ? values.provider.value : null;
+            obj.keywords = values.keywords ? values.keywords.map((item: any) => item.value) : [];
+            obj.installed_server = values.installed_server ? values.installed_server.map((item: any) => item.value) : [];
+            obj.application_dependency = values.application_dependency ? values.application_dependency.map((item: any) => item.value) : [];
+            obj.service_dependency = values.service_dependency.length ? values.service_dependency.map((item: any) => item.value) : [];
+            obj.customership = values.customership.length ? values.customership.map((item: any) => item.value) : [];
+            obj.integration = values.integration.length ? values.integration.map((item: any) => item.value) : [];
             break;
         case 'directory':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
-
-            // Arrays
-            if (values.applications.length === 0) {
-                obj.applications = []
-            } else {
-                obj.applications = values.applications.map((item: any) => item.value)
-            }
-            if (values.servers.length === 0) {
-                obj.servers = []
-            } else {
-                obj.servers = values.servers.map((item: any) => item.value)
-            }
-            if (values.services.length === 0) {
-                obj.services = []
-            } else {
-                obj.services = values.services.map((item: any) => item.value)
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
+            obj.applications = values.applications.length ? values.applications.map((item: any) => item.value) : [];
+            obj.servers = values.servers.length ? values.servers.map((item: any) => item.value) : [];
+            obj.services = values.services.length ? values.services.map((item: any) => item.value) : [];
             break;
         case 'service':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
-
             obj.service_status = values.service_status
             obj.criticality = values.criticality
             obj.service_level = values.service_level
@@ -145,55 +73,13 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             obj.provider_contact = values.provider_contact
             obj.additional_contacts = values.additional_contacts
 
-            if (values.customership.length === 0) {
-                obj.customership = []
-            } else {
-                obj.customership = values.customership.map((item: any) => item.value)
-            }
-
-            if (values.related_services.length === 0) {
-                obj.related_services = []
-            } else {
-                obj.related_services = values.related_services.map((item: any) => item.value)
-            }
-
-            if (values.required_installations.length === 0) {
-                obj.required_installations = []
-            } else {
-                obj.required_installations = values.required_installations.map((item: any) => item.value)
-            }
-
-            if (!values.provider) {
-                obj.provider = null
-            } else {
-                obj.provider = values.provider.value
-            }
-
-            if (!values.contract) {
-                obj.contract = null
-            } else {
-                obj.contract = values.contract.value
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
-            if (values.id_prefix) {
-                obj.id_prefix = values.id_prefix
-            }
+            obj.customership = values.customership.length ? values.customership.map((item: any) => item.value) : [];
+            obj.related_services = values.related_services.length ? values.related_services.map((item: any) => item.value) : [];
+            obj.required_installations = values.required_installations.length ? values.required_installations.map((item: any) => item.value) : [];
+            obj.provider = values.provider ? values.provider.value : null;
+            obj.contract = values.contract ? values.contract.value : null;
             break;
         case 'server':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
-
             obj.server_role = values.server_role
             obj.service_level = values.service_level
             obj.place_of_use = values.place_of_use
@@ -226,36 +112,10 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             obj.default_gateway = values.default_gateway
             obj.mac_address = values.mac_address
 
-            if (values.applications.length === 0) {
-                obj.applications = []
-            } else {
-                obj.applications = values.applications.map((item: any) => item.value)
-            }
-
-            if (values.customership.length === 0) {
-                obj.customership = []
-            } else {
-                obj.customership = values.customership.map((item: any) => item.value)
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
-            if (values.id_prefix) {
-                obj.id_prefix = values.id_prefix
-            }
+            obj.applications = values.applications.length ? values.applications.map((item: any) => item.value) : [];
+            obj.customership = values.customership.length ? values.customership.map((item: any) => item.value) : [];
             break;
         case 'integration':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
             obj.environment_type = values.environment_type
 
             if (!values.server_platform) {
@@ -263,26 +123,8 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             } else {
                 obj.server_platform = values.server_platform.value
             }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
-            if (values.id_prefix) {
-                obj.id_prefix = values.id_prefix
-            }
             break;
         case 'provider':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
-
             obj.business_id = values.business_id
             obj.provider_type = values.provider_type
             obj.full_address = values.full_address
@@ -294,77 +136,37 @@ function mapUIDataToAPIFormat (type: string, values: Record<string, any>): Objec
             obj.provider_user_contact = values.provider_user_contact
             obj.extra_url = values.extra_url
 
-            if (values.related_contracts.length === 0) {
-                obj.related_contracts = []
-            } else {
-                obj.related_contracts = values.related_contracts.map((item: any) => item.value)
-            }
-
-            if (values.related_applications.length === 0) {
-                obj.related_applications = []
-            } else {
-                obj.related_applications = values.related_applications.map((item: any) => item.value)
-            }
-
-            if (values.related_services.length === 0) {
-                obj.related_services = []
-            } else {
-                obj.related_services = values.related_services.map((item: any) => item.value)
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
-            if (values.id_prefix) {
-                obj.id_prefix = values.id_prefix
-            }
+            obj.related_contracts = values.related_contracts.length ? values.related_contracts.map((item: any) => item.value) : [];
+            obj.related_applications = values.related_applications.length ? values.related_applications.map((item: any) => item.value) : [];
+            obj.related_services = values.related_services.length ? values.related_services.map((item: any) => item.value) : [];
             break;
         case 'license':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
             obj.valid_from_date = values.valid_from_date
             obj.valid_until_date = values.valid_until_date
             obj.license_type = values.license_type
             obj.audits = values.audits
 
-            if (!values.contract) {
-                obj.contract = null
-            } else {
-                obj.contract = values.contract.value
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
-            if (values.id_prefix) {
-                obj.id_prefix = values.id_prefix
-            }
+            obj.contract = values.contract ? values.contract.value : null;
             break;
     }
     return obj
 }
 
-export function mapAPIDataToUIFormat (type: string, values: Record<string, any>): Object {
+export function mapAPIDataToUIFormat (type: string, values: Record<string, any>, mode: string): Object {
     const obj: formatValues = {}
+    // Shared values
+    obj.name = values.name;
+    obj.description = values.description;
+    obj.visibility = values.visibility;
+    if (mode === 'edit') {
+        obj.created_time = values.created_time;
+        obj.last_modified_time = values.last_modified_time;
+        obj.base_id = values.base_id;
+        obj.id_prefix = values.id_prefix;
+    }
+
     switch (type) {
         case 'application':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
             obj.classification = values.classification
             obj.status = values.status
             obj.person_register = values.person_register
@@ -384,140 +186,26 @@ export function mapAPIDataToUIFormat (type: string, values: Record<string, any>)
             obj.provider_responsibility = values.provider_responsibility
             obj.additional_contacts = values.additional_contacts
             obj.known_issues = values.known_issues
-            obj.visibility = values.visibility
 
-            if (!values.fileUrl) {
-                obj.fileUrl = null
-            } else {
-                obj.fileUrl = values.fileUrl
-            }
-            if (!values.license) {
-                obj.license = null
-            } else {
-                obj.license = {value: values.license.base_id, label: values.license.name}
-            }
-            if (!values.contract) {
-                obj.contract = null
-            } else {
-                obj.contract = {value: values.contract.base_id, label: values.contract.name}
-            }
+            obj.fileUrl = values.fileUrl ? values.fileUrl : null;
+            obj.license = values.license ? {value: values.license.base_id, label: values.license.name} : null;
+            obj.contract = values.contract ? {value: values.contract.base_id, label: values.contract.name} : null;
+            obj.provider = values.provider ? {value: values.provider.base_id, label: values.provider.name} : null;
 
-            if (!values.provider) {
-                obj.provider = null
-            } else {
-                obj.provider = {value: values.provider.base_id, label: values.provider.name}
-            }
+            obj.keywords = values.keywords ? values.keywords.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.installed_server = values.installed_server ? values.installed_server.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.application_dependency = values.application_dependency ? values.application_dependency.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.service_dependency = values.service_dependency.length ? values.service_dependency.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.customership = values.customership.length ? values.customership.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.integration = values.integration.length ? values.integration.map((item: any) => ({label: item.name, value: item.base_id})) : [];
 
-            if (!values.keywords) {
-                obj.keywords = []
-            } else {
-                obj.keywords = values.keywords.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (!values.installed_server) {
-                obj.installed_server = []
-            } else {
-                obj.installed_server = values.installed_server.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-            if (!values.application_dependency) {
-                obj.application_dependency = []
-            } else {
-                obj.application_dependency = values.application_dependency.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-            if (values.service_dependency.length === 0) {
-                obj.service_dependency = []
-            } else {
-                obj.service_dependency = values.service_dependency.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-            if (values.customership.length === 0) {
-                obj.customership = []
-            } else {
-                obj.customership = values.customership.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-            if (values.integration.length === 0) {
-                obj.integration = []
-            } else {
-                obj.integration = values.integration.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
             break;
         case 'directory':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
-
-            // Arrays
-            if (values.applications.length === 0) {
-                obj.applications = [];
-            } else {
-                obj.applications = values.applications.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (values.servers.length === 0) {
-                obj.servers = [];
-            } else {
-                obj.servers = values.servers.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (values.services.length === 0) {
-                obj.services = [];
-            } else {
-                obj.services = values.services.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
+            obj.applications = values.applications.length ? values.applications.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.servers = values.servers.length ? values.servers.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.services = values.services.length ? values.services.map((item: any) => ({label: item.name, value: item.base_id})) : [];
             break;
         case 'service':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
-
             obj.service_status = values.service_status
             obj.criticality = values.criticality
             obj.service_level = values.service_level
@@ -530,65 +218,14 @@ export function mapAPIDataToUIFormat (type: string, values: Record<string, any>)
             obj.provider_contact = values.provider_contact
             obj.additional_contacts = values.additional_contacts
 
-            // Arrays
-            if (values.customership.length === 0) {
-                obj.customership = [];
-            } else {
-                obj.customership = values.customership.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
+            obj.customership = values.customership.length ? values.customership.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.related_services = values.related_services.length ? values.related_services.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.required_installations = values.required_installations.length ? values.required_installations.map((item: any) => ({label: item.name, value: item.base_id})) : [];
 
-            if (values.related_services.length === 0) {
-                obj.related_services = [];
-            } else {
-                obj.related_services = values.related_services.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (values.required_installations.length === 0) {
-                obj.required_installations = [];
-            } else {
-                obj.required_installations = values.required_installations.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (!values.provider) {
-                obj.provider = null
-            } else {
-                obj.provider = {value: values.provider.base_id, label: values.provider.name}
-            }
-
-            if (!values.contract) {
-                obj.contract = null
-            } else {
-                obj.contract = {value: values.contract.base_id, label: values.contract.name}
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
-            if (values.id_prefix) {
-                obj.id_prefix = values.id_prefix
-            }
+            obj.provider = values.provider ? {value: values.provider.base_id, label: values.provider.name} : null;
+            obj.contract = values.contract ? {value: values.contract.base_id, label: values.contract.name} : null;
             break;
         case 'server':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
-
             obj.server_role = values.server_role
             obj.service_level = values.service_level
             obj.place_of_use = values.place_of_use
@@ -621,70 +258,15 @@ export function mapAPIDataToUIFormat (type: string, values: Record<string, any>)
             obj.default_gateway = values.default_gateway
             obj.mac_address = values.mac_address
 
-            // Arrays
-            if (values.applications.length === 0) {
-                obj.applications = [];
-            } else {
-                obj.applications = values.applications.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (values.customership.length === 0) {
-                obj.customership = [];
-            } else {
-                obj.customership = values.customership.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
-            if (values.id_prefix) {
-                obj.id_prefix = values.id_prefix
-            }
+            obj.applications = values.applications.length ? values.applications.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.customership = values.customership.length ? values.customership.map((item: any) => ({label: item.name, value: item.base_id})) : [];
             break;
         case 'integration':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
             obj.environment_type = values.environment_type
 
-            if (!values.server_platform) {
-                obj.server_platform = null
-            } else {
-                obj.server_platform = {value: values.server_platform.base_id, label: values.server_platform.name}
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
-            if (values.id_prefix) {
-                obj.id_prefix = values.id_prefix
-            }
+            obj.server_platform = values.server_platform ? {value: values.server_platform.base_id, label: values.server_platform.name} : null;
             break;
         case 'provider':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
-
             obj.business_id = values.business_id
             obj.provider_type = values.provider_type
             obj.full_address = values.full_address
@@ -696,75 +278,16 @@ export function mapAPIDataToUIFormat (type: string, values: Record<string, any>)
             obj.provider_user_contact = values.provider_user_contact
             obj.extra_url = values.extra_url
 
-            // Arrays
-            if (values.related_contracts.length === 0) {
-                obj.related_contracts = [];
-            } else {
-                obj.related_contracts = values.related_contracts.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (values.related_applications.length === 0) {
-                obj.related_applications = [];
-            } else {
-                obj.related_applications = values.related_applications.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (values.related_services.length === 0) {
-                obj.related_services = [];
-            } else {
-                obj.related_services = values.related_services.map((item: any) => ({
-                    label: item.name,
-                    value: item.base_id,
-                }));
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
-            if (values.id_prefix) {
-                obj.id_prefix = values.id_prefix
-            }
+            obj.related_contracts = values.related_contracts.length ? values.related_contracts.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.related_applications = values.related_applications.length ? values.related_applications.map((item: any) => ({label: item.name, value: item.base_id})) : [];
+            obj.related_services = values.related_services.length ? values.related_services.map((item: any) => ({label: item.name, value: item.base_id})) : [];
             break;
         case 'license':
-            // General data
-            obj.name = values.name
-            obj.description = values.description
-            obj.visibility = values.visibility
             obj.valid_from_date = values.valid_from_date
             obj.valid_until_date = values.valid_until_date
             obj.license_type = values.license_type
             obj.audits = values.audits
-
-            if (!values.contract) {
-                obj.contract = null
-            } else {
-                obj.contract = {value: values.contract.base_id, label: values.contract.name}
-            }
-
-            if (values.created_time) {
-                obj.created_time = values.created_time
-            }
-            if (values.last_modified_time) {
-                obj.last_modified_time = values.last_modified_time
-            }
-            if (values.base_id) {
-                obj.base_id = values.base_id
-            }
-            if (values.id_prefix) {
-                obj.id_prefix = values.id_prefix
-            }
+            obj.contract = values.contract ? {value: values.contract.base_id, label: values.contract.name} : null;
             break;
     }
     return obj
