@@ -33,6 +33,9 @@ function ApplicationForm ({isDisabled, type, mode, editValues}: formTypes): JSX.
         if (Object.keys(editValues).length !== 0 && (mode === 'edit' || mode === 'copy')) {
             setValues(editValues)
         }
+        if (Object.keys(editValues).length !== 0 && mode === 'create') {
+            setValues(appDefaultValues)
+        }
     }, [editValues, mode])
 
     useEffect(() => {

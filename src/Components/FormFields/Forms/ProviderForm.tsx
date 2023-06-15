@@ -27,6 +27,9 @@ function ProviderForm ({isDisabled, type, mode, editValues}: formTypes): JSX.Ele
         if (Object.keys(editValues).length !== 0 && (mode === 'edit' || mode === 'copy')) {
             setValues(editValues)
         }
+        if (Object.keys(editValues).length !== 0 && mode === 'create') {
+            setValues(providerDefaultValues)
+        }
     }, [editValues, mode])
 
     useEffect(() => {

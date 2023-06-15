@@ -28,6 +28,9 @@ function DirectoryForm ({isDisabled, type, mode, editValues}: formTypes): JSX.El
         if (Object.keys(editValues).length !== 0 && (mode === 'edit' || mode === 'copy')) {
             setValues(editValues)
         }
+        if (Object.keys(editValues).length !== 0 && mode === 'create') {
+            setValues(directoryDefaultValues)
+        }
     }, [editValues, mode])
 
     useEffect(() => {

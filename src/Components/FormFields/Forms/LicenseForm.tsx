@@ -27,6 +27,9 @@ function LicenseForm ({isDisabled, type, mode, editValues}: formTypes): JSX.Elem
         if (Object.keys(editValues).length !== 0 && (mode === 'edit' || mode === 'copy')) {
             setValues(editValues)
         }
+        if (Object.keys(editValues).length !== 0 && mode === 'create') {
+            setValues(licenseDefaultValues)
+        }
     }, [editValues, mode])
 
     useEffect(() => {

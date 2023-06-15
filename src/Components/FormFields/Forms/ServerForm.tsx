@@ -31,6 +31,9 @@ function ServerForm ({isDisabled, type, mode, editValues}: formTypes): JSX.Eleme
         if (Object.keys(editValues).length !== 0 && (mode === 'edit' || mode === 'copy')) {
             setValues(editValues)
         }
+        if (Object.keys(editValues).length !== 0 && mode === 'create') {
+            setValues(serverDefaultValues)
+        }
     }, [editValues, mode])
 
     useEffect(() => {
