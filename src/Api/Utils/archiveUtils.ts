@@ -293,18 +293,43 @@ export function mapAPIDataToUIFormat (type: string, values: Record<string, any>,
     return obj
 }
 
-export async function postData (navigate: Function, action: string, endpoint: string, values: any): Promise<void> {
+export async function postData (
+    navigate: Function,
+    action: string,
+    endpoint: string,
+    values: any,
+    showNotification: (message: string) => void,
+): Promise<void> {
     let data;
-
-    const preparedValues = mapUIDataToAPIFormat(endpoint, values)
+    let notification = ''
+    const preparedValues = mapUIDataToAPIFormat(endpoint, values);
 
     try {
         const response = action === 'save'
             ? await client.put(`${endpoint}/${values.base_id}/`, preparedValues)
-            : await client.post(`${endpoint}/`, preparedValues)
+            : await client.post(`${endpoint}/`, preparedValues);
         data = response.data;
+
+        // validation errors
+        if (response.status === 400) {
+            notification = 'status.validationError'
+        }
+
+        // auth errors
+        if (response.status === 401 || response.status === 403) {
+            notification = 'status.authorization'
+        }
+        if (response.status === 200) {
+            if (action === 'save') {
+                notification = 'status.save'
+            } else if (action === 'create') {
+                notification = 'status.create'
+            }
+        }
+        showNotification(notification)
     } catch (e: any) {
-        throw Error(e)
+        showNotification('status.error'); // Display error message
+        throw Error(e);
     } finally {
         navigate(`/${endpoint}/${data.base_id}`, {
             state: {
@@ -315,11 +340,28 @@ export async function postData (navigate: Function, action: string, endpoint: st
     }
 }
 
-export async function deleteData (navigate: Function, action: string, endpoint: string, id: string): Promise<void> {
+export async function deleteData (
+    navigate: Function,
+    action: string,
+    endpoint: string,
+    id: string,
+    showNotification: (message: string) => void,
+): Promise<void> {
+    let notification = ''
     try {
-        await client.delete(`${endpoint}/${id}/`)
+        const response = await client.delete(`${endpoint}/${id}/`);
+
+        // auth errors
+        if (response.status === 401 || response.status === 403) {
+            notification = 'status.authorization'
+        }
+        if (response.status === 204) {
+            notification = 'status.delete'
+        }
+        showNotification(notification)
     } catch (e: any) {
-        throw Error(e)
+        showNotification('status.error'); // Display error message
+        throw Error(e);
     } finally {
         navigate(`/`);
     }

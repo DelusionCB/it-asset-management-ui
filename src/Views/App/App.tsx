@@ -16,6 +16,7 @@ import Homepage from '../Homepage/Homepage';
 import ArchiveViewer from '../ArchiveViewer/ArchiveViewer';
 import Search from '../Search/Search';
 import ArchiveForms from '../ArchiveForms/ArchiveForms';
+import Notification from '../../Components/Notification/Notification';
 
 const App: React.FC = () => {
     return (
@@ -37,6 +38,7 @@ const Layout: React.FC = () => {
             <main id='main'>
                 <Outlet />
             </main>
+            <Notification />
             <Footer />
         </div>
     );

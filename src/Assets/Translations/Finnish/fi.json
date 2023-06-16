@@ -26,6 +26,14 @@
         "contract": "Sopimus"
     },
 
+    "status": {
+        "authorization": "Virhe autentiaaktion kanssa!",
+        "delete": "Poisto suoritettu onnistuneesti!",
+        "error": "Tapahtui virhe!",
+        "save": "Tallennus suoritettu onnistuneesti!",
+        "create": "Luonti suoritettu onnistuneesti!"
+    },
+
     "select": {
         "tosi": "TOSI",
         "tori": "TORI",

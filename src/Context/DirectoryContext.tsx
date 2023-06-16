@@ -13,7 +13,7 @@ interface ProviderProps {
     children?: React.ReactNode
 }
 
-const DirectoryProvider: React.FC<ProviderProps> = ({children}) => {
+function DirectoryProvider ({children}: ProviderProps): JSX.Element {
     const [directories, setDirectories] = React.useState<DirectoryResults>(directoryDefaultResults);
 
     const updateContext = (pageNumber?: number, countNumber?: number): void => {
@@ -31,6 +31,6 @@ const DirectoryProvider: React.FC<ProviderProps> = ({children}) => {
             {children}
         </DirectoryContext.Provider>
     )
-};
+}
 
 export default DirectoryProvider;

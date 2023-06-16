@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {Button} from 'reactstrap';
 import {useTranslation} from 'react-i18next';
 import './index.scss'
@@ -6,17 +6,19 @@ import {deleteData, postData} from '../../Api/Utils/archiveUtils';
 import {useNavigate} from 'react-router-dom'
 import {actionButtonPropTypes} from '../../Types/types.components';
 import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
+import {NotificationContext} from '../../Context/NotificationContext';
 
 function ActionButton ({values, action, type, disabled = false}: actionButtonPropTypes): JSX.Element {
     const [showConfirmation, setShowConfirmation] = useState(false);
     const {t} = useTranslation()
     const navigate = useNavigate()
+    const {showNotification} = useContext(NotificationContext);
 
     function handleAction (): void {
         switch (action) {
             case 'create':
             case 'save':
-                void postData(navigate, action, type, values)
+                void postData(navigate, action, type, values, showNotification)
                 break;
             case 'edit':
                 navigate(`/archive/${action}/${values.base_id}`, {
@@ -50,7 +52,7 @@ function ActionButton ({values, action, type, disabled = false}: actionButtonPro
     function handleConfirm (): void {
         switch (action) {
             case 'delete':
-                void deleteData(navigate, action, type, values.base_id)
+                void deleteData(navigate, action, type, values.base_id, showNotification)
         }
     }
 
