@@ -15,15 +15,6 @@
     align-items: center;
     text-align: center;
 
-    @keyframes scaleFont {
-        0% {
-            font-size: 0;
-        }
-        100% {
-            font-size: 8rem;
-        }
-    }
-
     i {
         &::before {
             font-size: 0;

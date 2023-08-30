@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import './index.scss'
-import logo from '../../Assets/Images/varha_logo_white.webp';
 import {
     Collapse,
     Navbar,
     NavbarToggler,
-    Nav,
     NavItem, Button,
 } from 'reactstrap';
 import {Link, useNavigate} from 'react-router-dom'
@@ -30,16 +28,26 @@ function Header (args: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<Na
     }
 
     return (
-        <>
-            <Navbar expand={true} container='fluid' dark={true} {...args}>
+        <header className='main-navbar'>
+            <div className='bar'>
                 <Link
+                    className='bar__logo'
                     to='/'
                     relative="path"
-                >
-                    <img alt='Varhan logo' height={80} src={logo} />
-                </Link>
+                    aria-label='Linkki etusivulle, Varhan logo'
+                />
+                <div className='bar__login'>
+                    <Button role='link' disabled={true}>
+                        <i className="bi bi-person-fill-lock" />
+                        <span>{t('user.login')}</span>
+                    </Button>
+                </div>
+            </div>
+
+            <Navbar role='navigation' className='mappi-bar' expand='xl'>
+                <NavbarToggler onClick={() => { toggleOpen() }} />
                 <Collapse isOpen={!isOpen} navbar>
-                    <Nav className="me-auto" navbar>
+                    <ul className='mappi-bar__links'>
                         <NavItem>
                             <Button
                                 className='navlink-button'
@@ -62,11 +70,34 @@ function Header (args: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<Na
                                 <i className='bi bi-search' />
                             </Button>
                         </NavItem>
-                    </Nav>
+                        <NavItem>
+                            <Button
+                                className='navlink-button'
+                                role='link'
+                                disabled={true}
+                                aria-label={`${t('archive-fetch')}`}
+                                onClick={() => { redirect('search', false) }}
+                            >
+                                <span>Tilastot</span>
+                                <i className='bi bi-graph-up-arrow' />
+                            </Button>
+                        </NavItem>
+                        <NavItem>
+                            <Button
+                                className='navlink-button'
+                                role='link'
+                                disabled={true}
+                                aria-label={`${t('archive-fetch')}`}
+                                onClick={() => { redirect('search', false) }}
+                            >
+                                <span>Hallintapaneeli</span>
+                                <i className='bi bi-wrench' />
+                            </Button>
+                        </NavItem>
+                    </ul>
                 </Collapse>
-                <NavbarToggler onClick={() => { toggleOpen() }} className="me-2" />
             </Navbar>
-        </>
+        </header>
     );
 }
 

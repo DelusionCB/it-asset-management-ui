@@ -1,5 +1,5 @@
 import {
-    contractDataPropTypes, DirectoryResults,
+    contractDataPropTypes,
     extendedApplicationDataProps,
     extendedDirectoryDataProps, integrationDataPropTypes,
     licenseDataPropTypes, providerDataPropTypes,
@@ -161,13 +161,6 @@ export const serviceDefaultValues: serviceDataProps = {
     related_services: [],
     required_installations: [],
     visibility: 'published',
-}
-
-export const directoryDefaultResults: DirectoryResults = {
-    count: 0,
-    next: null,
-    previous: null,
-    results: [],
 }
 
 export const integrationDefaultValues: integrationDataPropTypes = {

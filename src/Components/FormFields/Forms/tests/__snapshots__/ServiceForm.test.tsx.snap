@@ -29,7 +29,7 @@ exports[`<ServiceForm /> Snapshot renders correctly 1`] = `
           className="form-label"
           htmlFor="visibility"
         >
-          service.values.visibility
+          values.visibility
         </label>
         <select
           aria-invalid={false}

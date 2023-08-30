@@ -20,7 +20,7 @@ function Searchbar ({onFormSubmit, t}: searchBarPropTypes): JSX.Element {
 
     return (
         <Container>
-            <h1>{t('search-header')}</h1>
+            <h1 className='search-header'>{t('search-header')}</h1>
             <Row>
                 <ArchiveSelection
                     onChange={(e) => { setFieldType(e); }}

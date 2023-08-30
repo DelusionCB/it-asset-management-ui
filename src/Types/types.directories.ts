@@ -3,6 +3,7 @@
 export interface DirectoryFetchParams {
     countNumber?: number | string
     pageNumber?: number | string
+    endpoint?: string
 }
 
 export interface EndpointFetchParams {
@@ -18,21 +19,22 @@ export interface itemFetchParams {
 
 // Types for results from fetch for directories
 export interface DirectoryResults {
-    count: number
-    next: null | string
-    previous: null | string
-    results: DirectoryDataProps[]
+    count?: number
+    next?: null | string
+    previous?: null | string
+    results: any[]
 }
 
 // Types for Directory context
 export interface DirectoryContextType {
-    directories: DirectoryResults
-    updateContext: (pageNumber?: number, countNumber?: number) => void
+    directories: Record<string, DirectoryResults>
+    loading: boolean
 }
 
 // Types / Props for Directory folder
 export interface DirectoryFolderProps {
-    data: DirectoryResults
+    data: any
+    endpoints: string[]
 }
 
 // Types / Props for application data inside Directory data

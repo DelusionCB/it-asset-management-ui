@@ -7,7 +7,9 @@ exports[`<Search /> Snapshot renders correctly 1`] = `
   <div
     className="container"
   >
-    <h1>
+    <h1
+      className="search-header"
+    >
       search-header
     </h1>
     <div

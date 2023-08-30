@@ -4,7 +4,9 @@ exports[`<Searchbar /> Snapshot renders correctly 1`] = `
 <div
   className="container"
 >
-  <h1 />
+  <h1
+    className="search-header"
+  />
   <div
     className="row"
   >

@@ -1221,7 +1221,7 @@ exports[`<ApplicationForm  /> Snapshot renders correctly 1`] = `
           id="security_solutions"
           name="security_solutions"
           onChange={[Function]}
-          placeholder="security_solutions"
+          placeholder="placeholder.security_solutions"
           value=""
         />
       </div>

@@ -1,12 +1,29 @@
 .footer {
-    display: flex;
+    text-align: center;
     background-color: var(--primary-color);
     color: var(--white-color);
-    justify-content: center;
     padding: 2rem;
     margin-top: 1rem;
     position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
+    font-size: 1.25rem;
+    a {
+        color: var(--white-color);
+    }
+    .-image {
+        padding: 1rem;
+    }
+    .-info {
+        p {
+            margin: 0;
+            align-self: center;
+        }
+        display: flex;
+        justify-content: space-evenly;
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+        }
+    }
 }

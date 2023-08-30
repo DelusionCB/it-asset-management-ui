@@ -1,40 +1,115 @@
-.navbar {
-    background-color: var(--primary-color);
-    height: 100%;
-    padding: 10px;
-    border-bottom: 2px solid var(--secondary-color);
-    @media only screen and (max-width: 700px) {
-        &-toggler {
-            display: flex !important;
+.main-navbar {
+    .container-fluid {
+        flex-direction: row-reverse;
+    }
+    button {
+        font-weight: bold;
+        font-size: 1.25rem;
+        background-color: transparent !important;
+        border: none;
+        &:hover, &:focus, &:active {
+            color: inherit;
+            text-decoration: underline var(--secondary-color);
         }
-        .collapse {
-            display: none !important;
-            &.show {
-                display: flex !important;
+    }
+    .bar {
+        width: 100%;
+        background: var(--primary-color);
+        padding: 12px 24px 12px 24px;
+        display: inline-flex;
+        justify-content: space-between;
+        &__login {
+            display: inline-flex;
+            align-items: center;
+            button {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                &:hover, &:focus {
+                    text-decoration: underline;
+                    color: var(--white-color);
+                }
             }
         }
     }
-    .navlink-button {
-        color: white;
-        font-size: 1.5rem;
-        background-color: transparent;
-        margin-left: 10px;
-        margin-right: 10px;
-        border: 1px solid transparent;
-        &:hover, &:focus, &:active {
-            border: 1px solid var(--secondary-color);
-            background-color: transparent;
+
+    .mappi-bar {
+        height: 64px;
+        width: 100%;
+        background: var(--white-color);
+        z-index: 1;
+        border-bottom: rgba($color: #404040, $alpha: 0.75) 2px solid !important;
+        &__links {
+            display: contents;
+            color: var(--black-color);
+            .nav-item {
+                margin-right: 1rem;
+                display: block;
+                .navlink-button {
+                    text-decoration: none;
+                    font-weight: bold;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    position: relative;
+                    color: var(--black-color);
+                    font-size: 1.25rem;
+                    i {
+                        margin-left: 5px;
+                    }
+                    &.active, &:hover, &:focus {
+                        background-color: rgba(0, 0, 0, 0.08);
+                        outline: solid 2px var(--black-color);
+                    }
+                }
+            }
         }
-        i {
-            margin-left: 3px;
-            margin-right: 3px;
-        }
+    }
+    .bar__logo {
+        background-image: url('../../Assets/Images/varha_logo_white.webp');
+        height: 90px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        width: 100%;
     }
 }
 
-a {
-    font-size: 1.5rem;
-    color: white;
-    margin-left: 1rem;
-    margin-right: 0.5rem;
+// Hamburger for Mobile
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(0,0,0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+//Mobile
+@media only screen and (max-width: 1199px) {
+    .main-navbar {
+        height: auto;
+        .bar {
+            height: auto;
+            flex-wrap: nowrap;
+            &__login {
+                .btn {
+                    white-space: normal;
+                    display: flex;
+                    align-items: center;
+                    height: auto;
+                }
+            }
+        }
+        .mappi-bar {
+            height: auto;
+            width: auto;
+            &__links {
+                display: block;
+                text-align: center;
+                padding: 1rem;
+                .nav-item {
+                    margin-right: 0;
+                    margin-top: 1rem;
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
 }

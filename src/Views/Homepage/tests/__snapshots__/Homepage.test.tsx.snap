@@ -1,24 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Homepage /> Snapshot renders correctly 1`] = `
-<div>
-  <div>
+<div
+  className="container home-container"
+>
+  <div
+    className="container-md"
+  >
     <h1>
-      Tervetuloa IT- ja omaisuuden hallintaan!
+      home.header
     </h1>
+    <p>
+      Mappi-järjestelmä auttaa hallinnoimaan sopimuksia, sovelluksia, palvelinasioita ja arkistoa.
+    </p>
   </div>
-  <div>
-    <div>
-      <div
-        className="directory-container"
-      >
-        <div>
-          <h1>
-            Ei kansioita joita näyttää
-          </h1>
-        </div>
-      </div>
-    </div>
+  <div
+    animation="border"
+    className="spinner-border"
+    role="status"
+  >
+    <span
+      className="visually-hidden"
+    >
+      Ladataan...
+    </span>
   </div>
 </div>
 `;

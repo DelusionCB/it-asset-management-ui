@@ -4,10 +4,36 @@ exports[`<Footer /> Snapshot renders correctly 1`] = `
 <footer
   className="footer"
 >
-  <img
-    alt="Varhan logo"
-    height={80}
-    src=""
-  />
+  <div
+    className="-image"
+  >
+    <img
+      alt="Varhan logo"
+      height={80}
+      src=""
+    />
+  </div>
+  <div
+    className="-info"
+  >
+    <p>
+      © Varha 2023
+    </p>
+    <a
+      href="/"
+    >
+      Saavutettavuusseloste
+    </a>
+    <a
+      href="/"
+    >
+      Tietosuojaseloste
+    </a>
+    <a
+      href="/"
+    >
+      Evästeasetukset
+    </a>
+  </div>
 </footer>
 `;

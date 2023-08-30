@@ -9,19 +9,13 @@ function DirectoryItem ({data}: DirectoryItemProps): JSX.Element {
 
     return (
         <div className='directory-item'>
-            <div>
-                <h2>{data.name}</h2>
-                <small>{data.description}</small>
-            </div>
-            <div>
-                <Button
-                    className='item-button'
-                    onClick={() => { redirectTo(navigate, data.id_prefix, data.base_id); }}
-                >
-                    <p>Siirry {data.name} tietoihin</p>
-                    <i className='bi bi-arrow-right' />
-                </Button>
-            </div>
+            <Button
+                className='item-button'
+                onClick={() => { redirectTo(navigate, data.id_prefix, data.base_id); }}
+            >
+                <p>{data.name}</p>
+                <i className='bi bi-arrow-right' />
+            </Button>
         </div>
     );
 }

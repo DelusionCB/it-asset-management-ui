@@ -4,11 +4,29 @@
     "loading": "Ladataan...",
     "search-minimum-length": "Syötä vähintään 3 merkkiä",
     "search-no-results": "Ei tuloksia",
-    "create-new": "Luo uusi arkistointi",
+    "create-new": "Luo uusi",
     "values": {
         "visibility": "Näkyvyys"
     },
 
+    "home": {
+        "header": "Mappi - Omaisuudenhallintajärjestelmä"
+    },
+
+    "user": {
+        "login": "Kirjaudu sisään"
+    },
+
+    "folder": {
+        "application": "Sovellukset",
+        "directory": "Kansiot",
+        "license": "Lisenssit",
+        "server": "Palvelimet",
+        "service": "Palvelut",
+        "integration": "Integraatiot",
+        "provider": "Toimittajat",
+        "no-data": "Ei sisältöä"
+    },
     "visibility": {
         "draft": "Luonnos",
         "published": "Julkaistu",
@@ -27,8 +45,8 @@
     },
 
     "status": {
-        "authorization": "Virhe autentiaaktion kanssa!",
-        "delete": "Poisto suoritettu onnistuneesti!",
+        "authorization": "Virhe autentikaaktion kanssa!",
+        "delete": "Poisto suoritettu onnistuneesti! Siirrämme sinut takaisin etusivulle.",
         "error": "Tapahtui virhe!",
         "save": "Tallennus suoritettu onnistuneesti!",
         "create": "Luonti suoritettu onnistuneesti!"
@@ -353,9 +371,9 @@
     "dateRange": "Alkaa: {{startDate}}, päättyy: {{endDate}}",
     "back": "Palaa takaisin",
     "select-archive": "Valitse arkiston tyyppi",
-    "select-archive-search": "Valitse arkiston tyyppi haettavaksi",
+    "select-archive-search": "Valitse sisällön tyyppi haettavaksi",
     "archive-contents": "Arkiston nimi (min. 3 merkkiä)",
-    "archive-fetch": "Hae arkistoja",
+    "archive-fetch": "Hae",
     "archive-example": "Esim. Elatusapulaskuri...",
     "search-results": "Hakutulosten määrä on {{count}}",
     "search-header": "Etsi arkistoista sisältöä"

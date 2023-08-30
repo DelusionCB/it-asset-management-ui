@@ -319,7 +319,7 @@ export async function postData (
         if (response.status === 401 || response.status === 403) {
             notification = 'status.authorization'
         }
-        if (response.status === 200) {
+        if (response.status === 200 || response.status === 201) {
             if (action === 'save') {
                 notification = 'status.save'
             } else if (action === 'create') {
@@ -351,7 +351,6 @@ export async function deleteData (
     try {
         const response = await client.delete(`${endpoint}/${id}/`);
 
-        // auth errors
         if (response.status === 401 || response.status === 403) {
             notification = 'status.authorization'
         }
@@ -360,7 +359,7 @@ export async function deleteData (
         }
         showNotification(notification)
     } catch (e: any) {
-        showNotification('status.error'); // Display error message
+        showNotification('status.error');
         throw Error(e);
     } finally {
         navigate(`/`);

@@ -76,7 +76,7 @@ function ServiceForm ({isDisabled, type, mode, editValues}: formTypes): JSX.Elem
                     onChange={(e) => { handleChange(e); }}
                     disabled={false}
                     id='visibility'
-                    label={'service.values.visibility'}
+                    label={'values.visibility'}
                     invalid={false}
                     options={['draft', 'hidden', 'published']}
                     placeholder={'placeholder.visibility'}

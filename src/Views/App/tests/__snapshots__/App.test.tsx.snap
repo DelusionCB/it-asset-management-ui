@@ -4,111 +4,202 @@ exports[`<App /> Snapshot renders correctly 1`] = `
 <div
   className="container-wrapper"
 >
-  <nav
-    className="navbar navbar-expand navbar-dark"
+  <header
+    className="main-navbar"
   >
     <div
-      className="container-fluid"
+      className="bar"
     >
       <a
+        aria-label="Linkki etusivulle, Varhan logo"
+        className="bar__logo"
         href="/"
         onClick={[Function]}
-      >
-        <img
-          alt="Varhan logo"
-          height={80}
-          src=""
-        />
-      </a>
+      />
       <div
-        className="collapse navbar-collapse"
-        style={{}}
+        className="bar__login"
       >
-        <ul
-          className="me-auto navbar-nav"
+        <button
+          className="btn btn-secondary disabled"
+          disabled={true}
+          onClick={[Function]}
+          role="link"
         >
-          <li
-            className="nav-item"
-          >
-            <button
-              aria-label="create-new"
-              className="navlink-button btn btn-secondary"
-              onClick={[Function]}
-              role="link"
-              type="button"
-            >
-              <span>
-                create-new
-              </span>
-              <i
-                className="bi bi-plus"
-              />
-            </button>
-          </li>
-          <li
-            className="nav-item"
-          >
-            <button
-              aria-label="archive-fetch"
-              className="navlink-button btn btn-secondary"
-              onClick={[Function]}
-              role="link"
-              type="button"
-            >
-              <span>
-                archive-fetch
-              </span>
-              <i
-                className="bi bi-search"
-              />
-            </button>
-          </li>
-        </ul>
+          <i
+            className="bi bi-person-fill-lock"
+          />
+          <span>
+            user.login
+          </span>
+        </button>
       </div>
-      <button
-        aria-label="Toggle navigation"
-        className="me-2 navbar-toggler"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="navbar-toggler-icon"
-        />
-      </button>
     </div>
-  </nav>
+    <nav
+      className="mappi-bar navbar navbar-expand-xl"
+      role="navigation"
+    >
+      <div
+        className="container-fluid"
+      >
+        <button
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          style={{}}
+        >
+          <ul
+            className="mappi-bar__links"
+          >
+            <li
+              className="nav-item"
+            >
+              <button
+                aria-label="create-new"
+                className="navlink-button btn btn-secondary"
+                onClick={[Function]}
+                role="link"
+                type="button"
+              >
+                <span>
+                  create-new
+                </span>
+                <i
+                  className="bi bi-plus"
+                />
+              </button>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <button
+                aria-label="archive-fetch"
+                className="navlink-button btn btn-secondary"
+                onClick={[Function]}
+                role="link"
+                type="button"
+              >
+                <span>
+                  archive-fetch
+                </span>
+                <i
+                  className="bi bi-search"
+                />
+              </button>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <button
+                aria-label="archive-fetch"
+                className="navlink-button btn btn-secondary disabled"
+                disabled={true}
+                onClick={[Function]}
+                role="link"
+                type="button"
+              >
+                <span>
+                  Tilastot
+                </span>
+                <i
+                  className="bi bi-graph-up-arrow"
+                />
+              </button>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <button
+                aria-label="archive-fetch"
+                className="navlink-button btn btn-secondary disabled"
+                disabled={true}
+                onClick={[Function]}
+                role="link"
+                type="button"
+              >
+                <span>
+                  Hallintapaneeli
+                </span>
+                <i
+                  className="bi bi-wrench"
+                />
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
   <main
     id="main"
   >
-    <div>
-      <div>
+    <div
+      className="container home-container"
+    >
+      <div
+        className="container-md"
+      >
         <h1>
-          Tervetuloa IT- ja omaisuuden hallintaan!
+          home.header
         </h1>
+        <p>
+          Mappi-järjestelmä auttaa hallinnoimaan sopimuksia, sovelluksia, palvelinasioita ja arkistoa.
+        </p>
       </div>
-      <div>
-        <div>
-          <div
-            className="directory-container"
-          >
-            <div>
-              <h1>
-                Ei kansioita joita näyttää
-              </h1>
-            </div>
-          </div>
-        </div>
+      <div
+        animation="border"
+        className="spinner-border"
+        role="status"
+      >
+        <span
+          className="visually-hidden"
+        >
+          Ladataan...
+        </span>
       </div>
     </div>
   </main>
   <footer
     className="footer"
   >
-    <img
-      alt="Varhan logo"
-      height={80}
-      src=""
-    />
+    <div
+      className="-image"
+    >
+      <img
+        alt="Varhan logo"
+        height={80}
+        src=""
+      />
+    </div>
+    <div
+      className="-info"
+    >
+      <p>
+        © Varha 2023
+      </p>
+      <a
+        href="/"
+      >
+        Saavutettavuusseloste
+      </a>
+      <a
+        href="/"
+      >
+        Tietosuojaseloste
+      </a>
+      <a
+        href="/"
+      >
+        Evästeasetukset
+      </a>
+    </div>
   </footer>
 </div>
 `;

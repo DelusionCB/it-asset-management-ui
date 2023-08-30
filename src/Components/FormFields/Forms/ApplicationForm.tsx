@@ -332,7 +332,7 @@ function ApplicationForm ({isDisabled, type, mode, editValues}: formTypes): JSX.
                     type='textarea'
                     label={'application.values.security_solutions'}
                     onChange={(e) => { handleChange(e) }}
-                    placeholder={'security_solutions'}
+                    placeholder={'placeholder.security_solutions'}
                     value={values.security_solutions}
                 />
             </Row>
